@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+./vscode/*
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+megaphone
+awesome_crappy_pb
