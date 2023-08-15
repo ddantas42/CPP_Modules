@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:29:44 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/15 15:11:58 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/15 22:22:44 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Contact {
 		std::string	nickname;	
 		std::string	dark_secret;	
 		std::string	phone_nbr;	
-		int		index;
+		int			index;
+	
 };
 
 #endif

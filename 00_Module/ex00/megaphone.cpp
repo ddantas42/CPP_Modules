@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:31:12 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/14 15:52:23 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/15 20:51:28 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void put_string_up(std::string *str)
 int main (int argc, char **argv)
 {
 	int			n = 1;
-	std::string	str; 
-	
+	std::string	str;
+
 	if (argc <= 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else

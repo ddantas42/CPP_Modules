@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:11:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/15 12:16:50 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/15 21:41:12 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class PhoneBook {
 		Contact contacts[8];
 		PhoneBook ( void );
 		~PhoneBook ( void );
+		void print_name ( std::string name );
 		void add_contact ( void );		
 		void print_contact ( void );
 
