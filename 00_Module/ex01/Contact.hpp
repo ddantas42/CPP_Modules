@@ -6,13 +6,14 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:29:44 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/14 18:16:39 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:07:47 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 # define CONTACT_H
 
+#include "PhoneBook.hpp"
 
 class Contact {
 
@@ -20,14 +21,13 @@ class Contact {
 		Contact ( void );
 		~Contact ( void );
 		
-		char	*first_name;	
-		char	*last_name;	
-		char	*nickname;	
+		std::string	first_name;	
+		std::string	last_name;	
+		std::string	nickname;	
+		std::string	dark_secret;	
+		char 	*pointer;
 		int		phone_nbr;
 		int		index;
-		
-	
-	
 };
 
 #endif
