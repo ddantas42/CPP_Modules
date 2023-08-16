@@ -63,7 +63,7 @@ void	PhoneBook::print_name( std::string name )
 	std::cout << "|";
 }
 
-std::string get_info( const std::string question, std::string prompt)
+std::string get_info( const std::string question, std::string prompt )
 {
 	while (1)
 	{
@@ -161,13 +161,6 @@ int main () {
 		else if (prompt.compare("EXIT") == 0)
 			break ;
 		
-		/*int i = 0;
-		while (!instance.contacts[i].first_name.empty())
-		{
-			std::cout << "contact[" << i << "].first_name = "
-			<< instance.contacts[i].first_name << std::endl;
-			i++;
-		}*/
 	}
 	return (0);
 }
