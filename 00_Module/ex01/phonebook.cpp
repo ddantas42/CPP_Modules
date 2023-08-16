@@ -63,13 +63,19 @@ void	PhoneBook::print_name( std::string name )
 	std::cout << "|";
 }
 
-std::string get_info( const std::string question, std::string prompt )
+std::string get_info( const std::string question )
 {
+	std::string prompt;
 	while (1)
 	{
 		prompt.clear();
 		std::cout << question;
-		getline(std::cin, prompt);
+		if (!getline(std::cin, prompt))
+		{
+			std::cout << std::endl << "Error: cannot be empty field" << std::endl;
+			prompt.clear();
+			exit(1);
+		}
 		if (prompt.size() > 0)
 			break ;
 	}
@@ -81,6 +87,11 @@ void	PhoneBook::print_contact ( void )
 	std::string prompt;
 	int			index = 0;
 	
+	if (this->contacts[0].index == -1)
+	{
+		std::cout << "No contacts to show" << std::endl;
+		return ;
+	}
 	std::cout << "|  index   |First Name| Last name| Nickname |" << std::endl;
 	for (int i = 0; this->contacts[i].index > 0; i++)
 	{
@@ -94,9 +105,10 @@ void	PhoneBook::print_contact ( void )
 	}
 	std::cout << std::endl;
 	
-	prompt = get_info("index: ", prompt);
-	if (stoi(prompt) >= 1 && stoi(prompt) <= 8 && this->contacts[stoi(prompt) - 1].index > 0)
-		index = stoi(prompt) - 1;
+	std::cout << "index: ";
+	std::cin >> index;
+	if (index >= 1 && index <= 8 && this->contacts[index - 1].index > 0)
+		index = index - 1;
 	else
 	{
 		std::cout << "invalied input" << std::endl;
@@ -116,23 +128,23 @@ void	PhoneBook::add_contact( void )
 	static int	index = 0;
 	std::cout << " ------ Contact Creator ------ " << std::endl;
 	
-	prompt = get_info( "Input first name: ", prompt);
+	prompt = get_info( "Input first name: ");
 	this->contacts[index].first_name.clear();
 	this->contacts[index].first_name.assign(prompt);
 	
-	prompt = get_info( "Input last name: ", prompt);
+	prompt = get_info( "Input last name: ");
 	this->contacts[index].last_name.clear();
 	this->contacts[index].last_name.assign(prompt);
 
-	prompt = get_info( "Input nickname: ", prompt);
+	prompt = get_info( "Input nickname: ");
 	this->contacts[index].nickname.clear();
 	this->contacts[index].nickname.assign(prompt);
 
-	prompt = get_info( "Input phone number: ", prompt);
+	prompt = get_info( "Input phone number: ");
 	this->contacts[index].phone_nbr.clear();
 	this->contacts[index].phone_nbr.assign(prompt);
 	
-	prompt = get_info( "Input darkest secret...: ", prompt);
+	prompt = get_info( "Input darkest secret...: ");
 	this->contacts[index].dark_secret.clear();
 	this->contacts[index].dark_secret.assign(prompt);
 	
@@ -152,8 +164,9 @@ int main () {
 	{
 		prompt.clear();
 		std::cout << "ACP: ";
-		getline(std::cin, prompt);
-		
+		if (!std::getline(std::cin, prompt))
+			exit(0);
+		std::cout << "prompt: " << prompt << std::endl;
 		if (prompt.compare("ADD") == 0)
 			instance.add_contact();
 		else if (prompt.compare("SEARCH") == 0)
@@ -163,5 +176,5 @@ int main () {
 		
 	}
 	return (0);
-}
+}	
 	
