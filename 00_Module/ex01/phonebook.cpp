@@ -14,6 +14,7 @@
 #include <string>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <limits>
 
 void print_left_spaces( std::string name )
 {
@@ -106,12 +107,19 @@ void	PhoneBook::print_contact ( void )
 	std::cout << std::endl;
 	
 	std::cout << "index: ";
-	std::cin >> index;
+	if (!(std::cin >> index))
+	{
+		std::cout << "Invalid input." << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the newline character
+		return ; 
+	}
+	 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the newline character
 	if (index >= 1 && index <= 8 && this->contacts[index - 1].index > 0)
 		index = index - 1;
 	else
 	{
-		std::cout << "invalied input" << std::endl;
+		std::cout << "invalid input." << std::endl;
 		return ;
 	}
 	std::cout << std::endl;
@@ -166,7 +174,6 @@ int main () {
 		std::cout << "ACP: ";
 		if (!std::getline(std::cin, prompt))
 			exit(0);
-		std::cout << "prompt: " << prompt << std::endl;
 		if (prompt.compare("ADD") == 0)
 			instance.add_contact();
 		else if (prompt.compare("SEARCH") == 0)
