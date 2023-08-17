@@ -6,7 +6,7 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 16:44:58 by hiper             #+#    #+#              #
-#    Updated: 2023/08/17 16:47:02 by hiper            ###   ########.fr        #
+#    Updated: 2023/08/17 18:00:09 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = recover
 RM = rm
 
-FILESC = tests.cpp
+FILESC = tests.cpp Account.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 
