@@ -17,24 +17,30 @@
 
 Contact::Contact( void ) : index(-1)
 {
-	std::cout << "Contact Constructor call :D " << std::endl;
+	// std::cout << "Contact Constructor call :D " << std::endl;
 	return ;
 }
 
 Contact::~Contact( void )
 {
+	first_name.clear();
+    last_name.clear();
+    nickname.clear();
+    dark_secret.clear();
+    phone_nbr.clear();
+    index = 0;
 	std::cout << "Contact Destructor call :D " << std::endl;
 	return ;
 }
 
 PhoneBook::PhoneBook( void )
 {
-	std::cout << "PhoneBook Constructor call :D " << std::endl;
+	// std::cout << "PhoneBook Constructor call :D " << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook( void )	
 {
-	std::cout << "PhoneBook Destructor call :D " << std::endl;
+	// std::cout << "PhoneBook Destructor call :D " << std::endl;
 	return ;
 }
