@@ -16,19 +16,6 @@
 #include "Contact.hpp"
 #include <limits>
 
-void exit ( int status , PhoneBook instance)
-{
-	instance.contacts[0].~Contact();
-	instance.contacts[1].~Contact();
-	instance.contacts[2].~Contact();
-	instance.contacts[3].~Contact();
-	instance.contacts[4].~Contact();
-	instance.contacts[5].~Contact();
-	instance.contacts[6].~Contact();
-	instance.contacts[7].~Contact();
-	exit(status);
-}
-
 void print_left_spaces( std::string name )
 {
 	int	size = name.size();
@@ -88,7 +75,7 @@ std::string get_info( const std::string question, PhoneBook instance )
 		{
 			std::cout << std::endl << "Error: cannot be empty field" << std::endl;
 			prompt.clear();
-			exit(1, instance);
+			exit(1);
 		}
 		if (prompt.size() > 0)
 			break ;

@@ -27,7 +27,7 @@ class Contact {
 		std::string	dark_secret;	
 		std::string	phone_nbr;	
 		int			index;
-	
+
 };
 
 #endif

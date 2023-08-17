@@ -29,7 +29,7 @@ Contact::~Contact( void )
     dark_secret.clear();
     phone_nbr.clear();
     index = 0;
-	std::cout << "Contact Destructor call :D " << std::endl;
+	// std::cout << "Contact Destructor call :D " << std::endl;
 	return ;
 }
 
