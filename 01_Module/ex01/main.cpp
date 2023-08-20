@@ -6,27 +6,26 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 16:49:36 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 18:55:00 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/20 21:26:11 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <new>
 
 int main()
 {
-    Zombie *matt = newZombie("Matt");
-    Zombie *Jonh = newZombie("Jonh");
-    Zombie *ILoveBrains = newZombie("ILoveBrains");
-
-    matt->announce();
-    Jonh->announce();
-    ILoveBrains->announce();
+    Zombie *horde;
+    int i = 2;
     
-    randomChump("Randimi");
-    randomChump("lilia");
+    horde = zombieHorde(i, "matt");  
 
-    delete ILoveBrains;
-    delete Jonh;
-    delete matt;
+    int n = 0;
+    while (n < i)
+    {
+        horde[n].announce();
+        n++;
+    }
+    delete (horde);
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 16:49:36 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 18:55:00 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/20 20:48:57 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ int main()
     randomChump("Randimi");
     randomChump("lilia");
 
-    delete ILoveBrains;
-    delete Jonh;
     delete matt;
+    delete Jonh;
+    delete ILoveBrains;
+    
     return (0);
 }

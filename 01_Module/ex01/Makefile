@@ -6,7 +6,7 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 16:44:58 by hiper             #+#    #+#              #
-#    Updated: 2023/08/20 18:59:01 by hiper            ###   ########.fr        #
+#    Updated: 2023/08/20 19:16:37 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = zombie2
 RM = rm
 
-FILESC = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
+FILESC = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

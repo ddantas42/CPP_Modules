@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 16:46:30 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 18:51:28 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/20 21:13:23 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ZOMBIE_H
 
 # include <iostream>
-
 
 class Zombie
 {
@@ -29,7 +28,6 @@ class Zombie
 
 };
 
-Zombie* newZombie( std::string name );
-void    randomChump( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
