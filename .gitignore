@@ -2,6 +2,7 @@
 *.d
 settings.json
 .vscode/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -33,3 +34,4 @@ settings.json
 *.app
 megaphone
 awesome_crappy_pb
+zombie

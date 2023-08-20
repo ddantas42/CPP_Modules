@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 17:53:03 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 16:12:37 by hiper            ###   ########.fr       */
+/*   Created: 2023/08/20 16:46:30 by hiper             #+#    #+#             */
+/*   Updated: 2023/08/20 18:51:28 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-Account::Account( void )
-{
-    return ;
-} 
+# include <iostream>
 
-int	Account::getNbAccounts( void )
-{
-    return (this->_nbAccounts);
-}
 
-int	Account::getTotalAmount( void )
+class Zombie
 {
-    return (0);
-    
-}
+    private:
+        std::string name;
+        
+    public:
+        Zombie( std::string str_name );
+        ~Zombie( void );
 
-int	Account::getNbDeposits( void )
-{
-    return (0);
-    
-}
+        void announce( void );
 
-int	Account::getNbWithdrawals( void )
-{
-    return (0);
-    
-}
+};
 
-void Account::displayAccountsInfos( void )
-{
-    return ;
-    
-}
+Zombie* newZombie( std::string name );
+void    randomChump( std::string name );
+
+#endif

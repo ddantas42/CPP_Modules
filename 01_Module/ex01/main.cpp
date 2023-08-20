@@ -1,47 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 17:53:03 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 16:12:37 by hiper            ###   ########.fr       */
+/*   Created: 2023/08/20 16:49:36 by hiper             #+#    #+#             */
+/*   Updated: 2023/08/20 18:55:00 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#include "Zombie.hpp"
 
-Account::Account( void )
+int main()
 {
-    return ;
-} 
+    Zombie *matt = newZombie("Matt");
+    Zombie *Jonh = newZombie("Jonh");
+    Zombie *ILoveBrains = newZombie("ILoveBrains");
 
-int	Account::getNbAccounts( void )
-{
-    return (this->_nbAccounts);
-}
+    matt->announce();
+    Jonh->announce();
+    ILoveBrains->announce();
+    
+    randomChump("Randimi");
+    randomChump("lilia");
 
-int	Account::getTotalAmount( void )
-{
+    delete ILoveBrains;
+    delete Jonh;
+    delete matt;
     return (0);
-    
-}
-
-int	Account::getNbDeposits( void )
-{
-    return (0);
-    
-}
-
-int	Account::getNbWithdrawals( void )
-{
-    return (0);
-    
-}
-
-void Account::displayAccountsInfos( void )
-{
-    return ;
-    
 }

@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 17:53:03 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 16:12:37 by hiper            ###   ########.fr       */
+/*   Created: 2023/08/20 16:55:07 by hiper             #+#    #+#             */
+/*   Updated: 2023/08/20 18:57:00 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
 
-Account::Account( void )
-{
-    return ;
-} 
+#include <iostream>
+#include "Zombie.hpp"
 
-int	Account::getNbAccounts( void )
+Zombie::Zombie( std::string str_name ) : name(str_name)
 {
-    return (this->_nbAccounts);
+    std::cout << "Zombie " << name << " ready to eat brainzzzz" << std::endl;
 }
 
-int	Account::getTotalAmount( void )
+Zombie::~Zombie( void )
 {
-    return (0);
-    
+    std::cout << "Zombie " << this->name << " gave his last breath" << std::endl;
 }
 
-int	Account::getNbDeposits( void )
+void Zombie::announce( void )
 {
-    return (0);
-    
-}
-
-int	Account::getNbWithdrawals( void )
-{
-    return (0);
-    
-}
-
-void Account::displayAccountsInfos( void )
-{
-    return ;
-    
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
