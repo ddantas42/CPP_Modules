@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:12 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 16:24:08 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 19:21:41 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ class HumanB
 {
     private:
         std::string name;
-        Weapon  *weapon;
+        Weapon      *weapon;
 
     public:
         HumanB( std::string name );
         ~HumanB( void );
         
         void attack( void );
-        void setWeapon( Weapon weapon );
+        void setWeapon( Weapon &weapon_arg );
 };
 
 #endif

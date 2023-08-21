@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:24 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 17:41:34 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 19:21:18 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void Weapon::setType( std::string type )
 
 }
 
-Weapon::Weapon( std::string type )
+Weapon::Weapon( std::string type ) : type(type)
 {
-    this->setType(type);
+
 }
 
 Weapon::~Weapon( void )

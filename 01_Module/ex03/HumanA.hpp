@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:17 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 16:20:22 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 19:19:07 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanA
         std::string name;
 
     public:
-        HumanA( std::string name, Weapon weapon );
+        HumanA( std::string name, Weapon &weapon );
         ~HumanA( void );
         
         void attack( void );
