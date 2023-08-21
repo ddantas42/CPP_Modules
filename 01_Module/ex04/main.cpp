@@ -6,12 +6,13 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 20:24:51 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 22:17:30 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 22:57:22 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 int main(int ac, char **av)
 {
@@ -21,28 +22,21 @@ int main(int ac, char **av)
         return (1);
     }
 
-    std::ifstream in_file;
+    std::ifstream in_file(av[1]);
     std::ofstream new_file;
 
     std::string file;
     file.assign(av[1]);
-    
     new_file.open(file + ".replace", std::ios::out);
-    in_file.open(file, std::ios::in);
-
     file.clear();
     
-    std::string c;
-    while (1)
+    if (in_file)
     {
-        in_file >> c;
-        new_file << c;
-        if (in_file.eof())
-            break ;
-        std::cout << c;
+        std::ostringstream ss;
+        ss << in_file.rdbuf();
+        file = ss.str();    
     }
-    
-    
+
     in_file.close();
     new_file.close();
     return (0);
