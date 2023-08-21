@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:18 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 02:59:50 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 16:47:37 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void HumanB::attack( void )
 
 HumanB::HumanB( std::string name ) : name(name)
 {
-
+    this->weapon = NULL;
 }
 
 HumanB::~HumanB( void )
@@ -33,5 +33,5 @@ HumanB::~HumanB( void )
 
 void HumanB::setWeapon( Weapon weapon_arg )
 {
-    *(this->weapon) = weapon_arg;
+    this->weapon = &weapon_arg;
 }

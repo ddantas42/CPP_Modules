@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:12 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 03:00:00 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 16:24:08 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ class HumanB
         void attack( void );
         void setWeapon( Weapon weapon );
 };
-
 
 #endif
