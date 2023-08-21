@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:36:21 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 19:20:42 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 19:34:09 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-
+/*
 int main()
 {
     {
@@ -37,30 +37,24 @@ int main()
     }
     return 0;
 }
-/**/
-/*
+*/
+
 int main()
 {
-    Weapon club("club");
     HumanB human_B("B");
-
-    club.getType();
-    human_B.setWeapon(club);    
+    Weapon Balls("Balls");
+    human_B.setWeapon(Balls);    
+    
+    Weapon baseball("baseball");
+    HumanA human_A("A", baseball);
+    
+    human_A.attack();
     human_B.attack();
-    // Weapon weaponB("balls");
     
-    // HumanB human_B("B");
-
-
-    // human_B.setWeapon(weaponB);    
-    // human_B.attack();
+    Balls.setType("Balls v2");
     
-    
-    // human_B.setWeapon(weaponA);
-    // human_B.attack();
-    // weaponA.setType("Bola de base");
-
-    
+    human_A.attack();
+    human_B.attack();
     
     return (0);
 }
