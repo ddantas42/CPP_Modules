@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 20:24:51 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 22:57:22 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/21 23:06:41 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int main(int ac, char **av)
         ss << in_file.rdbuf();
         file = ss.str();    
     }
+    
+    new_file << file;
 
     in_file.close();
     new_file.close();
