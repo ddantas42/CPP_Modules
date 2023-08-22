@@ -6,12 +6,12 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 22:04:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/22 23:24:44 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/23 00:39:39 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <stdlib.h>
+#include <iostream>
 
 int main()
 {
@@ -21,6 +21,6 @@ int main()
     instance.complain("INFO");
     instance.complain("WARNING");
     instance.complain("ERROR");
-
+    
     return (0);
 }

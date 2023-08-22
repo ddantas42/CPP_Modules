@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 22:03:55 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/22 23:36:14 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/23 00:45:23 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,23 @@ void Harl::complain( std::string level )
     void (Harl::* warningPTR) ( ) = &Harl::warning;
     void (Harl::* errorPTR) ( ) = &Harl::error;
 
+    void (Harl::*ptr[4]) ();
+    ptr[0] = &Harl::debug;
+    ptr[1] = &Harl::info;
+    ptr[2] = &Harl::warning;
+    ptr[3] = &Harl::error;
+
+    std::string compare[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     
+    int n = 0;
+    while (n < 4)
+    {
+        if (level.compare(compare[n]) == 0)
+        {
+            (this->*ptr[n]) ( );
+        }
+        n++;
+    }
 }
 
 Harl::Harl( void )
