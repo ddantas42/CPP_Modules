@@ -2,7 +2,7 @@
 *.d
 settings.json
 .vscode/
-
+**/.vscode
 # Compiled Object files
 *.slo
 *.lo
@@ -39,5 +39,5 @@ zombie2
 hi
 violence
 sed_v2
-
-valgrind.txt
+Harl
+*.txt
