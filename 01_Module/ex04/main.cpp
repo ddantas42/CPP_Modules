@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 20:24:51 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/22 21:48:18 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/22 21:53:23 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main(int ac, char **av)
                 file = temp + temp2;
                 iterator = file.begin();
                 temp.clear(); temp2.clear();
+                n--;
             }
             else
                 n = n - av2;
