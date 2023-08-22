@@ -6,7 +6,7 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 16:44:58 by hiper             #+#    #+#              #
-#    Updated: 2023/08/21 20:34:34 by hiper            ###   ########.fr        #
+#    Updated: 2023/08/22 17:57:00 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = sed_v2
 RM = rm
-FILESC = main.cpp 
+FILESC = main.cpp utils.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

@@ -6,52 +6,35 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 20:24:51 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 23:21:35 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/22 18:30:56 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
+#include "sed.hpp"
 
 int main(int ac, char **av)
 {
-    if (ac != 4)
-    {
-        std::cout << "please input 3 parameters" << std::endl;
+    if (protection(ac, av) > 0)
         return (1);
-    }
-    if (av[2][0] == '\0' || av[2][0] == '\0')
-    {
-        std::cout << "string argument invalid" << std::endl;
-        return (1);
-    }
 
     std::ifstream in_file(av[1]);
-    if (!in_file)
-    {
-        std::cout << av[1] << ": file not found" << std::endl;
-        return (1);
-    }
-    
     std::ofstream new_file;
-
     std::string file;
-    file.assign(av[1]);
-    new_file.open(file + ".replace", std::ios::out);
-    file.clear();
+    file = get_file(&in_file, &new_file, av);
     
-    if (in_file)
+    
+    
+    std::string::iterator iterator = file.begin();
+    int n = 0;
+    int i = 0;
+    
+    while (iterator[n] != '\0')
     {
-        std::ostringstream ss;
-        ss << in_file.rdbuf();
-        file = ss.str();    
+        iterator[n] = 'a';
+        n++;
     }
-    
-    std::string *ptr = &file;
-    
-    new_file << ptr;
 
+    new_file << file;
     in_file.close();
     new_file.close();
     return (0);
