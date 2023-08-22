@@ -6,12 +6,12 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 20:24:51 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/22 18:30:56 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/22 21:48:18 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
-
+#include <unistd.h>
 int main(int ac, char **av)
 {
     if (protection(ac, av) > 0)
@@ -22,15 +22,35 @@ int main(int ac, char **av)
     std::string file;
     file = get_file(&in_file, &new_file, av);
     
-    
-    
     std::string::iterator iterator = file.begin();
+    std::string temp;
+    std::string temp2;
     int n = 0;
-    int i = 0;
+    int av2 = 0;
     
     while (iterator[n] != '\0')
     {
-        iterator[n] = 'a';
+        if (iterator[n] == av[2][0])
+        {
+            av2 = 0;
+            while (iterator[n] == av[2][av2] && iterator[n] != '\0' && av[2][av2] != '\0')
+            {
+                n++; av2++;            
+            }
+            if (av[2][av2] == '\0')
+            {
+                temp = file.substr(0, n - av2);
+                temp.append(av[3]);
+                temp2 = file.substr(n, file.size());
+                file.clear();
+                file = temp + temp2;
+                iterator = file.begin();
+                temp.clear(); temp2.clear();
+            }
+            else
+                n = n - av2;
+            
+        }
         n++;
     }
 
