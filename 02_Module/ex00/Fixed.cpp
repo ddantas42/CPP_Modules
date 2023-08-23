@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:07 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 03:14:39 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/23 03:15:47 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void Fixed::operator=( const Fixed &F )
 Fixed::~Fixed( void )
 {
     std::cout << "Destructor called" << std::endl;
-    
 }
 
 int Fixed::getRawBits( void )
@@ -45,6 +44,5 @@ int Fixed::getRawBits( void )
 void Fixed::setRawBits( int const raw )
 {
     std::cout << "setRawBits called" << std::endl;
-
     this->fixed_point = raw;
 }
