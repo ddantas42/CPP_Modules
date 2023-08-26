@@ -74,7 +74,7 @@ Fixed operator++( void )
 	return (0);
 }
 
-Fixed operator++( int )
+Fixed operator++( int n )
 {
 	return (0);
 }
@@ -85,7 +85,7 @@ Fixed operator--( void )
 	return (0);
 }
 
-Fixed operator--( int )
+Fixed operator--( int n )
 {
 	return (0);
 }
