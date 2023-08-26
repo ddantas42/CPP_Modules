@@ -11,62 +11,20 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <bitset>
 
 int main( void )
 {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-
-	a = Fixed( 1234.4321f );
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-		
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-		
-return 0;
-}
-
-/*
-std::string intToBinaryString(int num) {
-	// Use std::bitset to convert the integer to binary
-	return (std::bitset<sizeof(int) * 8>(num).to_string());
-}
-
-std::string floatToBinaryString(float num) {
-	// Interpret the float as an integer
-	int intEquivalent = 0;
-	std::memcpy(&intEquivalent, &num, sizeof(float));
-
-	// Use std::bitset to convert the integer to binary
-	return std::bitset<sizeof(float) * 8>(intEquivalent).to_string();
-}
-
-
-int main()
-{
-	float a = 10.10f;
-	int fixed_point = roundf(a * (1 << 8));
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
 	
-	std::cout << "a = " << a << std::endl;
-	std::cout << "a = " << floatToBinaryString(a) << std::endl;
-	
-	std::cout << "fixed_point = " << fixed_point << std::endl;
-	std::cout << "fixed_point = " << intToBinaryString(fixed_point) << std::endl;
-	
-	std::cout << "fixed_point / 256 = " << fixed_point / 256 << std::endl;
-	std::cout << "fixed_point / 256 = " << intToBinaryString(fixed_point / 256) << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 
-	float f = static_cast<float>(fixed_point) / static_cast<float>(1 << 8);
-	std::cout << "fp to float = " << f << std::endl;
-
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
 }
-*/

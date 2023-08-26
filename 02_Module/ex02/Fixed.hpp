@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/26 00:34:21 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/26 22:47:06 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,36 @@ class Fixed
         float   toFloat ( void ) const;
         int     toInt( void ) const;
         
+		
+		/*			comparisons operators		*/
+		int operator>( const Fixed &a );
+		int operator<( const Fixed &a );
+
+		int operator>=( const Fixed &a );
+		int operator<=( const Fixed &a );
+
+		int operator==( const Fixed &a );
+		int operator!=( const Fixed &a );
+
+		/*			arithmetic operators		*/
+		int operator+( const Fixed &a );
+		int operator-( const Fixed &a );
+		int operator*( const Fixed &a );
+		int operator/( const Fixed &a );
+
+		/*		Incremente/decrement operators	*/
+		Fixed operator++( void );	// pre
+		Fixed operator++( int );	// post
+		
+		Fixed operator--( void );	// pre
+		Fixed operator--( int );	// post
+		
+		/*			overload funtions			*/
+		int &min( int &fp, int &fp2 );
+		int &min( const int &fp, const int &fp2 );
+		
+		int &max( int &fp, int &fp2 );
+		int &max( const int &fp, const int &fp2 );
 
 };
 

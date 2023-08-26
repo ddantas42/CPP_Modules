@@ -13,6 +13,115 @@
 #include "Fixed.hpp"
 
 
+/*			comparisons operators		*/
+int Fixed::operator>( const Fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator<( const Fixed &a )
+{
+	return (0);
+	
+}
+
+int Fixed::operator>=( const Fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator<=( const Fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator==( const Fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator!=( const Fixed &a )
+{
+	return (0);
+}
+
+/*			arithmetic operators		*/
+int	Fixed::operator+( const Fixed &a )
+{
+	int ret;
+
+	ret = a.getRawBits() + this->getRawBits();
+	return (ret);
+}
+
+int Fixed::operator-( const fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator*( const fixed &a )
+{
+	return (0);
+}
+
+int Fixed::operator/( const fixed &a )
+{
+	return (0);
+}
+
+Fixed operator++( void )
+{
+	return (0);
+}
+
+Fixed operator++( int )
+{
+	return (0);
+}
+
+
+Fixed operator--( void )
+{
+	return (0);
+}
+
+Fixed operator--( int )
+{
+	return (0);
+}
+
+int &min( int &fp, int &fp2 )
+{
+	int n = 0;
+	int &n2 = n;
+
+	return (n2);
+}
+
+int &min( const int &fp, const int &fp2 )
+{
+	int n = 0;
+	int &n2 = n;
+
+	return (n2);
+}
+
+
+int &max( int &fp, int &fp2 )
+{
+	int n = 0;
+	int &n2 = n;
+
+	return (n2);
+}
+
+int &max( const int &fp, const int &fp2 )
+{
+	int n = 0;
+	int &n2 = n;
+
+	return (n2);
+}
 
 
 
@@ -21,10 +130,7 @@
 
 
 
-
-
-
-
+/* ---------------------------------------------------- */
 
 Fixed::Fixed( void ) : fixed_point(0)
 {
@@ -80,7 +186,7 @@ Fixed::Fixed( const Fixed &instance)
 
 void Fixed::operator=( const Fixed &F )
 {
-	std::cout << "Copy assignmente operator called" << std::endl;
+	std::cout << "Copy assignmente Fixed::operator called" << std::endl;
 	this->fixed_point = F.fixed_point;
 }
 
