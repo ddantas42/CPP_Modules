@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 12:51:35 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/26 00:34:21 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include "iostream"
+# include <iostream>
+# include <cmath>
 
 class Fixed
 {
@@ -24,7 +25,7 @@ class Fixed
         
     public:
         Fixed(); // constructor
-        Fixed(Fixed &instance); // copy constructor
+        Fixed(const Fixed &instance); // copy constructor
         void operator=( const Fixed &F ); // Copy assignmente operator overload
         ~Fixed(); // destructor
 
@@ -37,8 +38,9 @@ class Fixed
         float   toFloat ( void ) const;
         int     toInt( void ) const;
         
-        void operator<<( const Fixed &F ); // insertion assignmente operator overload
 
 };
 
+	std::ostream &operator<<( std::ostream &out, Fixed const & i ); // insertion assignmente operator overload
+	
 #endif

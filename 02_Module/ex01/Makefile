@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
+#    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 02:08:29 by hiper             #+#    #+#              #
-#    Updated: 2023/08/23 02:26:09 by hiper            ###   ########.fr        #
+#    Updated: 2023/08/25 23:36:21 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = how_cute
+NAME = how_cute_v2
 RM = rm
 FILESC = main.cpp Fixed.cpp
 

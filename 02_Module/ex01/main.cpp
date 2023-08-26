@@ -3,33 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:06 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 12:29:58 by hiper            ###   ########.fr       */
+/*   Updated: 2023/08/26 13:02:01 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <bitset>
+#include <string>
+#include <cstring>
+
+std::string intToBinaryString(int num) {
+    // Use std::bitset to convert the integer to binary
+    return (std::bitset<sizeof(int) * 8>(num).to_string());
+}
+
+std::string floatToBinaryString(float num) {
+    // Interpret the float as an integer
+    int intEquivalent = 0;
+    std::memcpy(&intEquivalent, &num, sizeof(float));
+
+    // Use std::bitset to convert the integer to binary
+    return std::bitset<sizeof(float) * 8>(intEquivalent).to_string();
+}
 
 int main( void )
 {
-    Fixed a;
-    Fixed const b( 10 );
-    Fixed const c( 42.42f );
-    Fixed const d( b );
+    // Fixed a;
+    // Fixed const b( 10 );
+    // Fixed const c( 42.42f );
+    // Fixed const d( b );
 
-    a = Fixed( 1234.4321f );
+    // a = Fixed( 1234.4321f );
+	
+	float a = 10.10f;
+	int fixed_point = roundf(a * (1 << 8));
+	
+    std::cout << "a = " << a << std::endl;
+	std::cout << "a = " << floatToBinaryString(a) << std::endl;
+	
+	std::cout << "fixed_point = " << fixed_point << std::endl;
+    std::cout << "fixed_point = " << intToBinaryString(fixed_point) << std::endl;
+	
+    std::cout << "fixed_point / 256 = " << fixed_point / 256 << std::endl;
+    std::cout << "fixed_point / 256 = " << intToBinaryString(fixed_point / 256) << std::endl;
+
+	std::cout << "fp to float = " << static_cast<float>(8 >> fixed_point) << std::endl;
+	
+	
+	// a.setRawBits(100);
+    // std::cout << a << std::endl;
+    // std::cout << intToBinaryString(a.getRawBits()) << std::endl;
+	
+    // std::cout << "a is " << a << std::endl;
+    // std::cout << "b is " << b << std::endl;
+    // std::cout << "c is " << c << std::endl;
+    // std::cout << "d is " << d << std::endl;
     
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
-    
-    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    // std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    // std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    // std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    // std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     
 return 0;
 }
+
+// 0000 0000 . 0000 0000
