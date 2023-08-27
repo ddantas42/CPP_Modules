@@ -13,7 +13,35 @@
 #include "Fixed.hpp"
 
 
+/*int main () // Arithmetic operators
+{
+	Fixed a(10);
+	Fixed b(20);
+	Fixed c(10);
 
+	Fixed a(10.1f);
+	Fixed b(20.1f);
+	Fixed c(10.1f);
+
+	std::cout << "a + b = " << a + b << std::endl;
+	std::cout << "c + b = " << c + b << std::endl;
+	std::cout << "a + 200 = " << a + 200 << std::endl << std::endl;
+
+	std::cout << "a - b = " << a - b << std::endl;
+	std::cout << "c - b = " << c - b << std::endl;
+	std::cout << "a - 200 = " << a - 200 << std::endl << std::endl;
+
+	std::cout << "a * b = " << a * b << std::endl;
+	std::cout << "c * b = " << c * b << std::endl;
+	std::cout << "a * 200 = " << a * 200 << std::endl << std::endl;
+
+	std::cout << "a / b = " << a / b << std::endl;
+	std::cout << "c / b = " << c / b << std::endl;
+	std::cout << "a / 200 = " << a / 200 << std::endl;
+	std::cout << "b / a = " << b / a << std::endl << std::endl;
+	
+}
+*/
 
 /*int main()  // Comparison operators
 {

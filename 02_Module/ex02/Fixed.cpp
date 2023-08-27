@@ -56,33 +56,41 @@ int Fixed::operator!=( const Fixed &a )
 	return (0);
 }
 
-/*
 /*			arithmetic operators		*/
 
-/*
 int	Fixed::operator+( const Fixed &a )
 {
 	int ret;
 
-	ret = a.getRawBits() + this->getRawBits();
+	ret = this->toFloat() + a.toFloat();
 	return (ret);
 }
 
-int Fixed::operator-( const fixed &a )
+int Fixed::operator-( const Fixed &a )
 {
-	return (0);
+	int ret;
+
+	ret = this->toFloat() - a.toFloat();
+	return (ret);
 }
 
-int Fixed::operator*( const fixed &a )
+int Fixed::operator*( const Fixed &a )
 {
-	return (0);
+	int ret;
+
+	ret = this->toFloat() * a.toFloat();
+	return (ret);
 }
 
-int Fixed::operator/( const fixed &a )
+int Fixed::operator/( const Fixed &a )
 {
-	return (0);
+	int ret;
+
+	ret = this->toFloat() / a.toFloat();
+	return (ret);
 }
 
+/*
 Fixed operator++( void )
 {
 	return (0);
