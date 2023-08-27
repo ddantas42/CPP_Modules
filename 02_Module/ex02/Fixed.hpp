@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/27 19:51:27 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/27 23:11:54 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ class Fixed
 		int operator/( const Fixed &a );
 
 		/*		Incremente/decrement operators	*/
+		int operator++( void );		// pre
+		int operator++( int n );	// post
 		/*
-		Fixed operator++( void );	// pre
-		Fixed operator++( int n );	// post
 		
 		Fixed operator--( void );	// pre
 		Fixed operator--( int n );	// post

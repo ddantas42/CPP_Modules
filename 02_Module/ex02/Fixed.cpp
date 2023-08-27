@@ -90,18 +90,20 @@ int Fixed::operator/( const Fixed &a )
 	return (ret);
 }
 
+Fixed	Fixed::operator++( void )	// pre
+{
+	this->fixed_point++;
+	return (*this);
+}
+
+Fixed Fixed::operator++( int n )	// post
+{
+	this->fixed_point++;
+	return (*this);
+}
+
+
 /*
-Fixed operator++( void )
-{
-	return (0);
-}
-
-Fixed operator++( int n )
-{
-	return (0);
-}
-
-
 Fixed operator--( void )
 {
 	return (0);

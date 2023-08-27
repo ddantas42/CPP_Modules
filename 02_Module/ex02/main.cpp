@@ -13,6 +13,16 @@
 #include "Fixed.hpp"
 
 
+int main() // increment/decrement operators
+{
+	Fixed a;
+
+	std::cout << a++ << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+
+}
+
 /*int main () // Arithmetic operators
 {
 	Fixed a(10);
@@ -85,7 +95,8 @@
 }
 */
 
-/*int main( void )
+/*
+int main( void )
 {
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
@@ -100,4 +111,5 @@
 
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
-}*/
+}
+*/
