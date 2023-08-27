@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/26 22:51:33 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/27 19:40:49 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,14 @@ class Fixed
 		int operator!=( const Fixed &a );
 
 		/*			arithmetic operators		*/
+		/*
 		int operator+( const Fixed &a );
 		int operator-( const Fixed &a );
 		int operator*( const Fixed &a );
 		int operator/( const Fixed &a );
 
 		/*		Incremente/decrement operators	*/
+		/*
 		Fixed operator++( void );	// pre
 		Fixed operator++( int n );	// post
 		
@@ -63,12 +65,13 @@ class Fixed
 		Fixed operator--( int n );	// post
 		
 		/*			overload funtions			*/
+		/*
 		int &min( int &fp, int &fp2 );
 		int &min( const int &fp, const int &fp2 );
 		
 		int &max( int &fp, int &fp2 );
 		int &max( const int &fp, const int &fp2 );
-
+		*/
 };
 
 	std::ostream &operator<<( std::ostream &out, Fixed const & i ); // insertion assignmente operator overload
