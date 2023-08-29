@@ -58,97 +58,92 @@ int Fixed::operator!=( const Fixed &a )
 
 /*			arithmetic operators		*/
 
-int	Fixed::operator+( const Fixed &a )
+Fixed	Fixed::operator+( const Fixed &a )
 {
-	int ret;
-
-	ret = this->toFloat() + a.toFloat();
+	Fixed ret (this->toFloat() + a.toFloat());
 	return (ret);
 }
 
-int Fixed::operator-( const Fixed &a )
+Fixed Fixed::operator-( const Fixed &a )
 {
-	int ret;
-
-	ret = this->toFloat() - a.toFloat();
+	Fixed ret (this->toFloat() - a.toFloat());
 	return (ret);
 }
 
-int Fixed::operator*( const Fixed &a )
+Fixed Fixed::operator*( const Fixed &a )
 {
-	int ret;
-
-	ret = this->toFloat() * a.toFloat();
+	Fixed ret (this->toFloat() * a.toFloat());
 	return (ret);
 }
 
-int Fixed::operator/( const Fixed &a )
+Fixed Fixed::operator/( const Fixed &a )
 {
-	int ret;
-
-	ret = this->toFloat() / a.toFloat();
+	Fixed ret (this->toFloat() / a.toFloat());
 	return (ret);
 }
+
+/*		Incremente/decrement operators	*/
 
 Fixed	Fixed::operator++( void )	// pre
 {
-	this->fixed_point++;
+	this->setRawBits(this->fixed_point + 1);
 	return (*this);
 }
 
 Fixed Fixed::operator++( int n )	// post
 {
-	this->fixed_point++;
+	Fixed pre;
+
+	pre.setRawBits(this->fixed_point);
+	this->setRawBits(this->fixed_point + 1);
+	return (pre);
+}
+
+
+Fixed Fixed::operator--( void )		// pre
+{
+	this->setRawBits(this->fixed_point - 1);
 	return (*this);
 }
 
-
-/*
-Fixed operator--( void )
+Fixed Fixed::operator--( int n )	// post
 {
-	return (0);
-}
+	Fixed pre;
 
-Fixed operator--( int n )
-{
-	return (0);
+	pre.setRawBits(this->fixed_point);
+	this->setRawBits(this->fixed_point - 1);
+	return (pre);
 }
 
 /*			overload funtions			*/
-/*
-int &min( int &fp, int &fp2 )
-{
-	int n = 0;
-	int &n2 = n;
 
-	return (n2);
+Fixed &Fixed::max( Fixed &fp, Fixed &fp2 )
+{
+	if (fp.toFloat() > fp2.toFloat())
+		return (fp);
+	return (fp2);
 }
 
-int &min( const int &fp, const int &fp2 )
+const Fixed &Fixed::max( const Fixed &fp, const Fixed &fp2 )
 {
-	int n = 0;
-	int &n2 = n;
-
-	return (n2);
+	if (fp.toFloat() > fp2.toFloat())
+		return (fp);
+	return (fp2);
 }
 
-
-int &max( int &fp, int &fp2 )
+Fixed &Fixed::min( Fixed &fp, Fixed &fp2 )
 {
-	int n = 0;
-	int &n2 = n;
-
-	return (n2);
+	if (fp.toFloat() > fp2.toFloat())
+		return (fp2);
+	return (fp);
 }
 
-int &max( const int &fp, const int &fp2 )
+const Fixed &Fixed::min( const Fixed &fp, const Fixed &fp2 )
 {
-	int n = 0;
-	int &n2 = n;
-
-	return (n2);
+	if (fp.toFloat() > fp2.toFloat())
+		return (fp2);
+	return (fp);
 }
-
 
 
 

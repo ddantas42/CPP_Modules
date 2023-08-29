@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/27 23:11:54 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/29 13:16:24 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,27 +50,25 @@ class Fixed
 		int operator!=( const Fixed &a );
 
 		/*			arithmetic operators		*/
-		int operator+( const Fixed &a );
-		int operator-( const Fixed &a );
-		int operator*( const Fixed &a );
-		int operator/( const Fixed &a );
+		Fixed operator+( const Fixed &a );
+		Fixed operator-( const Fixed &a );
+		Fixed operator*( const Fixed &a );
+		Fixed operator/( const Fixed &a );
 
 		/*		Incremente/decrement operators	*/
-		int operator++( void );		// pre
-		int operator++( int n );	// post
-		/*
+		Fixed operator++( void );		// pre
+		Fixed operator++( int n );		// post
 		
 		Fixed operator--( void );	// pre
 		Fixed operator--( int n );	// post
 		
 		/*			overload funtions			*/
-		/*
-		int &min( int &fp, int &fp2 );
-		int &min( const int &fp, const int &fp2 );
+		static Fixed &max( Fixed &fp, Fixed &fp2 );
+		static const Fixed &max( const Fixed &fp, const Fixed &fp2 );
 		
-		int &max( int &fp, int &fp2 );
-		int &max( const int &fp, const int &fp2 );
-		*/
+		static Fixed &min( Fixed &fp, Fixed &fp2 );
+		static const Fixed &min( const Fixed &fp, const Fixed &fp2 );
+		
 };
 
 	std::ostream &operator<<( std::ostream &out, Fixed const & i ); // insertion assignmente operator overload

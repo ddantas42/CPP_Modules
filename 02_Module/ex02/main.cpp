@@ -13,25 +13,46 @@
 #include "Fixed.hpp"
 
 
-int main() // increment/decrement operators
+/*int main() // overload functions
+{
+	Fixed a(10);
+	Fixed b(20);
+
+	Fixed a(10.1f);
+	Fixed b(20.1f);
+
+	std::cout << "max = " << Fixed::max( a, b ) << std::endl;
+	std::cout << "max = " << Fixed::max( b, a ) << std::endl;
+	std::cout << "min = " << Fixed::min( b, a ) << std::endl;
+	std::cout << "min = " << Fixed::min( a, b ) << std::endl;
+
+	return (0);
+}
+*/
+
+/*int main() // increment/decrement operators
 {
 	Fixed a;
 
 	std::cout << a++ << std::endl;
-	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << --a << std::endl;
 
-}
+	return (0);
+}*/
 
 /*int main () // Arithmetic operators
 {
-	Fixed a(10);
-	Fixed b(20);
-	Fixed c(10);
+	// Fixed a(10);
+	// Fixed b(20);
+	// Fixed c(10);
 
-	Fixed a(10.1f);
-	Fixed b(20.1f);
-	Fixed c(10.1f);
+	// Fixed a(10.1f);
+	// Fixed b(20.1f);
+	// Fixed c(10.1f);
 
 	std::cout << "a + b = " << a + b << std::endl;
 	std::cout << "c + b = " << c + b << std::endl;
@@ -50,6 +71,7 @@ int main() // increment/decrement operators
 	std::cout << "a / 200 = " << a / 200 << std::endl;
 	std::cout << "b / a = " << b / a << std::endl << std::endl;
 	
+	return (0);
 }
 */
 
@@ -95,7 +117,7 @@ int main() // increment/decrement operators
 }
 */
 
-/*
+
 int main( void )
 {
 	Fixed a;
@@ -112,4 +134,3 @@ int main( void )
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
-*/
