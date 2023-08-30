@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:23:28 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/29 14:50:11 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/30 01:33:04 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ class Point {
 		
 	public:
 		Point();
+		~Point();
 		Point( const Fixed x, const Fixed y );
-		Point(const Point &point);
+		Point( const Point &point );
+
+        void operator=( Point &P );
 };
 
 #endif

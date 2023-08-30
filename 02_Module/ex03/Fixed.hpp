@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/29 13:16:24 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/30 02:03:34 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ class Fixed
 		Fixed operator++( void );		// pre
 		Fixed operator++( int n );		// post
 		
-		Fixed operator--( void );	// pre
-		Fixed operator--( int n );	// post
+		Fixed operator--( void );		// pre
+		Fixed operator--( int n );		// post
 		
 		/*			overload funtions			*/
 		static Fixed &max( Fixed &fp, Fixed &fp2 );

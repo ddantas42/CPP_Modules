@@ -6,15 +6,20 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:13:59 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/29 14:22:16 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/08/30 02:07:39 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 #include "Point.hpp"
 
 int main()
 {
+	Point a(Fixed(10), Fixed(10));
+
+	Point b;
+
+	b = a;
+
 	
 	return (0);
 }
