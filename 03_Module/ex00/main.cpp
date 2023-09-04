@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/30 03:16:20 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:11:16 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	ClapTrap Jonh("Jonh");
-
+	
 	Jonh.attack("Josh");
 	Jonh.attack("Tosh");
 
