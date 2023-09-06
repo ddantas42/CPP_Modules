@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 16:49:36 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/20 20:48:57 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/06 18:15:54 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,20 @@ int main()
     Zombie *Jonh = newZombie("Jonh");
     Zombie *ILoveBrains = newZombie("ILoveBrains");
 
+    std::cout << std::endl;
+
     matt->announce();
     Jonh->announce();
     ILoveBrains->announce();
     
+    std::cout << std::endl;
+
+    
     randomChump("Randimi");
+    std::cout << std::endl;
     randomChump("lilia");
+
+    std::cout << std::endl;
 
     delete matt;
     delete Jonh;

@@ -6,7 +6,7 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 14:35:30 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/06 15:06:07 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/06 16:21:39 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM = rm
 
 FILESC = megaphone.cpp
 
-OBJS = $(FILESC:.c=.o)
+OBJS = $(FILESC:.cpp=.o)
 
 all: $(NAME)
 
