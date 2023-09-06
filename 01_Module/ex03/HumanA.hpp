@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:28:17 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 19:19:07 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/06 15:41:18 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanA
 {
     private:
-        Weapon      *weapon;
+        Weapon      &weapon;
         std::string name;
 
     public:
