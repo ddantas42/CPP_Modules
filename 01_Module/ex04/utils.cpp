@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 17:02:40 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/22 17:46:09 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/06 18:33:56 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ std::string get_file(std::ifstream *in_file, std::ofstream *new_file, char **av)
     std::string file;
 
     file.assign(av[1]);
-    new_file->open(file + ".replace", std::ios::out);
+    new_file->open((file + ".replace").c_str(), std::ios::out);
     file.clear();
 
     if (*in_file)
