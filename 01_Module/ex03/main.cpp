@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:36:21 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/06 15:25:23 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:21:49 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Weapon.hpp"
 
 
-int main()
+/*int main()
 {
     {
         Weapon club = Weapon("crude spiked club");
@@ -37,8 +37,8 @@ int main()
     }
     return 0;
 }
+*/
 
-/*
 int main()
 {
     HumanB human_B("B");
@@ -58,4 +58,3 @@ int main()
     
     return (0);
 }
-*/
