@@ -6,7 +6,7 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 02:08:29 by hiper             #+#    #+#              #
-#    Updated: 2023/08/25 23:36:21 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/08 18:58:00 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.c
+%.o: %.cpp
 	c++ $(CFLAGS) -c -o $@ $<
 
 clean:

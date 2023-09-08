@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 22:03:55 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 02:00:20 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/06 18:54:36 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,14 @@ void Harl::complain( std::string level )
         case  1:
         {
             (this->*debugPTR) ();
-            // (this->*infoPTR) ();
-            // (this->*warningPTR) ();
-            // (this->*errorPTR) ();
         }
         case 2:
         {
             (this->*infoPTR) ();
-            // (this->*warningPTR) ();
-            // (this->*errorPTR) ();
         }
         case 3:
         {
             (this->*warningPTR) ();
-            // (this->*errorPTR) ();
         }
         case 4:
         {
