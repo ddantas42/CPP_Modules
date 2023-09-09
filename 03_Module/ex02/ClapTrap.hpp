@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:36:03 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/04 14:53:07 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/09 01:58:42 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class ClapTrap
 {
 	protected:
 		std::string name;
-		int hit_points = 10;
-		int energy_points = 10;
-		int attack_damage = 0;
+		int hit_points;
+		int energy_points;
+		int attack_damage;
 		
 	public:	
 		ClapTrap(std::string name);
