@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 16:29:58 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/15 23:08:31 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:05:17 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <stdlib.h>
 #include <limits>
 
 void print_left_spaces( std::string name )
@@ -64,7 +65,7 @@ void	PhoneBook::print_name( std::string name )
 	std::cout << "|";
 }
 
-std::string get_info( const std::string question, PhoneBook instance )
+std::string get_info( const std::string question)
 {
 	std::string prompt;
 	while (1)
@@ -136,23 +137,23 @@ void	PhoneBook::add_contact( void )
 	static int	index = 0;
 	std::cout << " ------ Contact Creator ------ " << std::endl;
 	
-	prompt = get_info( "Input first name: ", *this);
+	prompt = get_info( "Input first name: ");
 	this->contacts[index].first_name.clear();
 	this->contacts[index].first_name.assign(prompt);
 	
-	prompt = get_info( "Input last name: ", *this);
+	prompt = get_info( "Input last name: ");
 	this->contacts[index].last_name.clear();
 	this->contacts[index].last_name.assign(prompt);
 
-	prompt = get_info( "Input nickname: ", *this);
+	prompt = get_info( "Input nickname: ");
 	this->contacts[index].nickname.clear();
 	this->contacts[index].nickname.assign(prompt);
 
-	prompt = get_info( "Input phone number: ", *this);
+	prompt = get_info( "Input phone number: ");
 	this->contacts[index].phone_nbr.clear();
 	this->contacts[index].phone_nbr.assign(prompt);
 	
-	prompt = get_info( "Input darkest secret...: ", *this);
+	prompt = get_info( "Input darkest secret...: ");
 	this->contacts[index].dark_secret.clear();
 	this->contacts[index].dark_secret.assign(prompt);
 	

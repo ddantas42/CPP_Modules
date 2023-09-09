@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:36:21 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/21 19:34:09 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/06 18:21:49 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-/*
-int main()
+
+/*int main()
 {
     {
         Weapon club = Weapon("crude spiked club");
@@ -58,4 +58,3 @@ int main()
     
     return (0);
 }
-/**/
