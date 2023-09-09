@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/03 00:01:52 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/09 23:48:56 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Animal.hpp"
-#include "Dog.hpp"
 #include "Cat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
@@ -24,9 +23,9 @@ int main()
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 	
 	return 0;
 }

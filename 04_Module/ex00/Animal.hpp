@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 16:02:19 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/04 13:16:14 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/09 23:25:17 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/09 23:51:17 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,21 @@ class Animal
 {
 	protected:
 		std::string type;
-
+	
 	public:
+		// Constructors
 		Animal();
+		Animal(const Animal &copy);
+		Animal(std::string type);
+		
+		// Destructor
 		~Animal();
 		
-		std::string getType( void );
-			
+		// Operators
+		Animal & operator=(const Animal &assign);
+		std::string getType(void) const;
+		
+		void makeSound(void) const;
 };
 
-#endif	
+#endif

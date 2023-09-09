@@ -3,27 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 23:42:15 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/02 23:50:45 by ddantas-         ###   ########.fr       */
+/*   Created: 2023/09/09 23:27:35 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/09 23:52:51 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+// Constructors
+Dog::Dog() 
 {
 	this->type.assign("Dog");
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "Default Constructor called of Dog" << std::endl;
 }
 
+Dog::Dog(const Dog &copy)
+{
+	std::cout << "Copy Constructor called of Dog" << std::endl;
+	this->type.assign(copy.type);
+}
+
+
+// Destructor
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Destructor called of Dog" << std::endl;
 }
 
-void Dog::makeSound()
+
+// Operators
+Dog & Dog::operator=(const Dog &assign)
 {
-	std::cout << "Woof Woof" << std::endl;
+	this->type.assign(assign.type);
+	return *this;
+}
+
+void    Dog::makeSound( void ) const
+{
+    std::cout << "woof woof" << std::endl;
 }
