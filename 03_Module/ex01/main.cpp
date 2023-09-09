@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/09 02:45:01 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/09 02:50:35 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 	Jonh.attack("Carreiras");
 	Carreiras.takeDamage(20);
 	std::cout << std::endl;
+	
 	return (0);
 }
 
