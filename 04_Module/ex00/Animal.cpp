@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 23:36:03 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/03 00:01:25 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:15:27 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Animal::~Animal()
 
 std::string Animal::getType( void )
 {
-	return ("hello");	
+	return (this->type);
 }
