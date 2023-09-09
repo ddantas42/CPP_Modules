@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
+#    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/08/30 02:46:37 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/09 02:14:29 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.c
+%.o: %.cpp
 	c++ $(CFLAGS) -c -o $@ $<
 
 clean:
