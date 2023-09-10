@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:24:30 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 00:00:38 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/10 16:20:08 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ std::string Animal::getType(void) const
 	return (this->type);
 }
 
-void    Animal::makeSound( void ) const
+void	Animal::makeSound( void ) const
 {
-    std::cout << "Uknown animal sound" << std::endl;
+    std::cout << "Unknown animal sound" << std::endl;
 }
