@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
+#    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/02 23:42:32 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/10 16:50:17 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = animal
 RM = rm
-FILESC = main.cpp Dog.cpp Cat.cpp
+FILESC = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

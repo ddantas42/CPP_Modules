@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/06 14:40:46 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/09 02:54:13 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@
 int main()
 {
 	ClapTrap Afonso("Afonso");
-	FragTrap Fragger2("Fragger");
+	FragTrap Fragger("Fragger");
 
-	FragTrap Fragger("heyy");
-
-	Fragger = Fragger;
 	std::cout << std::endl;
 	
 	Afonso.attack("Fragger");

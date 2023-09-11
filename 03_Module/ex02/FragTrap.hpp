@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/06 14:38:45 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/09 02:57:01 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class FragTrap : public ClapTrap
 	
 		FragTrap( std::string name );
 		FragTrap( const FragTrap &copy );
+		
 		~FragTrap( void );
+		FragTrap &operator=(const FragTrap &copy);
 
 		void	highFiveGuys( void );
 		void	attack(const std::string& target);

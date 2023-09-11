@@ -3,26 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 23:40:48 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/02 23:58:54 by ddantas-         ###   ########.fr       */
+/*   Created: 2023/09/09 23:27:38 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/09 23:50:42 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include <iostream>
 # include "Animal.hpp"
+# include <iostream>
 
 class Dog : public Animal
 {
 	public:
+		// Constructors
 		Dog();
+		Dog(const Dog &copy);
+		
+		// Destructor
 		~Dog();
+		
+		// Operators
+		Dog & operator=(const Dog &assign);
 
-		void makeSound();
+		void makeSound() const;
 };
 
 #endif

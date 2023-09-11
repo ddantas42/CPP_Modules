@@ -3,26 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 23:36:03 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/03 00:01:25 by ddantas-         ###   ########.fr       */
+/*   Created: 2023/09/09 23:24:30 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/10 16:20:08 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
+// Constructors
 Animal::Animal()
 {
-	std::cout << "Animal constructor called" << std::endl;
+	std::cout << "Default Constructor called of Animal" << std::endl;
 }
 
+Animal::Animal(std::string type) : type(type)
+{
+	std::cout << "Default Constructor called of Animal" << std::endl;
+}
+
+Animal::Animal(const Animal &copy)
+{
+	this->type.assign(copy.type);
+
+	std::cout << "Copy Constructor called of Animal" << std::endl;
+}
+
+
+// Destructor
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Destructor called of Animal" << std::endl;
 }
 
-std::string Animal::getType( void )
+
+// Operators
+Animal & Animal::operator=(const Animal &assign)
 {
-	return ("hello");	
+	this->type.assign(assign.type);
+	return *this;
+}
+
+std::string Animal::getType(void) const
+{
+	return (this->type);
+}
+
+void	Animal::makeSound( void ) const
+{
+    std::cout << "Unknown animal sound" << std::endl;
 }
