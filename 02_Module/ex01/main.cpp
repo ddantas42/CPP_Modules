@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <bitset>
-#include <string>
-#include <cstring>
 
 int main( void )
 {
@@ -37,7 +34,13 @@ int main( void )
 return 0;
 }
 
+
+
 /*
+#include <bitset>
+#include <string>
+#include <cstring>
+
 std::string intToBinaryString(int num) {
 	// Use std::bitset to convert the integer to binary
 	return (std::bitset<sizeof(int) * 8>(num).to_string());
@@ -55,7 +58,7 @@ std::string floatToBinaryString(float num) {
 
 int main()
 {
-	float a = 10.10f;
+	float a = 10.1f;
 	int fixed_point = roundf(a * (1 << 8));
 	
 	std::cout << "a = " << a << std::endl;
@@ -69,6 +72,7 @@ int main()
 
 	float f = static_cast<float>(fixed_point) / static_cast<float>(1 << 8);
 	std::cout << "fp to float = " << f << std::endl;
+	std::cout << "fp to float = " << floatToBinaryString(f) << std::endl;
 
-}
-*/
+	return (0);
+}*/

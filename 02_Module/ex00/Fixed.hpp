@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 03:14:14 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/11 19:44:00 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Fixed
         void operator=( const Fixed &F ); // Copy assignmente operator overload
         ~Fixed(); // destructor
 
-        int getRawBits( void );
+        int getRawBits( void ) const;
         void setRawBits( int const raw );
         
         

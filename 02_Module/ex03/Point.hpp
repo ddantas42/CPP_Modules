@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:23:28 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/30 02:32:29 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:55:06 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ class Point {
 		Point( const Fixed x, const Fixed y );
 		Point( const Point &point );
 
-        void operator=( Point &P );
+
+		Fixed getX( void ) const ;
+		Fixed getY( void ) const ;
+        void operator=( const Point &P );
+		
+        int operator==( const Point &P ) const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

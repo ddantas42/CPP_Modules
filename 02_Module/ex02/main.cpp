@@ -15,11 +15,11 @@
 
 /*int main() // overload functions
 {
-	Fixed a(10);
-	Fixed b(20);
+	// Fixed a(10);
+	// Fixed b(20);
 
-	Fixed a(10.1f);
-	Fixed b(20.1f);
+	// Fixed a(10.1f);
+	// Fixed b(20.1f);
 
 	std::cout << "max = " << Fixed::max( a, b ) << std::endl;
 	std::cout << "max = " << Fixed::max( b, a ) << std::endl;
@@ -75,42 +75,41 @@
 }
 */
 
+
 /*int main()  // Comparison operators
 {
-	// /*
-	Fixed a(10);
-	Fixed b(20);
-	Fixed c(10);
+	// Fixed a(10);
+	// Fixed b(20);
+	// Fixed c(10);
 
-	// /*
-	Fixed a(10.1f);
-	Fixed b(20.1f);
-	Fixed c(10.1f);
+	// Fixed a(10.1f);
+	// Fixed b(20.1f);
+	// Fixed c(10.1f);
 
 	if (a > b)
-		std::cout << "1 indeed: a > b = 1" << std::endl;
+		std::cout << "1 indeed: a > b" << std::endl;
 	if (a < b)
-		std::cout << "2 indeed: a < b = 1" << std::endl;
+		std::cout << "2 indeed: a < b" << std::endl;
 
 	if (a >= c)
-		std::cout << "3 indeed: a >= c = 1" << std::endl;
+		std::cout << "3 indeed: a >= c" << std::endl;
 	if (c >= 10)
-		std::cout << "4 indeed: c >= 10 = 1" << std::endl;
+		std::cout << "4 indeed: c >= 10" << std::endl;
 
 	if (a <= c)
-		std::cout << "5 indeed: a <= c = 1" << std::endl;
+		std::cout << "5 indeed: a <= c" << std::endl;
 	if (b <= c)
-		std::cout << "6 indeed: b <= c = 1" << std::endl;
+		std::cout << "6 indeed: b <= c" << std::endl;
 
 	if (c == a)
-		std::cout << "7 indeed: c == a = 1" << std::endl;
+		std::cout << "7 indeed: c == a" << std::endl;
 	if (b == a)
-		std::cout << "8 indeed: b == a = 1" << std::endl;
+		std::cout << "8 indeed: b == a" << std::endl;
 
 	if (a != 10)
-		std::cout << "9 indeed: a != 10 = 1" << std::endl;
+		std::cout << "9 indeed: a != 10" << std::endl;
 	if (a != c)
-		std::cout << "10 indeed: a != c = 1" << std::endl;
+		std::cout << "10 indeed: a != c" << std::endl;
 
 	return (0);
 

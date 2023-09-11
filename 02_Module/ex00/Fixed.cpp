@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:07 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/23 03:15:47 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/11 19:43:25 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Fixed::~Fixed( void )
     std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits( void )
+int Fixed::getRawBits( void ) const
 {
     std::cout << "getRawBits member function called" << std::endl;
 

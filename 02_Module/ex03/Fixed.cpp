@@ -93,6 +93,7 @@ Fixed Fixed::operator++( int n )	// post
 {
 	Fixed pre;
 
+	(void)n;
 	pre.setRawBits(this->fixed_point);
 	this->setRawBits(this->fixed_point + 1);
 	return (pre);
@@ -109,6 +110,7 @@ Fixed Fixed::operator--( int n )	// post
 {
 	Fixed pre;
 
+	(void)n;
 	pre.setRawBits(this->fixed_point);
 	this->setRawBits(this->fixed_point - 1);
 	return (pre);
@@ -215,7 +217,7 @@ Fixed::~Fixed( void )
 	// std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits( void )
+int Fixed::getRawBits( void ) const
 {
 	// std::cout << "getRawBits member function called" << std::endl;
 

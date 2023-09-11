@@ -6,11 +6,12 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:27:18 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/08/30 02:29:40 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:55:01 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include "Fixed.hpp"
 
 Point::Point() : x(Fixed(0)), y(Fixed(0))
 {
@@ -19,7 +20,7 @@ Point::Point() : x(Fixed(0)), y(Fixed(0))
 
 Point::Point( const Fixed x, const Fixed y ) : x(x), y(y)
 {
-	
+
 }
 
 Point::Point( const Point &point ) : x(point.x), y(point.y)
@@ -32,10 +33,32 @@ Point::~Point()
 	
 }
 
-
-void Point::operator=( Point &P )
+Fixed Point::getX( void ) const
 {
-	std::cout << "P.x.ToFloat = " << P.x.toFloat() << std::endl;
-	std::cout << "P.x.ToFloat = " << this->x.toFloat() << std::endl;
+	return this->x;
+}
 
+
+Fixed Point::getY( void ) const
+{
+	return this->y;
+}
+
+int Point::operator==( const Point &P ) const
+{
+	int n = 0;
+	if (this->getX().getRawBits() == P.getX().getRawBits())
+		n++;
+	if (this->getY().getRawBits() == P.getY().getRawBits())
+		n++;
+	if (n == 2)
+		return (1);
+	return (0);
+}
+
+
+
+void Point::operator=( const Point &P )
+{
+	(void)P;
 }

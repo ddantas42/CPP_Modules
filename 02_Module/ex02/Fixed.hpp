@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:09:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/08/29 13:16:24 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:43:00 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Fixed
         void operator=( const Fixed &F ); // Copy assignmente operator overload
         ~Fixed(); // destructor
 
-        int     getRawBits( void );
+        int     getRawBits( void ) const;
         void    setRawBits( int const raw );
 
         Fixed( const int n ); // constructor v2
