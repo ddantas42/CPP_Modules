@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:44:24 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/04 14:10:39 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/11 14:04:33 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::ClapTrap(std::string name) : name(name)
 {
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
 	std::cout << "Constructor called" << std::endl;
 }
 
