@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:13:11 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 19:56:33 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:06:52 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ float area ( Point const x, Point const y, Point const z )
 	float x3 = z.getX().toFloat();
 	float y3 = z.getY().toFloat();
 
-	float abs = roundf((x1 * (y2 - y3)) + (x2 * (y3 - y1)) + (x3 * (y1 - y2)));
+	float abs = (x1 * (y2 - y3)) + (x2 * (y3 - y1)) + (x3 * (y1 - y2));
 	if (abs < 0)
 		abs *= -1;
 
@@ -36,8 +36,8 @@ float area ( Point const x, Point const y, Point const z )
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	if (point == a || point == b || point == c)
-		return (false);
+	// if (point == a || point == b || point == c)
+		// return (false);
 	
 	float areaT = area(a, b, c);
 	float area1 = area(a, b, point);

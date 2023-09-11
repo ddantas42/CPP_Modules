@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:27:18 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 20:04:32 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:57:02 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ int Point::operator==( const Point &P ) const
 
 void Point::operator=( const Point &P )
 {
-	(void)P
+	(void)P;
 }
