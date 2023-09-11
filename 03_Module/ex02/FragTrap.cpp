@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:20:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/09 02:55:18 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/11 14:23:57 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 }
 
-FragTrap::FragTrap( const FragTrap &copy ) : FragTrap(copy.name)
+FragTrap::FragTrap( const FragTrap &copy ) : ClapTrap(copy.name)
 {
 	this->name = copy.name;
-	this->ClapTrap::name = copy.name;
 	this->hit_points = copy.hit_points;
 	this->energy_points = copy.energy_points;
 	this->attack_damage = copy.attack_damage;
+
+	std::cout << "FragTrap " << this->name << " Copy constructor called" << std::endl;
+
 }
 
 FragTrap &FragTrap::operator=( const FragTrap &copy )
