@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:20:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/02 13:18:42 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:30:14 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 }
 
-void FragTrap::attack(const std::string& target)
-
+FragTrap::FragTrap( const FragTrap &copy ) : ClapTrap(copy.name)
 {
-	if (this->hit_points <= 0)
-	{
-		std::cout << "FragTrap " << this->name << " is already dead..." << std::endl;
-		return ;
-	}
-	if (this->energy_points <= 0)
-	{
-		std::cout << "FragTrap " << this->name << " has no energy to attack!" << std::endl;
-		return ;
-	}
-	
-	std::cout << "FragTrap " << this->name;
-	std::cout << " attacks " << target;
-	std::cout << ", causing " << this->attack_damage;
-	std::cout << " points of damage!!" << std::endl;
+	this->name = copy.name;
+	this->hit_points = copy.hit_points;
+	this->energy_points = copy.energy_points;
+	this->attack_damage = copy.attack_damage;
 
-	this->energy_points--;
+	std::cout << "FragTrap " << this->name << " Copy constructor called" << std::endl;
+
+}
+
+FragTrap &FragTrap::operator=( const FragTrap &copy )
+{
+	std::cout << "Copy assignmente operator called" << std::endl;
+	this->name = copy.name;
+	this->hit_points = copy.hit_points;
+	this->energy_points = copy.energy_points;
+	this->attack_damage = copy.attack_damage;
+
+	return (*this);
 }
 
 FragTrap::~FragTrap( void )

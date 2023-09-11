@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:28:49 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:51:31 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap &operator=( const ScavTrap &copy );
 		
 		void	guardGate( void );
+		void	attack(const std::string& target);
 };
 
 #endif
