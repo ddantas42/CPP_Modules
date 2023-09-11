@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:34:33 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:09:17 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 
 int main()
 {
-	DiamondTrap Dia("Dia");
+	DiamondTrap Diamond("Diamond");
+	std::cout << std::endl;
 	
-	Dia.highFiveGuys();
+
+	
+	std::cout << std::endl;
 	return (0);
 }
 
