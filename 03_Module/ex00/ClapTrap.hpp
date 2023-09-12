@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:36:03 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:04:13 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:51:20 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class ClapTrap
 		int energy_points;
 		int attack_damage;
 		
-	public:	
+	public:
+		ClapTrap( void );
 		ClapTrap(std::string name);
 		ClapTrap( const ClapTrap &copy );
 		

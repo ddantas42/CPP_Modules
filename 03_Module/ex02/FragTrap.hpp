@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:30:08 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:21:34 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class FragTrap : public ClapTrap
 {
 	public:
 	
+		FragTrap( void );
 		FragTrap( std::string name );
 		FragTrap( const FragTrap &copy );
 		

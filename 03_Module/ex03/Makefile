@@ -6,15 +6,15 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/08 19:34:06 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/08 19:34:02 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = diamondtrap
+NAME = fragtrap
 RM = rm
-FILESC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+FILESC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

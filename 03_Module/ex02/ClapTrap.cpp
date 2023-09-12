@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:44:24 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:19:43 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:49:09 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,22 @@ ClapTrap::ClapTrap( const ClapTrap &copy )
 	this->hit_points = copy.hit_points;
 	this->energy_points = copy.energy_points;
 	this->attack_damage = copy.attack_damage;
+
+	std::cout << "ClapTrap " << this->name << " copy constructor called" << std::endl;
+
 }
+
+ClapTrap::ClapTrap( void ) 
+{
+	this->name.assign("Default_CP");
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
+
+	std::cout << "ClapTrap default constructor called" << std::endl;
+
+}
+
 
 ClapTrap &ClapTrap::operator=( const ClapTrap &copy )
 {
