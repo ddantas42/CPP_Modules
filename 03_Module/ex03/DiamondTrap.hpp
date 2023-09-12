@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:52:17 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/12 17:05:54 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:43:13 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : virtual public ScavTrap, public FragTrap
 {
 	private:
 		std::string name;
