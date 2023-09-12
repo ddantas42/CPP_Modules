@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 14:13:11 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 23:06:52 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/12 14:49:39 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ float area ( Point const x, Point const y, Point const z )
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	// if (point == a || point == b || point == c)
-		// return (false);
-	
 	float areaT = area(a, b, c);
 	float area1 = area(a, b, point);
 	float area2 = area(a, c, point);
