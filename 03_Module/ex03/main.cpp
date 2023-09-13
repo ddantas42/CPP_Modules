@@ -6,18 +6,15 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 23:54:52 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/13 15:15:46 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
 int main()
 {
-	DiamondTrap Diamond("Diamond");
-	std::cout << std::endl;
+	DiamondTrap a;
 	
 	// Diamond.attack();
 	

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:36:03 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/09 22:55:09 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/12 15:16:15 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class ClapTrap
 		int attack_damage;
 		
 	public:	
-		ClapTrap(std::string name);
+		ClapTrap( void );
+		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap &copy );
 		
 		~ClapTrap( void );

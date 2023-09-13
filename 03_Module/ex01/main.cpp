@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:17:50 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:23:18 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-	ScavTrap Jonh("Jonh");
+	ScavTrap Jonh;
 	ClapTrap Carreiras("Carreiras");
 	std::cout << std::endl;
 	

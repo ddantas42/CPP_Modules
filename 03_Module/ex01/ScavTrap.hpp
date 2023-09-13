@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/11 14:50:05 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:19:05 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class ScavTrap : public ClapTrap
 {
 	public:
-	
+		ScavTrap( void );
 		ScavTrap( std::string name );
 		ScavTrap( const ScavTrap & copy );
 		~ScavTrap( void );
