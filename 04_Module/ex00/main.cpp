@@ -6,14 +6,13 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/10 16:54:05 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/13 15:32:28 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-
 #include "WrongCat.hpp"
 
 int main()
@@ -51,7 +50,6 @@ int main()
 	std::cout << std::endl;
 
 	delete meta2;
-	delete WrongCat1;
-	
+	delete WrongCat1	;
 	return 0;
 }
