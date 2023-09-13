@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:52:39 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/10 16:43:16 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/14 00:54:17 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 // Constructors
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-	this->type.assign("Cat");
-	this->brain = new Brain();
-	std::cout << "Default Constructor called of Cat" << std::endl;
+	this->type.assign("WrongCat");
+	std::cout << "Default Constructor called of WrongCat" << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal (copy.getType())
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal (copy.getType())
 {
-	std::cout << "Copy Constructor called of Cat" << std::endl;
+	std::cout << "Copy Constructor called of WrongCat" << std::endl;
 	this->type.assign(copy.type);
 }
 
 // Destructor
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	delete this->brain;
-	std::cout << "Destructor called of Cat" << std::endl;
+	std::cout << "Destructor called of WrongCat" << std::endl;
 }
 
 // Operators
-Cat & Cat::operator=(const Cat &assign)
+WrongCat & WrongCat::operator=(const WrongCat &assign)
 {
 	this->type.assign(assign.type);
 	return *this;
 }
 
-void    Cat::makeSound( void ) const
+void    WrongCat::makeSound( void ) const
 {
     std::cout << "meow meow" << std::endl;
 }

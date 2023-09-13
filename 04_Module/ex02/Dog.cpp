@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:52:39 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/09 23:27:35 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/14 00:54:33 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
 // Constructors
-Cat::Cat() : Animal()
+Dog::Dog() : Animal()
 {
-	this->type.assign("Cat");
+	this->type.assign("Dog");
 	this->brain = new Brain();
-	std::cout << "Default Constructor called of Cat" << std::endl;
+	std::cout << "Default Constructor called of Dog" << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal (copy.getType())
+Dog::Dog(const Dog &copy) : Animal(copy.getType())
 {
-	std::cout << "Copy Constructor called of Cat" << std::endl;
+	std::cout << "Copy Constructor called of Dog" << std::endl;
 	this->type.assign(copy.type);
 }
 
 // Destructor
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->brain;
-	std::cout << "Destructor called of Cat" << std::endl;
+	std::cout << "Destructor called of Dog" << std::endl;
 }
 
 // Operators
-Cat & Cat::operator=(const Cat &assign)
+Dog & Dog::operator=(const Dog &assign)
 {
 	this->type.assign(assign.type);
 	return *this;
 }
 
-void    Cat::makeSound( void ) const
+void    Dog::makeSound( void ) const
 {
-    std::cout << "meow meow" << std::endl;
+    std::cout << "woof woof" << std::endl;
 }
