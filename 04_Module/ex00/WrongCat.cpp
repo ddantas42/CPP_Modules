@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:43:16 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 16:51:04 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 00:51:36 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	std::cout << "Default Constructor called of WrongCat" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &copy)
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal (copy.getType())
 {
 	std::cout << "Copy Constructor called of WrongCat" << std::endl;
 	this->type.assign(copy.type);

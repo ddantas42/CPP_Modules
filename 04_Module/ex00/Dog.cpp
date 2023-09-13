@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:27:35 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 16:20:55 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 00:51:12 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog() : Animal()
 	std::cout << "Default Constructor called of Dog" << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal (copy.getType())
 {
 	std::cout << "Copy Constructor called of Dog" << std::endl;
 	this->type.assign(copy.type);
