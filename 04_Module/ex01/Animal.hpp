@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:38:51 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/12 00:39:46 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/09 23:25:17 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/10 16:29:56 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
 
-class DiamondTrap : virtual FragTrap, virtual ScavTrap
+class Animal
 {
-	private:
-		std::string name;
-		
-	public:
+	protected:
+		std::string type;
 	
-		DiamondTrap( std::string name );
-		~DiamondTrap( void );
+	public:
+		// Constructors
+		Animal();
+		Animal(const Animal &copy);
+		Animal(std::string type);
+		
+		// Destructor
+		~Animal();
+		
+		// Operators
+		Animal & operator=(const Animal &assign);
+		std::string getType(void) const;
+		
+		void virtual makeSound(void) const;
 };
 
 #endif

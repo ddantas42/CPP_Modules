@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:38:51 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/12 00:39:46 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/10 16:43:49 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/10 16:47:40 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
+# include "WrongAnimal.hpp"
 # include <iostream>
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
 
-class DiamondTrap : virtual FragTrap, virtual ScavTrap
+class WrongCat : public WrongAnimal
 {
-	private:
-		std::string name;
-		
 	public:
-	
-		DiamondTrap( std::string name );
-		~DiamondTrap( void );
+		// Constructors
+		WrongCat();
+		WrongCat(const WrongCat &copy);
+		
+		// Destructor
+		~WrongCat();
+		
+		// Operators
+		WrongCat & operator=(const WrongCat &assign);
+
+		void makeSound() const;
 };
 
 #endif

@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:38:51 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/12 00:39:46 by hiper            ###   ########.fr       */
+/*   Created: 2023/09/10 17:03:59 by hiper             #+#    #+#             */
+/*   Updated: 2023/09/10 17:04:00 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
-# include "ClapTrap.hpp"
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+# include <string>
 
-class DiamondTrap : virtual FragTrap, virtual ScavTrap
+class Brain
 {
-	private:
-		std::string name;
-		
-	public:
+	protected:
+		std::string ideias[100];
 	
-		DiamondTrap( std::string name );
-		~DiamondTrap( void );
+	public:
+		// Constructors
+		Brain();
+		Brain(const Brain &copy);
+		
+		// Destructor
+		~Brain();
+		
+		// Operators
+		Brain & operator=(const Brain &assign);
+		
 };
 
 #endif
