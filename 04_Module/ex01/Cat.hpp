@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:31:14 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 17:11:20 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 00:16:16 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain * brain;
+		Brain *brain;
 	
 	public:
 		// Constructors

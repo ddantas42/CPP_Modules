@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:03:59 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 17:04:00 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/13 22:40:21 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Brain
 		Brain(const Brain &copy);
 		
 		// Destructor
-		~Brain();
+		virtual ~Brain();
 		
 		// Operators
 		Brain & operator=(const Brain &assign);

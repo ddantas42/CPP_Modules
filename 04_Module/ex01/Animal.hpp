@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:25:17 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 16:29:56 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 00:37:30 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 		Animal(std::string type);
 		
 		// Destructor
-		~Animal();
+		virtual ~Animal();
 		
 		// Operators
 		Animal & operator=(const Animal &assign);
