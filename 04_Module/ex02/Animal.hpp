@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:25:17 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:37:30 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 01:12:47 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ class Animal
 {
 	protected:
 		std::string type;
-	
-	public:
-		// Constructors
 		Animal();
 		Animal(const Animal &copy);
 		Animal(std::string type);
+	
+	public:
+		// Constructors
 		
 		// Destructor
 		virtual ~Animal();
