@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/13 15:15:46 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 21:11:37 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int main()
 {
-	DiamondTrap a;
+	DiamondTrap a("a");
 	
-	// Diamond.attack();
 	
 	std::cout << std::endl;
 	return (0);

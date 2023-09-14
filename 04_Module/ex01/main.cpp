@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/13 22:40:43 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 18:42:18 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	Cat catlin;
 
-	delete j;	//should not create a leak
-	// delete i;
-	
-	return 0;
+	catlin.makeSound();
+
+	Cat copy = catlin;
+
+	copy.makeSound();
+
+	delete catlin;
+	delete copy;
+	return (0);
 }
 
 

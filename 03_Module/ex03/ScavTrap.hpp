@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/12 15:19:05 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/14 21:09:48 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public  ClapTrap
 {
 	public:
 		ScavTrap( void );

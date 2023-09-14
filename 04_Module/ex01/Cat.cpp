@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:52:39 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/14 18:26:34 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ Cat::~Cat()
 Cat & Cat::operator=(const Cat &assign)
 {
 	this->type.assign(assign.type);
+	std::cout << "Copy assignmente operator called of Cat" << std::endl;
+
 	return *this;
 }
 
