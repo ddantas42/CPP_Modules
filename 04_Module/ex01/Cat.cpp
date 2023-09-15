@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 18:26:34 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:59:19 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat &copy) : Animal (copy.getType())
 {
+	this->type.assign(copy.getType());
+	this->brain = new Brain();
 	std::cout << "Copy Constructor called of Cat" << std::endl;
-	this->type.assign(copy.type);
 }
 
 // Destructor
@@ -34,11 +35,16 @@ Cat::~Cat()
 }
 
 // Operators
-Cat & Cat::operator=(const Cat &assign)
+Cat & Cat::operator=(const Cat &copy)
 {
-	this->type.assign(assign.type);
+	delete this->brain;
+		
+	// this->brain = copy.brain
+	// FIND a way to copy ALL brain ideias to new brain
+	
+	this->brain = new Brain(); // just not to segfault	
+	(void)copy;
 	std::cout << "Copy assignmente operator called of Cat" << std::endl;
-
 	return *this;
 }
 

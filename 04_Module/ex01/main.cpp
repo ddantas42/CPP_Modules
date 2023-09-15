@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/14 18:42:18 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:15:51 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,21 @@
 int main()
 {
 	Cat catlin;
+	std::cout << std::endl;
 
 	catlin.makeSound();
 
-	Cat copy = catlin;
+	std::cout << std::endl;
+	
+	Cat copy;
 
+	copy = catlin;
+
+	std::cout << std::endl;
+	
 	copy.makeSound();
 
-	delete catlin;
-	delete copy;
+	std::cout << std::endl;
 	return (0);
 }
 
