@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:54:38 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/16 16:51:50 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,17 @@ Cat::Cat() : Animal()
 	std::cout << "Default Constructor called of Cat" << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal(copy.getType())
+Cat::Cat(const Cat &copy) : Animal (copy.getType())
 {
+	this->type.assign(copy.getType());
+	this->brain = new Brain();
+	int i = 0;
+	while (i < 100)
+	{
+		this->brain->ideias[i].assign(copy.brain->ideias[i]);
+		i++;
+	}
 	std::cout << "Copy Constructor called of Cat" << std::endl;
-	this->type.assign(copy.type);
 }
 
 // Destructor
@@ -34,13 +41,43 @@ Cat::~Cat()
 }
 
 // Operators
-Cat & Cat::operator=(const Cat &assign)
+Cat & Cat::operator=(const Cat &copy)
 {
-	this->type.assign(assign.type);
+	delete this->brain;
+
+	this->type.assign(copy.type);
+	this->brain = new Brain();
+	int i = 0;
+	while (i < 100)
+	{
+		this->brain->ideias[i].assign(copy.brain->ideias[i]);
+		i++;
+	}
+	std::cout << "Copy assignmente operator called of Cat" << std::endl;
 	return *this;
 }
 
 void    Cat::makeSound( void ) const
 {
     std::cout << "meow meow" << std::endl;
+}
+
+void	Cat::showIdeas( void ) const
+{
+	std::cout << "cat ideias:" << std::endl;
+
+	int i = 0;
+	while (this->brain->ideias[i].size())
+	{
+		std::cout 
+			<< "ideia " << i + 1 << ": "
+			<< this->brain->ideias[i]
+			<< std::endl;
+		i++;
+	}
+}
+
+Brain *Cat::getBrain() const
+{
+	return (this->brain);
 }

@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:27:38 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/10 17:26:31 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/16 16:55:15 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Dog : public Animal
 {
 	private:
-		const Brain *brain;
+		Brain *brain;
 		
 	public:
 		// Constructors
@@ -34,6 +34,9 @@ class Dog : public Animal
 		Dog & operator=(const Dog &assign);
 
 		void makeSound() const;
+
+		void showIdeas() const;
+		Brain *getBrain() const;
 };
 
 #endif

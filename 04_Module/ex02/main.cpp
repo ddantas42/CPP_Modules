@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/15 17:03:15 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/16 17:01:15 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 #include "WrongCat.hpp"
 
-int main()
-{
-	Animal animal;
+// int main()
+// {
+// 	Animal animal;
 
-	delete animal;
+// 	delete animal;
 
-	return (0);
-}
+// 	return (0);
+// }
 
 // int main()
 // {

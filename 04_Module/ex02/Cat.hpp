@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:31:14 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/14 00:16:16 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/16 16:54:26 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ class Cat : public Animal
 		~Cat();
 		
 		// Operators
-		Cat & operator=(const Cat &assign);
+		Cat & operator=(const Cat &copy);
 
 		void makeSound() const;
+
+		void showIdeas() const;
+		Brain *getBrain() const;
 };
 
 #endif
