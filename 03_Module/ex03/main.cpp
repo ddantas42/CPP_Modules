@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/14 21:11:37 by ddantas-         ###   ########.fr       */
+/*   Cwreated: 2023/08/30 02:46:05 by ddantas-          #+#    #+#             */
+/*   Updated: 2023/09/16 22:04:48 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int main()
 {
-	DiamondTrap a("a");
+	DiamondTrap a("Shiny");
+	std::cout << std::endl;
 	
-	
+	a.showStats();
+
 	std::cout << std::endl;
 	return (0);
 }

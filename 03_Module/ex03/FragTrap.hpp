@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/14 21:09:43 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/16 22:53:29 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 class FragTrap : virtual public ClapTrap
 {
+	protected:
+		std::string name;
+		int FS_hit_points;
+		int FS_energy_points;
+		int FS_attack_damage;
+	
 	public:
 	
 		FragTrap( void );
