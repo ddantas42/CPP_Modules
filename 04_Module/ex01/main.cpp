@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/15 17:15:51 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:56:17 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,85 @@
 
 #include "WrongCat.hpp"
 
+// int main()
+// {
+// 	Dog creative;
+
+// 	std::cout << std::endl;
+
+// 	creative.showIdeas();
+// 	creative.getBrain()->ideias[0] = "I should cut my nails!";
+// 	creative.getBrain()->ideias[1] = "Agua de coco!";
+// 	creative.showIdeas();
+// 	std::cout << std::endl;
+	
+// 	Dog Ideia_thief;
+
+// 	Ideia_thief.showIdeas();
+	
+// 	Ideia_thief = creative;
+// 	std::cout << std::endl;
+
+// 	Ideia_thief.showIdeas();
+	
+// 	std::cout << std::endl;
+	
+// 	return (0);
+// }
+
+// int main()
+// {
+// 	Animal *DogAnimals[10];
+// 	Animal *CatAnimals[10];
+
+// 	int i = 0;
+
+// 	while (i < 10)
+// 	{
+// 		DogAnimals[i] = new Dog();
+// 		CatAnimals[i] = new Cat();
+// 		i++;
+// 	}
+
+// 	i = 0;
+// 	while (i < 10)
+// 	{
+// 		delete DogAnimals[i];
+// 		delete CatAnimals[i];
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+// int main()
+// {
+// 	Cat catlin;
+// 	std::cout << std::endl;
+
+// 	catlin.makeSound();
+
+// 	std::cout << std::endl;
+	
+// 	Cat copy(catlin);
+
+// 	std::cout << std::endl;
+	
+// 	copy.makeSound();
+
+// 	std::cout << std::endl;
+// 	return (0);
+// }
+
 int main()
 {
-	Cat catlin;
-	std::cout << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	catlin.makeSound();
-
-	std::cout << std::endl;
+	delete j;//should not create a leak
+	delete i;
 	
-	Cat copy;
-
-	copy = catlin;
-
-	std::cout << std::endl;
-	
-	copy.makeSound();
-
-	std::cout << std::endl;
-	return (0);
+	return 0;
 }
-
 
 // int main()
 // {

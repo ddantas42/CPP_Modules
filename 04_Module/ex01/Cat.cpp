@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 23:59:02 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/15 18:59:19 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:51:50 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ Cat::Cat(const Cat &copy) : Animal (copy.getType())
 {
 	this->type.assign(copy.getType());
 	this->brain = new Brain();
+	int i = 0;
+	while (i < 100)
+	{
+		this->brain->ideias[i].assign(copy.brain->ideias[i]);
+		i++;
+	}
 	std::cout << "Copy Constructor called of Cat" << std::endl;
 }
 
@@ -38,12 +44,15 @@ Cat::~Cat()
 Cat & Cat::operator=(const Cat &copy)
 {
 	delete this->brain;
-		
-	// this->brain = copy.brain
-	// FIND a way to copy ALL brain ideias to new brain
-	
-	this->brain = new Brain(); // just not to segfault	
-	(void)copy;
+
+	this->type.assign(copy.type);
+	this->brain = new Brain();
+	int i = 0;
+	while (i < 100)
+	{
+		this->brain->ideias[i].assign(copy.brain->ideias[i]);
+		i++;
+	}
 	std::cout << "Copy assignmente operator called of Cat" << std::endl;
 	return *this;
 }
@@ -51,4 +60,24 @@ Cat & Cat::operator=(const Cat &copy)
 void    Cat::makeSound( void ) const
 {
     std::cout << "meow meow" << std::endl;
+}
+
+void	Cat::showIdeas( void ) const
+{
+	std::cout << "cat ideias:" << std::endl;
+
+	int i = 0;
+	while (this->brain->ideias[i].size())
+	{
+		std::cout 
+			<< "ideia " << i + 1 << ": "
+			<< this->brain->ideias[i]
+			<< std::endl;
+		i++;
+	}
+}
+
+Brain *Cat::getBrain() const
+{
+	return (this->brain);
 }
