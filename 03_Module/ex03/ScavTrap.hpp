@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 03:29:42 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/16 22:17:09 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/16 22:58:41 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+	protected:
+		int FS_hit_points;
+		int FS_energy_points;
+		int FS_attack_damage;
+		
 	public:
 		ScavTrap( void );
 		ScavTrap( std::string name );
