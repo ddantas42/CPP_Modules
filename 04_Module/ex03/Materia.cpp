@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Materia.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:42:46 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/18 19:06:44 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/19 14:53:35 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Materia.hpp"
 
 // Constructors
 AMateria::AMateria()
@@ -45,20 +45,20 @@ AMateria & AMateria::operator=(const AMateria &assign)
 // Constructors
 Ice::Ice()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Ice\e[0m" << std::endl;
+	std::cout << "Default Constructor called of Ice" << std::endl;
 }
 
 Ice::Ice(const Ice &copy)
 {
 	(void) copy;
-	std::cout << "\e[0;33mCopy Constructor called of Ice\e[0m" << std::endl;
+	std::cout << "Copy Constructor called of Ice" << std::endl;
 }
 
 
 // Destructor
 Ice::~Ice()
 {
-	std::cout << "\e[0;31mDestructor called of Ice\e[0m" << std::endl;
+	std::cout << "Destructor called of Ice" << std::endl;
 }
 
 
@@ -76,20 +76,20 @@ Ice & Ice::operator=(const Ice &assign)
 // Constructors
 Cure::Cure()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Cure\e[0m" << std::endl;
+	std::cout << "Default Constructor called of Cure" << std::endl;
 }
 
 Cure::Cure(const Cure &copy)
 {
 	(void) copy;
-	std::cout << "\e[0;33mCopy Constructor called of Cure\e[0m" << std::endl;
+	std::cout << "Copy Constructor called of Cure" << std::endl;
 }
 
 
 // Destructor
 Cure::~Cure()
 {
-	std::cout << "\e[0;31mDestructor called of Cure\e[0m" << std::endl;
+	std::cout << "Destructor called of Cure" << std::endl;
 }
 
 

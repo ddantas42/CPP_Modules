@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Materia.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:42:43 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/18 19:07:08 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/19 14:54:12 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "Character.hpp"
 
 class AMateria
 {
@@ -37,6 +38,10 @@ class AMateria
 		virtual void use(ICharacter& target);
 };
 
+/* --- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- */
+/* --- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- */
+/* --- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- */
+
 class Ice
 {
 	public:
@@ -53,6 +58,10 @@ class Ice
 	private:
 		
 };
+
+/* --- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- */
+/* --- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- */
+/* --- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- */
 
 class Cure
 {

@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/18 19:05:28 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/19 14:39:21 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Materia.hpp"
+#include "Character.hpp"
 
 int main()
 {
-	// IMateriaSource* src = new MateriaSource();
+	IMateriaSource* src = new MateriaSource();
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 	
@@ -33,7 +34,7 @@ int main()
 	
 	// delete bob;
 	// delete me;
-	// delete src;
+	delete src;
 	
 	return 0;
 }
