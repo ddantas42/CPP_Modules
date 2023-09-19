@@ -6,15 +6,14 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:42:43 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/19 14:54:12 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:40:30 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIA_HPP
+# define MATERIA_HPP
 
 # include <iostream>
-# include <string>
 # include "Character.hpp"
 
 class AMateria
@@ -42,7 +41,7 @@ class AMateria
 /* --- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- */
 /* --- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- Ice --------- */
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		// Constructors
@@ -63,7 +62,7 @@ class Ice
 /* --- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- */
 /* --- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- Cure --------- */
 
-class Cure
+class Cure : public AMateria
 {
 	public:
 		// Constructors

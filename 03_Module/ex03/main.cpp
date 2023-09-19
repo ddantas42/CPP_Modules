@@ -18,7 +18,10 @@ int main()
 	std::cout << std::endl;
 	
 	a.showStats();
+	std::cout << std::endl;
 
+	a.attack("Bright");
+	
 	std::cout << std::endl;
 	return (0);
 }

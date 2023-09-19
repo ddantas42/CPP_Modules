@@ -1,8 +1,19 @@
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/19 15:24:33 by ddantas-          #+#    #+#             */
+/*   Updated: 2023/09/19 17:37:46 by ddantas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <iostream>
-# include <string>
 # include "Materia.hpp"
 
 class ICharacter
@@ -43,7 +54,7 @@ class Character : public ICharacter
 		Character & operator=(const Character &assign);
 		
 	private:
-		
+		std::string name;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 16:01:50 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/16 17:01:15 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/19 17:53:10 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,42 +37,42 @@
 // }
 
 
-// int main()
-// {
-// 	// const Animal* meta = new Animal();
-// 	const Animal* Dog1 = new Dog();
-// 	const Animal* Cat1 = new Cat();
-// 	std::cout << std::endl;
+int main()
+{
+	// const Animal* meta = new Animal();
+	const Animal* Dog1 = new Dog();
+	const Animal* Cat1 = new Cat();
+	std::cout << std::endl;
 	
-// 	std::cout << Dog1->getType() << " " << std::endl;
-// 	std::cout << Cat1->getType() << " " << std::endl;
+	std::cout << Dog1->getType() << " " << std::endl;
+	std::cout << Cat1->getType() << " " << std::endl;
 	
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	Cat1->makeSound(); //will output the cat sound!
-// 	Dog1->makeSound();
-// 	// meta->makeSound();
+	Cat1->makeSound(); //will output the cat sound!
+	Dog1->makeSound();
+	// meta->makeSound();
 	
-// 	std::cout << std::endl;
-// 	// delete meta;
-// 	delete Dog1;
-// 	delete Cat1;
-// 	std::cout << std::endl;
-// 	std::cout << std::endl;
+	std::cout << std::endl;
+	// delete meta;
+	delete Dog1;
+	delete Cat1;
+	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	const WrongAnimal* meta2 = new WrongAnimal();
-// 	const WrongAnimal* WrongCat1 = new WrongCat();
+	const WrongAnimal* meta2 = new WrongAnimal();
+	const WrongAnimal* WrongCat1 = new WrongCat();
 
-// 	std::cout << WrongCat1->getType() << " " << std::endl;
-// 	std::cout << std::endl;
+	std::cout << WrongCat1->getType() << " " << std::endl;
+	std::cout << std::endl;
 	
-// 	meta2->makeSound();
-// 	WrongCat1->makeSound();
+	meta2->makeSound();
+	WrongCat1->makeSound();
 	
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	delete meta2;
-// 	delete WrongCat1;
+	delete meta2;
+	delete WrongCat1;
 	
-// 	return 0;
-// }
+	return 0;
+}

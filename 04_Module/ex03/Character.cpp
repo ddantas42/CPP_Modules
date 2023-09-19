@@ -1,4 +1,17 @@
-#include "Character.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/19 15:20:12 by ddantas-          #+#    #+#             */
+/*   Updated: 2023/09/19 17:38:05 by ddantas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include "Character.hpp"
+
 
 // Constructors
 ICharacter::ICharacter()
@@ -10,13 +23,6 @@ ICharacter::ICharacter(const ICharacter &copy)
 {
 	(void) copy;
 	std::cout << "Copy Constructor called of ICharacter" << std::endl;
-}
-
-
-// Destructor
-ICharacter::~ICharacter()
-{
-	std::cout << "Destructor called of ICharacter" << std::endl;
 }
 
 
