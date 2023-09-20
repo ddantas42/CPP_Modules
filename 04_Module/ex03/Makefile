@@ -6,15 +6,15 @@
 #    By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/19 17:28:39 by ddantas-         ###   ########.fr        #
+#    Updated: 2023/09/20 17:02:23 by ddantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = no_animal
+NAME = COMPILE_PLS
 RM = rm
-FILESC = Character.cpp MateriaSource.cpp Materia.cpp main.cpp
+FILESC = Character.cpp main.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

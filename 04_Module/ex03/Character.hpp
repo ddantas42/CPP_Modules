@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 15:24:33 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/19 17:37:46 by ddantas-         ###   ########.fr       */
+/*   Created: 2023/09/20 16:45:39 by ddantas-          #+#    #+#             */
+/*   Updated: 2023/09/20 17:16:22 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,42 @@
 # define CHARACTER_HPP
 
 # include <iostream>
-# include "Materia.hpp"
+# include <string>
 
-class ICharacter
+class AMateria;
+
+class ICharacter 
 {
-	public:
-		// Constructors
+	protected:
 		ICharacter();
 		ICharacter(const ICharacter &copy);
 		
+	public:
+		// Constructors
+		
 		// Destructor
-		virtual ~ICharacter() {}
-
+		virtual ~ICharacter() {};
+		
 		// Operators
 		ICharacter & operator=(const ICharacter &assign);
-		
-		virtual std::string const & getName() const = 0;
+		// virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
+
 		
 };
 
-/* ----------Character -----------Character -----------Character -----------Character -----------Character ---------  */
-/* ----------Character -----------Character -----------Character -----------Character -----------Character ---------  */
-/* ----------Character -----------Character -----------Character -----------Character -----------Character ---------  */
-
 class Character : public ICharacter
 {
+	protected:
+		std::string name;
+		AMateria *inventory[4];
+		
 	public:
 		// Constructors
 		Character();
+		Character(std::string name);
 		Character(const Character &copy);
 		
 		// Destructor
@@ -52,9 +57,15 @@ class Character : public ICharacter
 		
 		// Operators
 		Character & operator=(const Character &assign);
+		// std::string const & getName() const ;
+		void equip(AMateria* m) { (void)m; };
+		void unequip(int idx) { (void)idx; };
+		void use(int idx, ICharacter& target) { (void)idx; (void)target; };
 		
 	private:
-		std::string name;
+		
 };
+
+
 
 #endif
