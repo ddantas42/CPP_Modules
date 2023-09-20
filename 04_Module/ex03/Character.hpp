@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:39 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/20 17:31:17 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:36:00 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ class Character : public ICharacter
 		// Operators
 		Character & operator=(const Character &assign);
 		std::string const & getName() const ;
-		void equip(AMateria* m) { (void)m; };
+		void equip(AMateria* m);
 		void unequip(int idx) { (void)idx; };
-		void use(int idx, ICharacter& target) { (void)idx; (void)target; };
+		void use(int idx, ICharacter& target);
 };
 
 

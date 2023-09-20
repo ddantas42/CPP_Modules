@@ -22,8 +22,8 @@ class AMateria
 
 		std::string const & getType() const;
 
-		// virtual AMateria* clone() const = 0;
-		// virtual void use(ICharacter& target);
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 		
 };
 
@@ -36,7 +36,7 @@ class IMateriaSource
 
 	public:
 		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
+		virtual void learnMateria(AMateria *new_materia) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
 
 };
@@ -52,8 +52,8 @@ class MateriaSource : public IMateriaSource
 		MateriaSource & operator=(const MateriaSource &assign);
 		~MateriaSource();
 
-		void learnMateria(AMateria*new_materia) {(void)new_materia;};
-		AMateria* createMateria(std::string const & type) {(void)type;return NULL;};
+		void learnMateria(AMateria *new_materia);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif
