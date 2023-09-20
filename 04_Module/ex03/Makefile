@@ -6,7 +6,7 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/21 00:20:13 by hiper            ###   ########.fr        #
+#    Updated: 2023/09/21 00:46:48 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = COMPILE_PLS
 RM = rm
-FILESC = Character.cpp AMateria.cpp Materials.cpp main.cpp
+FILESC = Character.cpp Materials.cpp AMateria.cpp main.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 
