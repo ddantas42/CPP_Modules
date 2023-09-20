@@ -6,80 +6,41 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/20 17:38:45 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:53:58 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 // Constructors
-AMateria::AMateria()
-{
-}
+AMateria::AMateria() {}
 
-AMateria::AMateria(const AMateria &copy)
-{
-	(void) copy;
-}
+AMateria::AMateria(const AMateria &copy) {(void) copy;}
 
 
 // Destructor
-AMateria::~AMateria()
-{
-}
+AMateria::~AMateria() {}
 
 
 // Operators
-AMateria & AMateria::operator=(const AMateria &assign)
-{
-	(void) assign;
-	return *this;
-}
+AMateria & AMateria::operator=(const AMateria &assign) {(void) assign;	return *this;}
+
 
 // Constructors
-Ice::Ice()
-{
-}
+IMateriaSource::IMateriaSource() {}
 
-Ice::Ice(const Ice &copy)
-{
-	(void) copy;
-}
-
-
-// Destructor
-Ice::~Ice()
-{
-}
-
+IMateriaSource::IMateriaSource(const IMateriaSource &copy) {(void) copy;}
 
 // Operators
-Ice & Ice::operator=(const Ice &assign)
-{
-	(void) assign;
-	return *this;
-}
+IMateriaSource & IMateriaSource::operator=(const IMateriaSource &assign) {(void) assign;	return *this;}
 
 // Constructors
-Cure::Cure()
-{
-}
+MateriaSource::MateriaSource() {}
 
-Cure::Cure(const Cure &copy)
-{
-	(void) copy;
-}
-
+MateriaSource::MateriaSource(const MateriaSource &copy) {(void) copy;}
 
 // Destructor
-Cure::~Cure()
-{
-}
-
+MateriaSource::~MateriaSource() {}
 
 // Operators
-Cure & Cure::operator=(const Cure &assign)
-{
-	(void) assign;
-	return *this;
-}
+MateriaSource & MateriaSource::operator=(const MateriaSource &assign) {(void) assign;	return *this;}

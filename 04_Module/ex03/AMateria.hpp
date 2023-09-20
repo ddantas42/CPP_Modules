@@ -6,6 +6,7 @@
 
 # include "Character.hpp"
 
+
 class AMateria
 {
 	public:
@@ -14,57 +15,45 @@ class AMateria
 		AMateria(const AMateria &copy);
 		
 		// Destructor
-		~AMateria();
+		virtual ~AMateria();
 		
 		// Operators
 		AMateria & operator=(const AMateria &assign);
 
 		std::string const & getType() const;
 
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
-		
-	private:
+		// virtual AMateria* clone() const = 0;
+		// virtual void use(ICharacter& target);
 		
 };
 
-class Ice : public AMateria
+class IMateriaSource
 {
-	public:
-		// Constructors
-		Ice();
-		Ice(const Ice &copy);
-		
-		// Destructor
-		~Ice();
-		
-		// Operators
-		Ice & operator=(const Ice &assign);
+	protected:
+		IMateriaSource();
+		IMateriaSource(const IMateriaSource &copy);
+		IMateriaSource & operator=(const IMateriaSource &assign);
 
-		AMateria* clone() const;
-		void use(ICharacter& target);
-		
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+
 };
 
-class Cure : public AMateria
+class MateriaSource : public IMateriaSource
 {
-	private:
-		std::string type;
-
+	// private:
+		// AMateria *materia[4];
+		
 	public:
-		// Constructors
-		Cure();
-		Cure(const Cure &copy);
-		
-		// Destructor
-		~Cure();
-		
-		// Operators
-		Cure & operator=(const Cure &assign);
+		MateriaSource();
+		MateriaSource(const MateriaSource &copy);
+		MateriaSource & operator=(const MateriaSource &assign);
+		~MateriaSource();
 
-		AMateria* clone() const;
-		void use(ICharacter& target);
-		
+		void learnMateria(AMateria*) {};
+		AMateria* createMateria(std::string const & type) {(void)type;return NULL;};
 };
 
 #endif

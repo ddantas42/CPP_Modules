@@ -6,16 +6,17 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/20 17:39:16 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:56:30 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 int main()
 {
-	// IMateriaSource* src = new MateriaSource();
+	IMateriaSource* src = new MateriaSource();
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 	
@@ -35,7 +36,7 @@ int main()
 	
 	// delete bob;
 	delete me;
-	// delete src
+	delete src;
 	
 	return 0;
 }
