@@ -6,13 +6,14 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/20 18:56:30 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:01:42 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include "Materials.hpp"
 
 int main()
 {

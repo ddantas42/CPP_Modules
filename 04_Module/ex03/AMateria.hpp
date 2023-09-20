@@ -43,8 +43,8 @@ class IMateriaSource
 
 class MateriaSource : public IMateriaSource
 {
-	// private:
-		// AMateria *materia[4];
+	private:
+		AMateria *materia[4];
 		
 	public:
 		MateriaSource();
@@ -52,7 +52,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource & operator=(const MateriaSource &assign);
 		~MateriaSource();
 
-		void learnMateria(AMateria*) {};
+		void learnMateria(AMateria*new_materia) {(void)new_materia;};
 		AMateria* createMateria(std::string const & type) {(void)type;return NULL;};
 };
 
