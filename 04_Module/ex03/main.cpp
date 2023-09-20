@@ -6,7 +6,7 @@
 /*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/20 17:10:43 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:39:16 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int main()
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 	
-	ICharacter* me = new Character("me");
+	ICharacter* me = new Character("SHEESSHHH");
+	std::cout << "WWWWWWWOOOOOOOOOOOOWWWWWWWWWWW" << std::endl;
+	std::cout << me->getName() << std::endl;
 	// AMateria* tmp;
 	// tmp = src->createMateria("ice");
 	// me->equip(tmp);
