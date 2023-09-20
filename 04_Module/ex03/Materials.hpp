@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 22:36:35 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/20 23:55:20 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 00:20:37 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Ice : public AMateria
 		// Operators
 		Ice & operator=(const Ice &assign);
 		
-		AMateria* clone() const {return NULL;};
+		// AMateria* clone() const {};
 		void use(ICharacter& target);
 		
 };
@@ -48,7 +48,7 @@ class Cure : public AMateria
 		// Operators
 		Cure & operator=(const Cure &assign);
 
-		AMateria* clone() const {return NULL;};
+		// AMateria* clone() const {};
 		void use(ICharacter& target);
 		
 };

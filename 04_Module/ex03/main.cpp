@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/20 23:37:13 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 00:16:00 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 	
-	// delete bob;
+	delete bob;
 	delete me;
 	delete src;
 	

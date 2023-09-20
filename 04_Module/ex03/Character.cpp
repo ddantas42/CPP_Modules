@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:43 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/20 23:56:59 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 00:20:25 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx <= 3)
 		this->inventory[idx]->use(target);
+	(void)idx;
+	(void)target;
 };
 
