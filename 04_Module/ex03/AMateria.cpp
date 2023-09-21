@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 20:44:11 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 21:28:36 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,24 @@ MateriaSource::MateriaSource()
 		this->materia[i] = NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy) {(void) copy;}
+MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy)
+{
+	AMateria *tmp = NULL;
+	int i = 0;
+	while (i < 4)
+	{
+		if (copy.materia[i] != NULL)
+		{
+			tmp = copy.materia[i]->clone();
+			this->materia[i] = tmp;
+			tmp = NULL;
+		}
+		else
+			this->materia[i] = NULL;
+		i++;
+	}
+	// std::cout << "MateriaSource copy constructor called" << std::endl;
+}
 
 // Destructor
 MateriaSource::~MateriaSource()
@@ -58,7 +75,25 @@ MateriaSource::~MateriaSource()
 }
 
 // Operators
-MateriaSource & MateriaSource::operator=(const MateriaSource &assign) {(void) assign;	return *this;}
+MateriaSource & MateriaSource::operator=(const MateriaSource &assign)
+{
+	AMateria *tmp = NULL;
+	int i = 0;
+	while (i < 4)
+	{
+		if (assign.materia[i] != NULL)
+		{
+			tmp = assign.materia[i]->clone();
+			this->materia[i] = tmp;
+			tmp = NULL;
+		}
+		else
+			this->materia[i] = NULL;
+		i++;
+	}
+	// std::cout << "MateriaSource assignation operator called" << std::endl;
+	return *this;
+}
 
 
 void MateriaSource::learnMateria(AMateria *new_materia)
