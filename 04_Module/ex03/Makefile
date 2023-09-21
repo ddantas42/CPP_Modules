@@ -6,13 +6,13 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/09/21 13:56:51 by hiper            ###   ########.fr        #
+#    Updated: 2023/09/21 17:04:53 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = COMPILE_PLS
+NAME = yupiii
 RM = rm
 FILESC = Character.cpp Materials.cpp AMateria.cpp main.cpp
 
