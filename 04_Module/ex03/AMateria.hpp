@@ -61,12 +61,7 @@ class MateriaSource : public IMateriaSource
 		void learnMateria(AMateria *new_materia);
 		AMateria* createMateria(std::string const & type);
 
-		void print_materias( void ) // Added
-		{
-			int i = 0;
-			while (i < 4)
-				std::cout << this->materia[i++]->getType() << std::endl;
-		};
+		void print_materias( void ); // Added
 };
 
 #endif

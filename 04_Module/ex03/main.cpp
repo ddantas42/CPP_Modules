@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/21 16:55:40 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 17:10:10 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	// IMateriaSource* src = src2;
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	
+	// IMateriaSource* src(src2);
 	// src->print_materias();
+
+	src->print_materias();
 	
 	ICharacter* me = new Character("me");
 	

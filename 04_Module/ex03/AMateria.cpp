@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 16:55:25 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 17:11:31 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,15 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	// else
 	// 	materia = NULL;
 	return materia;
+}
+
+void MateriaSource::print_materias( void )
+{
+	int i = 0;
+	while (i < 4)
+	{
+		if (this->materia[i] != NULL)
+			std::cout << this->materia[i]->getType() << std::endl;
+		i++;
+	}
 }
