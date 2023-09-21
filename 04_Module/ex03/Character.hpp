@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:39 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:18:45 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:38:15 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		
+		AMateria *ground[10000];
 };
 
 

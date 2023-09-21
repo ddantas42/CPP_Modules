@@ -6,18 +6,29 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:43 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:25:31 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:43:45 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Materials.hpp"
 
+Character::Character()
+{
+	this->name = "Default";
+	for (int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
+	for (int n = 0; n < 10000; n++)
+		this->ground[n] = NULL;
+}
+
 Character::Character(std::string name)
 {
 	this->name = name;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+	for (int n = 0; n < 10000; n++)
+		this->ground[n] = NULL;
 }
 
 // Destructor
@@ -27,6 +38,11 @@ Character::~Character()
 	{
 		if (this->inventory[i])
 			delete this->inventory[i];
+	}
+	for (int n = 0; n < 10000; n++)
+	{
+		if (this->ground[n])
+			delete this->ground[n];
 	}
 }
 
@@ -91,9 +107,10 @@ void Character::use(int idx, ICharacter& target)
 
 void Character::unequip(int idx)
 {
+	static int i = 0;
 	if (idx >= 0 && idx <= 3)
 	{
-		delete this->inventory[idx];
+		this->ground[i++] = this->inventory[idx];
 		this->inventory[idx] = NULL;
 	}
 	else
