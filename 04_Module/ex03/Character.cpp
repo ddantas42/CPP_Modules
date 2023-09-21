@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:43 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:02:15 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:25:31 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 Character::Character(std::string name)
 {
 	this->name = name;
+	for (int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
 }
 
 // Destructor
@@ -60,16 +62,40 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	static int i = 0;
-	
-	if (i >= 4)
-		i = 0;
-	this->inventory[i++] = m;
+	int i = 0;
+	while (i < 4)
+	{
+		if (this->inventory[i] == NULL)
+		{
+			this->inventory[i] = m;
+			break ;
+		}
+		i++;
+	}
+	if (i == 4)
+		std::cout << "Inventory is full" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx >= 0 && idx <= 3)
-		this->inventory[idx]->use(target);
+	{
+		if (this->inventory[idx] != NULL)
+			this->inventory[idx]->use(target);
+		else
+			std::cout << "Inventory slot is empty" << std::endl;
+	}
+	else
+		std::cout << "Invetory slot out of range" << std::endl;
 };
 
+void Character::unequip(int idx)
+{
+	if (idx >= 0 && idx <= 3)
+	{
+		delete this->inventory[idx];
+		this->inventory[idx] = NULL;
+	}
+	else
+		std::cout << "Invetory slot out of range" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:03:39 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:06:40 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ IMateriaSource::IMateriaSource(const IMateriaSource &copy){(void) copy;}
 IMateriaSource & IMateriaSource::operator=(const IMateriaSource &assign) {(void) assign;	return *this;}
 
 // Constructors
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+		this->materia[i] = NULL;
+}
 
 MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy) {(void) copy;}
 
