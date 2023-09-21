@@ -9,6 +9,9 @@
 
 class AMateria
 {
+	protected:
+		std::string type;
+
 	public:
 		// Constructors
 		AMateria();
@@ -20,9 +23,9 @@ class AMateria
 		// Operators
 		AMateria & operator=(const AMateria &assign);
 
-		std::string const & getType() const;
+		std::string const & getType() const {return this->type;};
 
-		// virtual AMateria* clone() const = 0;
+		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target) {(void)target;};
 		
 };
@@ -39,6 +42,9 @@ class IMateriaSource
 		virtual void learnMateria(AMateria *new_materia) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
 
+		virtual void print_materias( void ) = 0; // Added
+
+
 };
 
 class MateriaSource : public IMateriaSource
@@ -54,6 +60,13 @@ class MateriaSource : public IMateriaSource
 
 		void learnMateria(AMateria *new_materia);
 		AMateria* createMateria(std::string const & type);
+
+		void print_materias( void ) // Added
+		{
+			int i = 0;
+			while (i < 4)
+				std::cout << this->materia[i++]->getType() << std::endl;
+		};
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:06:40 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 16:55:25 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #include "Materials.hpp"
 
 // Constructors
-AMateria::AMateria() {}
+AMateria::AMateria()
+{
+	this->type = "none";
+}
 
 AMateria::AMateria(const AMateria &copy) {(void) copy;}
 
@@ -48,7 +51,10 @@ MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy) 
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-		delete this->materia[i];
+	{
+		if (this->materia[i])
+			delete this->materia[i];
+	}
 }
 
 // Operators
@@ -60,7 +66,10 @@ void MateriaSource::learnMateria(AMateria *new_materia)
 	static int i = 0;
 
 	if (i >= 4)
-		i = 0;
+	{
+		std::cout << "MateriaSource is full" << std::endl;
+		return ;
+	}
 	this->materia[i++] = new_materia;
 }
 
@@ -68,12 +77,22 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	AMateria *materia;
 	
-	if (type.compare("ice") == 0)
-		materia = new Ice();
-	else if (type.compare("cure") == 0)
-		materia = new Cure();
-	else
-		materia = NULL;
-
+	int i = 0;
+	while (i < 4)
+	{
+		if (this->materia[i] != NULL && this->materia[i]->getType().compare(type) == 0)
+		{
+			materia = this->materia[i]->clone();
+			return materia;
+		}
+		i++;
+	}
+	materia = NULL;
+	// if (type.compare("ice") == 0)
+	// 	materia = new Ice();
+	// else if (type.compare("cure") == 0)
+	// 	materia = new Cure();
+	// else
+	// 	materia = NULL;
 	return materia;
 }

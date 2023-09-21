@@ -6,16 +6,22 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 22:36:30 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/21 14:01:14 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 16:52:26 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Materials.hpp"
 
 // Constructors
-Ice::Ice() {}
+Ice::Ice()
+{
+	this->type = "ice";
+}
 
-Ice::Ice(const Ice &copy) : AMateria(copy) {(void) copy;}
+Ice::Ice(const Ice &copy) : AMateria(copy)
+{
+	this->type = copy.getType();
+}
 
 // Destructor
 Ice::~Ice() {}
@@ -28,9 +34,15 @@ Ice & Ice::operator=(const Ice &assign)
 }
 
 // Constructors
-Cure::Cure() {}
+Cure::Cure()
+{
+	this->type = "cure";
+}
 
-Cure::Cure(const Cure &copy)  : AMateria(copy) {(void) copy;}
+Cure::Cure(const Cure &copy)  : AMateria(copy)
+{
+	this->type = copy.getType();
+}
 
 // Destructor
 Cure::~Cure() {}
@@ -42,9 +54,21 @@ Cure & Cure::operator=(const Cure &assign)
 	return *this;
 }
 
+AMateria* Ice::clone() const
+{
+	AMateria *clone = new Ice();
+	return (clone);
+}
+
 void Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+AMateria* Cure::clone() const
+{
+	AMateria *clone = new Cure();
+	return (clone);
 }
 
 void Ice::use(ICharacter& target)
