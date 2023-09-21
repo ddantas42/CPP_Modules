@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/20 23:29:58 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:03:39 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ MateriaSource::MateriaSource() {}
 MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy) {(void) copy;}
 
 // Destructor
-MateriaSource::~MateriaSource() {}
+MateriaSource::~MateriaSource()
+{
+	for (int i = 0; i < 4; i++)
+		delete this->materia[i];
+}
 
 // Operators
 MateriaSource & MateriaSource::operator=(const MateriaSource &assign) {(void) assign;	return *this;}
