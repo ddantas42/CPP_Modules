@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 17:11:31 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:44:11 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ AMateria & AMateria::operator=(const AMateria &assign) {(void) assign;	return *t
 // Constructors
 IMateriaSource::IMateriaSource() {}
 
-IMateriaSource::IMateriaSource(const IMateriaSource &copy){(void) copy;}
+IMateriaSource::IMateriaSource(const IMateriaSource &copy) {(void) copy;}
 
 // Operators
 IMateriaSource & IMateriaSource::operator=(const IMateriaSource &assign) {(void) assign;	return *this;}
@@ -88,12 +88,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 		i++;
 	}
 	materia = NULL;
-	// if (type.compare("ice") == 0)
-	// 	materia = new Ice();
-	// else if (type.compare("cure") == 0)
-	// 	materia = new Cure();
-	// else
-	// 	materia = NULL;
+	std::cout << "Materia not found" << std::endl;
 	return materia;
 }
 

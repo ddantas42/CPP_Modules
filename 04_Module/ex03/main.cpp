@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/21 17:10:10 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/21 20:47:08 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	IMateriaSource* src2 = new MateriaSource();
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Cure());
 	
-	// IMateriaSource* src(src2);
-	// src->print_materias();
+	IMateriaSource* src(src2);
 
 	src->print_materias();
 	
@@ -33,10 +32,8 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	// AMateria *clone = tmp->clone();
-	// std::cout << "hello\n";
-
-	// me->equip(clone);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
