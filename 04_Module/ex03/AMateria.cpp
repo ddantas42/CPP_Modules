@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/21 21:28:36 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/22 16:32:54 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ AMateria::AMateria()
 }
 
 AMateria::AMateria(const AMateria &copy) {(void) copy;}
+
+AMateria::AMateria(std::string const & type)
+{
+	this->type = type;
+}
 
 
 // Destructor
@@ -45,7 +50,7 @@ MateriaSource::MateriaSource()
 		this->materia[i] = NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy)
+MateriaSource::MateriaSource(const MateriaSource &copy)
 {
 	AMateria *tmp = NULL;
 	int i = 0;
@@ -54,7 +59,7 @@ MateriaSource::MateriaSource(const MateriaSource &copy)  : IMateriaSource(copy)
 		if (copy.materia[i] != NULL)
 		{
 			tmp = copy.materia[i]->clone();
-			this->materia[i] = tmp;
+			this->materia[i] = copy.materia[i]->clone();;
 			tmp = NULL;
 		}
 		else

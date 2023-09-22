@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/21 21:34:16 by hiper            ###   ########.fr       */
+/*   Updated: 2023/09/22 16:37:29 by ddantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,48 @@
 #include "AMateria.hpp"
 #include "Materials.hpp"
 
-int main()
-{
+// int main()
+// {
+// 	MateriaSource src;
+// 	src.learnMateria(new Ice());
 
-	MateriaSource src;
-	src.learnMateria(new Ice());
-
-	MateriaSource src2(src);
+// 	MateriaSource src2(src);
 	
-	MateriaSource src3;
-	src3 = src;
+// 	MateriaSource src3;
+// 	src3 = src;
 
-
-	Ice ice;
-
+// 	AMateria *tmp = NULL;
+// 	tmp = new Ice();
 	
-	Character Diogo("Diogo");
+// 	Character Diogo("Diogo");
+// 	Diogo.equip(new Cure());
+// 	Diogo.use(0, Diogo);
 	
-	Diogo.use(0, Diogo);
+// 	Character clone(Diogo);
+// 	clone.equip(new Ice());
+// 	clone.use(0, Diogo);
+// 	clone.use(1, Diogo);
 	
-	return 0;
-}
+// 	delete tmp;
+// 	return 0;
+// }
 
 // int main()
 // {
-// 	IMateriaSource* src2 = new MateriaSource();
-// 	src2->learnMateria(new Ice());
-// 	src2->learnMateria(new Cure());
+// 	IMateriaSource* mago = new MateriaSource();
+// 	mago->learnMateria(new Ice());
+// 	mago->learnMateria(new Cure());
 	
-// 	IMateriaSource* src(src2);
-
-// 	src->print_materias();
+// 	mago->print_materias();
 	
 // 	ICharacter* me = new Character("me");
 	
 // 	AMateria* tmp;
-// 	tmp = src->createMateria("ice");
+// 	tmp = mago->createMateria("ice");
 // 	me->equip(tmp);
-// 	tmp = src->createMateria("cure");
+// 	tmp = mago->createMateria("cure");
 // 	me->equip(tmp);
-// 	tmp = src->createMateria("cure");
+// 	tmp = mago->createMateria("cure");
 // 	me->equip(tmp);
 
 // 	ICharacter* bob = new Character("bob");
@@ -64,31 +66,32 @@ int main()
 
 // 	delete bob;
 // 	delete me;
-// 	delete src;
+// 	delete mago;
 // 	return 0;
 // }
 
-// int main()
-// {
-// 	IMateriaSource* src = new MateriaSource();
-// 	src->learnMateria(new Ice());
-// 	src->learnMateria(new Cure());
+int main()
+{
+	IMateriaSource* mago = new MateriaSource();
+	mago->learnMateria(new Ice());
+	mago->learnMateria(new Cure());
 	
-// 	ICharacter* me = new Character("me");
+	ICharacter* me = new Character("me");
 	
-// 	AMateria* tmp;
-// 	tmp = src->createMateria("ice");
-// 	me->equip(tmp);
-// 	tmp = src->createMateria("cure");
-// 	me->equip(tmp);
+	AMateria* tmp;
+	tmp = mago->createMateria("ice");
+	me->equip(tmp);
+	
+	tmp = mago->createMateria("cure");
+	me->equip(tmp);
 
-// 	ICharacter* bob = new Character("bob");
-// 	me->use(0, *bob);
-// 	me->use(1, *bob);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
 
-// 	delete bob;
-// 	delete me;
-// 	delete src;
+	delete bob;
+	delete me;
+	delete mago;
 
-// 	return 0;
-// }
+	return 0;
+}

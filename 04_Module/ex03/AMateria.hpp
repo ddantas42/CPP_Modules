@@ -11,12 +11,13 @@ class AMateria
 {
 	protected:
 		std::string type;
+		AMateria();
+		AMateria(const AMateria &copy);
 
 	public:
 		// Constructors
-		AMateria();
-		AMateria(const AMateria &copy);
-		
+		AMateria(std::string const & type);
+
 		// Destructor
 		virtual ~AMateria();
 		
