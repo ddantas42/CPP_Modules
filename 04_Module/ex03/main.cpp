@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:02:27 by hiper             #+#    #+#             */
-/*   Updated: 2023/09/22 16:37:29 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/23 01:13:41 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,17 @@
 
 int main()
 {
-	IMateriaSource* mago = new MateriaSource();
-	mago->learnMateria(new Ice());
-	mago->learnMateria(new Cure());
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 	
 	ICharacter* me = new Character("me");
 	
 	AMateria* tmp;
-	tmp = mago->createMateria("ice");
+	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	
-	tmp = mago->createMateria("cure");
+	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
@@ -91,7 +91,7 @@ int main()
 
 	delete bob;
 	delete me;
-	delete mago;
+	delete src;
 
 	return 0;
 }

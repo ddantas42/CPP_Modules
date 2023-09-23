@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:38:22 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/22 16:32:54 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/23 01:13:15 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ MateriaSource::MateriaSource()
 		this->materia[i] = NULL;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &copy)
+MateriaSource::MateriaSource(const MateriaSource &copy) : IMateriaSource(copy)
 {
-	AMateria *tmp = NULL;
+	AMateria *tmp;
 	int i = 0;
 	while (i < 4)
 	{
 		if (copy.materia[i] != NULL)
 		{
 			tmp = copy.materia[i]->clone();
-			this->materia[i] = copy.materia[i]->clone();;
+			this->materia[i] = tmp;
 			tmp = NULL;
 		}
 		else

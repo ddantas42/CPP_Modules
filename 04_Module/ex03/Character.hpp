@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:39 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/22 15:45:08 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/23 00:56:29 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class ICharacter
 {
 	protected:
 		ICharacter();
-		ICharacter(const ICharacter &copy);
 		
 	public:
 		// Constructors
+		ICharacter(const ICharacter &copy);
 		
 		// Destructor
 		virtual ~ICharacter() {};

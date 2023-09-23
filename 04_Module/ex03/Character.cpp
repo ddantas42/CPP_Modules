@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddantas- <ddantas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:45:43 by ddantas-          #+#    #+#             */
-/*   Updated: 2023/09/22 15:07:26 by ddantas-         ###   ########.fr       */
+/*   Updated: 2023/09/23 01:10:07 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Character::Character()
 		this->ground[n] = NULL;
 }
 
-Character::Character(const Character &copy)
+Character::Character(const Character &copy) : ICharacter(copy)
 {
 	this->name = copy.name;
 	for (int i = 0; i < 4; i++)
@@ -40,7 +40,6 @@ Character::Character(const Character &copy)
 			this->ground[n] = NULL;
 	}
 }
-
 
 Character::Character(std::string name)
 {
