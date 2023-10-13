@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:26 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/06 23:10:17 by hiper            ###   ########.fr       */
+/*   Updated: 2023/10/13 22:19:12 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat &copy);
 		
 		// Destructor
-		~Bureaucrat();
+		~Bureaucrat() {};
 		
 		// Operators
 		Bureaucrat & operator=(const Bureaucrat &assign);
@@ -37,14 +37,14 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception 
 		{
 			const char* what() const throw() {return "Grade is too high";}
-			
 		};
-
-
+		
 		const std::string	&getName() const;
 		int					getGrade() const;
 		
-
+		void				incrementGrade();
+		void				decrementGrade();
+		
 	private:
 		const std::string	name;	
 		int					grade;

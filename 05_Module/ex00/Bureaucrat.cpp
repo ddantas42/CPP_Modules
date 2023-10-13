@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/06 23:10:24 by hiper            ###   ########.fr       */
+/*   Updated: 2023/10/13 22:17:26 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 }
 
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
-{
-	(void) copy;
-}
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name)
+{this->grade = copy.grade;}
 
 const std::string	&Bureaucrat::getName() const
 {return this->name;}
@@ -42,17 +40,36 @@ const std::string	&Bureaucrat::getName() const
 int	Bureaucrat::getGrade() const
 {return this->grade;}
 
-// Destructor
-Bureaucrat::~Bureaucrat()
+void Bureaucrat::incrementGrade()
 {
-
+	try {
+		if (this->grade - 1 < 1)
+			throw GradeTooHighException();
+		else
+			this->grade--;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
+void Bureaucrat::decrementGrade()
+{
+	try {
+		if (this->grade + 1 > 150)
+			throw GradeTooLowException();
+		else
+			this->grade++;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
 
 // Operators
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
 {
-	(void) assign;
+	this->grade = assign.getGrade();
 	return *this;
 }
 
