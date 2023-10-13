@@ -13,8 +13,20 @@
 #include "Bureaucrat.hpp"
 
 // Constructors
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
+	try {
+		if (grade < 1)
+			throw GradeTooHighException();
+		else if (grade > 150)
+			throw GradeTooLowException(); 
+		else
+			this->grade = grade;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+		this->grade = 0;
+	}
 
 }
 
@@ -32,7 +44,9 @@ int	Bureaucrat::getGrade() const
 
 // Destructor
 Bureaucrat::~Bureaucrat()
-{}
+{
+
+}
 
 
 // Operators
@@ -44,6 +58,9 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)
 {
-	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;
+	if (bureaucrat.getGrade() >= 0 && bureaucrat.getGrade() <= 150)
+		out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;
+	else
+		out << bureaucrat.getName() << ", bureaucrat grade undefined" << std::endl;
 	return out;
 }
