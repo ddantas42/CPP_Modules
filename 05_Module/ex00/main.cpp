@@ -15,7 +15,7 @@
 
 int main()
 {
-	Bureaucrat bureaucrat("Josh", 1);
+	Bureaucrat bureaucrat("Josh", -1);
 
 	std::cout << bureaucrat;
 	

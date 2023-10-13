@@ -30,8 +30,14 @@ class Bureaucrat
 		// Operators
 		Bureaucrat & operator=(const Bureaucrat &assign);
 
-		// void GradeTooLowException();
-		// void GradeTooHighException();
+		class GradeTooLowException : public std::exception
+		{
+			
+		};
+		class GradeTooHighException : public std::exception 
+		{
+		};
+
 
 		const std::string	&getName() const;
 		int					getGrade() const;
