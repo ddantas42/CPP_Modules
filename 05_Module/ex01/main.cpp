@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:30:39 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/13 22:40:34 by hiper            ###   ########.fr       */
+/*   Updated: 2023/10/15 20:38:44 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 
 int main()
 {
-	Bureaucrat Josh("Josh", 1);
-	Bureaucrat Josh2 = Josh;
-	Bureaucrat Josh3(Josh);
+	Bureaucrat	Josh("Josh", 1);
+	Bureaucrat Jam("Jam", 150);
+
+	Form		form("hey_form", 10, 10);
 	
-	std::cout << Josh;
-	Josh.incrementGrade();
-	std::cout << Josh << std::endl;
-	Josh.decrementGrade();
-	std::cout << Josh;
-	std::cout << Josh2;
-	std::cout << Josh3;
+	std::cout << Josh << std::endl;	
+	std::cout << Jam << std::endl;	
+	
+	
+	
 	
 	return 0;
 }

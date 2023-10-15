@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/13 22:17:26 by hiper            ###   ########.fr       */
+/*   Updated: 2023/10/15 20:57:41 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
 	try {
 		if (grade < 1)
-			throw GradeTooHighException();
+			throw Bureaucrat::GradeTooHighException();
 		else if (grade > 150)
-			throw GradeTooLowException(); 
+			throw Bureaucrat::GradeTooLowException(); 
 		else
 			this->grade = grade;
 	}
@@ -30,6 +30,12 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 
 }
 
+// Operators
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
+{
+	this->grade = assign.getGrade();
+	return *this;
+}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name)
 {this->grade = copy.grade;}
@@ -44,7 +50,7 @@ void Bureaucrat::incrementGrade()
 {
 	try {
 		if (this->grade - 1 < 1)
-			throw GradeTooHighException();
+			throw Bureaucrat::GradeTooHighException();
 		else
 			this->grade--;
 	}
@@ -57,7 +63,7 @@ void Bureaucrat::decrementGrade()
 {
 	try {
 		if (this->grade + 1 > 150)
-			throw GradeTooLowException();
+			throw Bureaucrat::GradeTooLowException();
 		else
 			this->grade++;
 	}
@@ -66,11 +72,18 @@ void Bureaucrat::decrementGrade()
 	}
 }
 
-// Operators
-Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
+void	Bureaucrat::signForm(Form &form)
 {
-	this->grade = assign.getGrade();
-	return *this;
+	if (form.getIsSigned() == true)
+		std::cout << this->name << " signed " << form.getName() << std::endl;
+	else {
+		try {
+			throw Bureaucrat::GradeTooLowException();
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+	}
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)

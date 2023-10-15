@@ -6,15 +6,15 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2023/10/06 22:58:47 by hiper            ###   ########.fr        #
+#    Updated: 2023/10/15 20:08:02 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = bureaucrat
+NAME = form
 RM = rm
-FILESC = main.cpp Bureaucrat.cpp
+FILESC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

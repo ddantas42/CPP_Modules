@@ -4,10 +4,13 @@
 # include <iostream>
 # include <string>
 
+class Bureaucrat;
+
 class Form
 {
 	public:
 		// Constructors
+		Form();
 		Form(const std::string &name, int gradeToSign, int gradeToExecute);
 		Form(const Form &copy);
 		
@@ -18,9 +21,11 @@ class Form
 		Form & operator=(const Form &assign);
 		
 		const std::string getName() const { return this->name; };
-		bool getIsSigned() const { return this->isSigned; };
-		int getGradeToSign() const { return this->gradeToSign; };
-		int getGradeToExecute() const { return this->gradeToExecute; };
+		bool	getIsSigned() const { return this->isSigned; };
+		int		getGradeToSign() const { return this->gradeToSign; };
+		int		getGradeToExecute() const { return this->gradeToExecute; };
+
+		void	beSigned(Bureaucrat &bureaucrat);
 
 		class GradeTooLowException : public std::exception
 		{
@@ -37,7 +42,6 @@ class Form
 		const int gradeToSign;
 		const int gradeToExecute;
 
-		Form() {};
 };
 
 std::ostream&		operator<<(std::ostream &out, const Form& form);
