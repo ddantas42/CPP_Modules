@@ -68,5 +68,6 @@ std::ostream&	operator<<(std::ostream &out, const Form& Form)
 	std::cout <<
 		"Grade to sign: " << Form.getGradeToSign() << std::endl <<
 		"Grade to execute: " << Form.getGradeToExecute() << std::endl;
+		
 	return out;
 }
