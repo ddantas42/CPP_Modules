@@ -33,7 +33,7 @@ Form & Form::operator=(const Form &assign)
 	return *this;
 }
 
-int	Form::beSigned(Bureaucrat &bureaucrat)
+void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	try {
 		if (this->getIsSigned() == true)
@@ -44,7 +44,6 @@ int	Form::beSigned(Bureaucrat &bureaucrat)
 			std::cout << "Form "
 					<<	this->getName() << " was signed by "
 					<< bureaucrat.getName() << std::endl;
-			return (1);
 		}
 		else
 			throw Form::GradeTooLowException();
@@ -52,12 +51,10 @@ int	Form::beSigned(Bureaucrat &bureaucrat)
 	}
 	catch (char *str) {
 		std::cout << str << std::endl;
-		return (2);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
-	return (0);
 }
 
 std::ostream&	operator<<(std::ostream &out, const Form& Form)

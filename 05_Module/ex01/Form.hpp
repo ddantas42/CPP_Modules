@@ -3,8 +3,8 @@
 
 # include <iostream>
 # include <string>
-
-class Bureaucrat;
+# include "Bureaucrat.hpp"
+// class Bureaucrat;
 
 class Form
 {
