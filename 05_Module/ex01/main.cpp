@@ -21,11 +21,15 @@ int main()
 
 	Form		form("hey_form", 10, 10);
 	
-	std::cout << Josh << std::endl;	
+	std::cout << Josh;	
 	std::cout << Jam << std::endl;	
+	std::cout << form << std::endl;	
 	
+	form.beSigned(Jam);
+	form.beSigned(Josh);
+	std::cout << std::endl;
+	std::cout << form << std::endl;	
 	
-	
-	
+
 	return 0;
 }

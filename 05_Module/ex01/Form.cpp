@@ -37,8 +37,8 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	try {
 		if (this->getIsSigned() == true)
-			throw "Form already signed";
-		if (bureaucrat.getGrade() <= this->gradeToSign)
+			std::cout << "Form " << this->getName() << " is already signed" << std::endl;
+		else if (bureaucrat.getGrade() <= this->gradeToSign)
 		{
 			this->isSigned = true;
 			std::cout << "Form "
@@ -49,9 +49,6 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 			throw Form::GradeTooLowException();
 
 	}
-	catch (char *str) {
-		std::cout << str << std::endl;
-	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -61,7 +58,14 @@ std::ostream&	operator<<(std::ostream &out, const Form& Form)
 {
 	std::cout <<
 		"Form name: " << Form.getName() << std::endl <<
-		"Is form signed: " << Form.getIsSigned() << std::endl <<
+		"Is form signed: ";
+
+	if (Form.getIsSigned() == true)
+		std::cout << "Yes" << std::endl;
+	else
+		std::cout << "No" << std::endl;
+		
+	std::cout <<
 		"Grade to sign: " << Form.getGradeToSign() << std::endl <<
 		"Grade to execute: " << Form.getGradeToExecute() << std::endl;
 	return out;
