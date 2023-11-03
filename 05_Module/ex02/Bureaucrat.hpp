@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-
+# include "AForm.hpp"
 
 class AForm;
 

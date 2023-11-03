@@ -13,15 +13,18 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	Bureaucrat	Josh("Josh", 1);
-	Bureaucrat Jam("Jam", 150);
+	Bureaucrat	Jam("Jam", 150);
+	ShrubberyCreationForm	Shrubbery;
 
 	std::cout << Josh;	
 	std::cout << Jam << std::endl;	
 	
+	Shrubbery.execute(Josh);
 	std::cout << std::endl;
 	
 

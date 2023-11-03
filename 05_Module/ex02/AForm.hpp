@@ -5,6 +5,8 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class AForm
 {
 	protected:
@@ -37,6 +39,8 @@ class AForm
 			const char* what() const throw() {return "Grade is too high";}
 		};
 		
+		void	execute(Bureaucrat const & executor) const;
+
 	private:
 		const std::string name;
 		bool isSigned;
