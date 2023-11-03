@@ -28,14 +28,22 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() <= this->getGradeToExecute())
-	{
-		std::ofstream MyFile("filename.txt");
-		std::string tree = 
+	try {
+		if (executor.getGrade() <= this->getGradeToExecute())
+		{
+			std::ofstream MyFile((executor.getName() + "_shrubbery").c_str());
+			std::string tree = 
 "         # #\\### ####\n        ### \\/#|### |/####\n       ##\\/#/ \\||/##/_/##/_#\n     ###  \\/###|/ \\/ # ###\n   ##_\\_#\\_\\## | #/###_/_####\n  ## #### # \\ #| /  #### ##/##\n   __#_--###`  |{,###---###-~\n             \\ }{\n              }}{\n              }}{\n              {{}\n        , -=-~{ .-^- _\n              `}\n               {";
-		MyFile << tree;
-		MyFile.close();
+			MyFile << tree;
+			MyFile.close();
+		}
+		else
+		{
+			throw AForm::GradeTooLowException();
+		}
 	}
-	else
-	{}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

@@ -14,7 +14,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = forms
 RM = rm
-FILESC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+FILESC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 
