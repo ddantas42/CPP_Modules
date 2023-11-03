@@ -28,6 +28,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	srand(time(NULL));
 	int random = rand() % 2;
 	try {
 		if (executor.getGrade() > this->getGradeToExecute())
