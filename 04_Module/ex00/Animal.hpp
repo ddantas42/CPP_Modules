@@ -33,7 +33,7 @@ class Animal
 		Animal & operator=(const Animal &assign);
 		std::string getType(void) const;
 		
-		void virtual makeSound(void) const;
+		virtual void makeSound(void) const;
 };
 
 #endif

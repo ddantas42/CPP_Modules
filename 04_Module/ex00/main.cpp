@@ -50,6 +50,6 @@ int main()
 	std::cout << std::endl;
 
 	delete meta2;
-	delete WrongCat1	;
+	delete WrongCat1;
 	return 0;
 }
