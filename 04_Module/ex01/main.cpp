@@ -16,31 +16,31 @@
 
 #include "WrongCat.hpp"
 
-int main()
-{
-	Dog creative;
+// int main()
+// {
+// 	Dog creative;
 
-	std::cout << std::endl;
+// 	std::cout << std::endl;
 
-	creative.showIdeas();
-	creative.getBrain()->ideias[0] = "I should cut my nails!";
-	creative.getBrain()->ideias[1] = "Agua de coco!";
-	creative.showIdeas();
-	std::cout << std::endl;
+// 	creative.showIdeas();
+// 	creative.getBrain()->ideias[0] = "I should cut my nails!";
+// 	creative.getBrain()->ideias[1] = "Agua de coco!";
+// 	creative.showIdeas();
+// 	std::cout << std::endl;
 	
-	Dog Ideia_thief;
+// 	Dog Ideia_thief;
 
-	Ideia_thief.showIdeas();
+// 	Ideia_thief.showIdeas();
 	
-	Ideia_thief = creative;
-	std::cout << std::endl;
+// 	Ideia_thief = creative;
+// 	std::cout << std::endl;
 
-	Ideia_thief.showIdeas();
+// 	Ideia_thief.showIdeas();
 	
-	std::cout << std::endl;
+// 	std::cout << std::endl;
 	
-	return (0);
-}
+// 	return (0);
+// }
 
 // int main()
 // {
@@ -85,16 +85,16 @@ int main()
 // 	return (0);
 // }
 
-// int main()
-// {
-// 	const Animal* j = new Dog();
-// 	const Animal* i = new Cat();
+int main()
+{
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-// 	delete j;//should not create a leak
-// 	delete i;
+	delete j;//should not create a leak
+	delete i;
 	
-// 	return 0;
-// }
+	return 0;
+}
 
 // int main()
 // {

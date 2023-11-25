@@ -26,12 +26,13 @@
 // 	src3 = src;
 
 // 	AMateria *tmp = NULL;
-// 	tmp = new Ice();
+// 	tmp = src.createMateria("ice");
 	
 // 	Character Diogo("Diogo");
 // 	Diogo.equip(new Cure());
 // 	Diogo.use(0, Diogo);
-	
+// 	Diogo.use(1, Diogo);
+
 // 	Character clone(Diogo);
 // 	clone.equip(new Ice());
 // 	clone.use(0, Diogo);
@@ -70,28 +71,28 @@
 // 	return 0;
 // }
 
-int main()
-{
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+// int main()
+// {
+// 	IMateriaSource* src = new MateriaSource();
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());
 	
-	ICharacter* me = new Character("me");
+// 	ICharacter* me = new Character("me");
 	
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+// 	AMateria* tmp;
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
 	
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
+// 	ICharacter* bob = new Character("bob");
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
 
-	delete bob;
-	delete me;
-	delete src;
+// 	delete bob;
+// 	delete me;
+// 	delete src;
 
-	return 0;
-}
+// 	return 0;
+// }
