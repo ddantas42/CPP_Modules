@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/13 16:25:36 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/13 17:46:12 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,7 @@ void Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signForm(Form &form)
 {
-	if (form.getIsSigned() == true)
-		std::cout << this->name << " signed " << form.getName() << std::endl;
-	else {
-		try {
-			throw Bureaucrat::GradeTooLowException();
-		}
-		catch(const std::exception& e) {
-			std::cerr << e.what() << '\n';
-		}
-	}
+	form.beSigned(*this);
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)

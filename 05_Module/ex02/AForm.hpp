@@ -9,13 +9,12 @@ class Bureaucrat;
 
 class AForm
 {
-	protected:
 	public:
+
+		// Constructors
 		AForm();
 		AForm(const std::string &name, int gradeToSign, int gradeToExecute);
 		AForm(const AForm &copy);
-		
-		// Constructors
 		
 		// Destructor
 		~AForm() {};

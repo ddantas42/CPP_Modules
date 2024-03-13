@@ -31,6 +31,11 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	if (this->getIsSigned() == false)
+	{
+		std::cout << "Form " << this->getName() << " has not been signed" << std::endl;
+		return;
+	}
 	srand(time(NULL));
 	int random = rand() % 2;
 	try {
