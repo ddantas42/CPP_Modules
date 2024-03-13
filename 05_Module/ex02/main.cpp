@@ -15,20 +15,29 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
 int main()
 {
-	Bureaucrat	Josh("Josh", 1);
-	Bureaucrat	Jam("Jam", 150);
+	Bureaucrat				Josh("Josh", 1);
+	Bureaucrat				Jam("Jam", 150);
 	ShrubberyCreationForm	Shrubbery;
 	RobotomyRequestForm		Robotomy;
+	PresidentialPardonForm	Presidential;
 
 	std::cout << Josh;	
 	std::cout << Jam << std::endl;	
 	
 	Shrubbery.execute(Josh);
 	Robotomy.execute(Josh);
+	Presidential.execute(Josh);
+
+	Shrubbery.execute(Jam);
+	Robotomy.execute(Jam);
+	Presidential.execute(Jam);
+
+	Josh.signAForm(Shrubbery);
 	std::cout << std::endl;
 	
 

@@ -14,7 +14,7 @@
 
 // Constructors
 AForm::AForm() : name("default"), gradeToSign(75), gradeToExecute(75)
-{isSigned = false;}
+{this->isSigned = false;}
 
 AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) :
 name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)

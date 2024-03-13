@@ -6,11 +6,12 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/15 20:57:41 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/13 16:25:36 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Constructors
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)

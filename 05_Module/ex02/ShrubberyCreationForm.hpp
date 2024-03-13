@@ -21,7 +21,6 @@ class ShrubberyCreationForm : public AForm
 		void execute(Bureaucrat const & executor) const;
 
 	private:
-		
 };
 
 #endif

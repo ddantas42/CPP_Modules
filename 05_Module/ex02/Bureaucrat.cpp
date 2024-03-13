@@ -74,15 +74,14 @@ void Bureaucrat::decrementGrade()
 
 void	Bureaucrat::signAForm(AForm &form)
 {
-	if (form.getIsSigned() == true)
-		std::cout << this->name << " signed " << form.getName() << std::endl;
-	else {
-		try {
+	try {
+		if (form.getIsSigned() == true)
+			std::cout << this->name << " signed " << form.getName() << std::endl;
+		else
 			throw Bureaucrat::GradeTooLowException();
-		}
-		catch(const std::exception& e) {
-			std::cerr << e.what() << '\n';
-		}
+	}
+	catch(std::exception &e) {
+		std::cout << e.what() << std::endl;
 	}
 }
 
