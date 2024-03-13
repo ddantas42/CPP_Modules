@@ -10,6 +10,7 @@ class RobotomyRequestForm : public AForm
 	public:
 		// Constructors
 		RobotomyRequestForm();
+		RobotomyRequestForm(const std::string &target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
 		
 		// Destructor

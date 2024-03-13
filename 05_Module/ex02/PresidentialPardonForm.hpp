@@ -10,6 +10,7 @@ class PresidentialPardonForm : public AForm
 	public:
 		// Constructors
 		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string &target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		
 		// Destructor

@@ -2,12 +2,18 @@
 #include <fstream>
 
 // Constructors
-PresidentialPardonForm::PresidentialPardonForm() : AForm("default_Shruberry", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm()
+: AForm("default_Shruberry", 25, 5), target("default_target")
 {
-
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm()
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+: AForm("default_Shruberry", 25, 5), target(target)
+{
+}
+
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy): AForm()
 {
 	(void) copy;
 }
@@ -32,7 +38,7 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	{
 		if (executor.getGrade() <= this->getGradeToExecute())
 		{
-			std::cout << "Bureaucrat " << executor.getName() << "  has been pardoned by Zaphod Beeblebrox" << std::endl;
+			std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 		}
 		else
 		{

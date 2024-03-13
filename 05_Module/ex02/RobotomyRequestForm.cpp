@@ -2,10 +2,13 @@
 #include <cstdlib>
 
 // Constructors
-RobotomyRequestForm::RobotomyRequestForm() : AForm("default_robotomy", 72, 45)
-{
+RobotomyRequestForm::RobotomyRequestForm()
+: AForm("default_robotomy", 72, 45), target("default_target")
+{}
 
-}
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+: AForm("default_robotomy", 72, 45), target(target)
+{}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm()
 {
@@ -39,11 +42,11 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		{
 			if (random == 0)
 			{
-				std::cout << "Bureaucrat " << executor.getName() << " has been robotomized successfully" << std::endl;
+				std::cout << this->target << " has been robotomized successfully" << std::endl;
 			}
 			else
 			{
-				std::cout << "Bureaucrat " << executor.getName() << " has failed to be robotomized" << std::endl;
+				std::cout << this->target << " has failed to be robotomized" << std::endl;
 			}
 		}
 	}
