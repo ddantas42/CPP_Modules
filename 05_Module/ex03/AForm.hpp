@@ -17,7 +17,7 @@ class AForm
 		AForm(const AForm &copy);
 		
 		// Destructor
-		~AForm() {};
+		virtual ~AForm() {};
 		
 		// Operators
 		AForm & operator=(const AForm &assign);

@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:30:39 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/16 16:55:19 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 18:00:08 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@
 
 int main()
 {
-	// Bureaucrat	Josh("Josh", 1);
-	// Bureaucrat	Jam("Jam", 150);
+	Bureaucrat	Josh("Josh", 1);
 	Intern intern;
 	AForm *form;
 
-	form = intern.makeForm("lerobotomy request", "My Home");
+	form = intern.makeForm("robotomy request", "My Home");
 	
-	// Josh.executeForm(*form);
-	// Josh.signAForm(*form);
-	// Josh.executeForm(*form);
+	Josh.executeForm(*form);
+	Josh.signAForm(*form);
+	Josh.executeForm(*form);
+
 
 (void)form;
 	std::cout << std::endl;
-	
+	delete form;
 	return 0;
 }
