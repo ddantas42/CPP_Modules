@@ -15,6 +15,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy): AForm()
 {
+	this->target = copy.target;
 	(void) copy;
 }
 

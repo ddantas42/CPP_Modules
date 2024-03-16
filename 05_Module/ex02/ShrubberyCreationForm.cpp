@@ -16,6 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm()
 {
+	this->target = copy.target;
 	(void) copy;
 }
 

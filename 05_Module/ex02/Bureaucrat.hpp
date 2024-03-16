@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:26 by hiper             #+#    #+#             */
-/*   Updated: 2023/10/15 21:03:20 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/15 09:25:31 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class Bureaucrat
 		void				decrementGrade();
 
 		void				signAForm(AForm &AForm);
+		void				executeForm(AForm const & form); 
 		
 	private:
 		const std::string	name;	

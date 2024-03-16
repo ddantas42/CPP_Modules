@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:30:39 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/13 17:46:45 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 15:04:42 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,18 @@ int main()
 	Presidential.execute(Jam);
 
 	Josh.signAForm(Shrubbery);
-	Shrubbery.execute(Jam);
-	Shrubbery.execute(Josh);
+	Josh.signAForm(Presidential);
+	Josh.signAForm(Robotomy);
+	
+	std::cout << "////////////////" << std::endl;
+	// Shrubbery.execute(Jam);
+	Jam.executeForm(Shrubbery);
+	
+	std::cout << "////////////////" << std::endl;
+	// Shrubbery.execute(Josh);
+	// Josh.executeForm(Shrubbery);
+	// Josh.executeForm(Robotomy);
+	Robotomy.execute(Josh);
 
 	std::cout << std::endl;
 	

@@ -6,11 +6,13 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/13 17:46:01 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 14:57:55 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+
 
 // Constructors
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
@@ -75,6 +77,11 @@ void Bureaucrat::decrementGrade()
 void	Bureaucrat::signAForm(AForm &form)
 {
 	form.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	form.execute(*this);
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)

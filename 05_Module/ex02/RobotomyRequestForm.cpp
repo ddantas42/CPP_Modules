@@ -12,6 +12,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AForm()
 {
+	this->target = copy.target;
 	(void) copy;
 }
 

@@ -38,7 +38,7 @@ class AForm
 			const char* what() const throw() {return "Grade is too high";}
 		};
 		
-		void	execute(Bureaucrat const & executor) const;
+		virtual void execute(Bureaucrat const & executor) const {(void)executor;std::cout << "this shouldn-t be here...\n";};
 
 	private:
 		const std::string name;
