@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:30:39 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/16 18:00:08 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 18:02:24 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main()
 	Josh.executeForm(*form);
 
 
-(void)form;
 	std::cout << std::endl;
 	delete form;
 	return 0;
