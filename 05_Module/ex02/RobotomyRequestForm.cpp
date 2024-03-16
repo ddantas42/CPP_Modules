@@ -26,7 +26,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // Operators
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &assign)
 {
-	(void) assign;
+	this->target = assign.target;
 	return *this;
 }
 

@@ -30,7 +30,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 // Operators
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &assign)
 {
-	(void) assign;
+	this->target = assign.target;
 	return *this;
 }
 

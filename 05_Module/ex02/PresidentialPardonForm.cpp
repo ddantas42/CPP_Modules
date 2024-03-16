@@ -29,7 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 // Operators
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &assign)
 {
-	(void) assign;
+	this->target = assign.target;
 	return *this;
 }
 

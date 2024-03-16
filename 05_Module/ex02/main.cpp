@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:30:39 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/16 15:04:42 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 15:25:55 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	ShrubberyCreationForm	Shrubbery("My Home");
 	RobotomyRequestForm		Robotomy("My Robot");
 	PresidentialPardonForm	Presidential("Mr. President");
-
+	
 	std::cout << Josh;	
 	std::cout << Jam << std::endl;	
 	
@@ -47,9 +47,9 @@ int main()
 	
 	std::cout << "////////////////" << std::endl;
 	// Shrubbery.execute(Josh);
-	// Josh.executeForm(Shrubbery);
+	Josh.executeForm(Shrubbery);
 	// Josh.executeForm(Robotomy);
-	Robotomy.execute(Josh);
+	// Robotomy.execute(Josh);
 
 	std::cout << std::endl;
 	
