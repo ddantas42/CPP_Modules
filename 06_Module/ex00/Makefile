@@ -6,13 +6,13 @@
 #    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2024/03/16 18:10:52 by hiper            ###   ########.fr        #
+#    Updated: 2024/03/18 12:13:51 by hiper            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = scalar
+NAME = converter
 RM = rm
 FILESC = main.cpp ScalarConverter.cpp
 
