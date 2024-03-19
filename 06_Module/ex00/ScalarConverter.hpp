@@ -24,12 +24,12 @@ class ScalarConverter
 		ScalarConverter & operator=(const ScalarConverter &assign);
 		
 		// Converters
-		/*
 		void static toChar(std::string str);
 		void static toInt(std::string str);
 		void static toFloat(std::string str);
 		void static toDouble(std::string str);
-		*/
+
+		int static isInt(std::string str);
 		
 };
 
