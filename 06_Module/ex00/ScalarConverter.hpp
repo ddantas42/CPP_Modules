@@ -4,8 +4,12 @@
 # include <iostream>
 # include <string>
 # include <stdlib.h>
+# include <stdint.h>
 # include <limits>
 # include <iomanip>
+
+# define ERROR 1
+# define ALL_GOOD 0
 
 class ScalarConverter
 {
@@ -30,6 +34,8 @@ class ScalarConverter
 		void static toDouble(std::string str);
 
 		int static isInt(std::string str);
+
+		bool static limit_check(std::string str, long double dbl, char *pEnd);
 		
 };
 

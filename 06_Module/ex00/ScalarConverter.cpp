@@ -24,14 +24,38 @@ int ScalarConverter::isInt(std::string str)
 	return (0);
 }
 
+bool ScalarConverter::limit_check(std::string str, long double dbl, char *pEnd)
+{
+	if ((pEnd[0] != '\0' && pEnd[0] != '\0') && (str != "nan"))
+	{
+		
+	}
+
+	if (dbl > INT32_MAX || dbl < INT32_MIN)
+	{
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return (ERROR);
+	}
+	return (ALL_GOOD);
+
+	(void)str;
+	(void)pEnd;
+}
+
 void ScalarConverter::convert(std::string str)
 {
-	// char *pEnd = NULL;
-	// long double dbl = strtod(str.c_str(), &pEnd);
+	char *pEnd = NULL;
 
-	// std::cout << "Double: " << dbl << std::endl;
-	// std::cout << "pEnd: " << pEnd << std::endl;
+	long double dbl = strtod(str.c_str(), &pEnd);
+	std::cout << "Double: " << dbl << std::endl;
+	std::cout << "pEnd: " << pEnd << std::endl << std::endl;
 
+	
+	if (ScalarConverter::limit_check(str, dbl, pEnd))
+		return ;
 	
 	if (ScalarConverter::isInt(str))
 	{
@@ -41,6 +65,7 @@ void ScalarConverter::convert(std::string str)
 		ScalarConverter::toFloat(str);
 		ScalarConverter::toDouble(str);
 	}
+
 }
 
 
