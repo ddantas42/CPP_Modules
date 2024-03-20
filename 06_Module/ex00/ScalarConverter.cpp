@@ -14,7 +14,10 @@ int ScalarConverter::isInt(std::string str)
 	{
 		i++;
 		if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
+		{
+			std::cout << "not an int" << std::endl;
 			return (0);
+		}
 	}
 	if (str[i] == '\0')
 		return (1);
@@ -23,13 +26,14 @@ int ScalarConverter::isInt(std::string str)
 
 void ScalarConverter::convert(std::string str)
 {
-	char *pEnd = NULL;
-	long double dbl = strtod(str.c_str(), &pEnd);
-	
-	std::cout << "Double: " << dbl << std::endl;
-	std::cout << "pEnd: " << pEnd << std::endl;
+	// char *pEnd = NULL;
+	// long double dbl = strtod(str.c_str(), &pEnd);
 
-	if (pEnd && ScalarConverter::isInt(str))
+	// std::cout << "Double: " << dbl << std::endl;
+	// std::cout << "pEnd: " << pEnd << std::endl;
+
+	
+	if (ScalarConverter::isInt(str))
 	{
 		std::cout << "here" << std::endl;
 		ScalarConverter::toChar(str);
@@ -42,17 +46,22 @@ void ScalarConverter::convert(std::string str)
 
 void ScalarConverter::toChar(std::string str)
 {
-	std::cout
-		<< "char: "
-		<< str
-		<< std::endl;
+	int display = std::atoi(str.c_str());
+	std::string result = "Impossible";
+
+	if (display >= 32 && display <= 126)
+		result = static_cast<char>(display);
+	else if ((display >= 0 && display <= 31) || (display >= 127 && display <= 255))
+		result = "Non displayable";
+
+	std::cout << "char: " << result << std::endl;
 }
 
 void ScalarConverter::toInt(std::string str)
 {
 	std::cout
 		<< "int: "
-		<< str
+		<< static_cast<int>(std::atoi(str.c_str()))
 		<< std::endl;
 }
 
@@ -60,7 +69,7 @@ void ScalarConverter::toFloat(std::string str)
 {
 	std::cout
 		<< "float: "
-		<< str
+		<< static_cast<float>(std::atoi(str.c_str()))
 		<< std::endl;
 }
 
@@ -68,6 +77,6 @@ void ScalarConverter::toDouble(std::string str)
 {
 	std::cout
 		<< "double: "
-		<< str
+		<< static_cast<double>(std::atoi(str.c_str()))
 		<< std::endl;
 }
