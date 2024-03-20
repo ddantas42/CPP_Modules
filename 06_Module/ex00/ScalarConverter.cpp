@@ -26,11 +26,11 @@ int ScalarConverter::isInt(std::string str)
 
 bool ScalarConverter::limit_check(std::string str, long double dbl, char *pEnd)
 {
-	if ((pEnd[0] != '\0' && pEnd[0] != '\0') && (str != "nan"))
-	{
-		
+	if ((pEnd[0] != '\0' && pEnd[1] != '\0') || str == "inff" || str == "inf") {
+		std::cout << "invalid parameter" << std::endl;
+		return (ERROR);
 	}
-
+	// if (str = "-inff")
 	if (dbl > INT32_MAX || dbl < INT32_MIN)
 	{
 		std::cout << "int: impossible" << std::endl;
@@ -79,7 +79,11 @@ void ScalarConverter::toChar(std::string str)
 	else if ((display >= 0 && display <= 31) || (display >= 127 && display <= 255))
 		result = "Non displayable";
 
-	std::cout << "char: " << result << std::endl;
+	std::cout
+		<< "char: '"
+		<< result
+		<< "'"
+		<< std::endl;
 }
 
 void ScalarConverter::toInt(std::string str)
@@ -94,7 +98,10 @@ void ScalarConverter::toFloat(std::string str)
 {
 	std::cout
 		<< "float: "
-		<< static_cast<float>(std::atoi(str.c_str()))
+		<< std::fixed
+		<< std::setprecision(1)
+		<< std::atof(str.c_str())
+		<< 'f'
 		<< std::endl;
 }
 
@@ -102,6 +109,8 @@ void ScalarConverter::toDouble(std::string str)
 {
 	std::cout
 		<< "double: "
-		<< static_cast<double>(std::atoi(str.c_str()))
+		<< std::fixed // avoid cientific notation
+		<< std::setprecision(1) // past dot precision 1
+		<< static_cast<double>(std::strtod(str.c_str(), NULL))
 		<< std::endl;
 }
