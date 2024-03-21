@@ -25,7 +25,7 @@ Span & Span::operator=(const Span &assign)
 
 void Span::addNumber(int n)
 {
-	if (this->numbers.size() + 1 < this->size)
+	if (this->numbers.size() + 1 > this->size)
 		this->numbers.push_back(n);
 	else
 	{
@@ -64,4 +64,15 @@ int Span::longestSpan()
 	int max = *(std::max_element(this->numbers.begin(), this->numbers.end()));
 	
 	return max - min;
+}
+
+void Span::AddRange(std::vector<int> v)
+{
+	if (this->numbers.size() + v.size() > this->size)
+		this->numbers.insert(this->numbers.end(), v.begin(), v.end());
+	else
+	{
+		std::cout << "Error: couldn't add range" << std::endl;
+		throw std::string("Exception: Vector is full!");
+	}
 }
