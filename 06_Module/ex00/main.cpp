@@ -16,6 +16,24 @@
 int main(int argc, char **argv)
 {
 
+	// std::cout << "Int max: " << std::numeric_limits<int>::max() << std::endl;
+	// std::cout << "Int max define: " << INT32_MAX << std::endl;
+
+	// std::cout << "Int min: " << std::numeric_limits<int>::min() << std::endl;
+	// std::cout << "Int min define: " << INT32_MIN << std::endl;
+
+	// std::cout << "Float max: " << std::numeric_limits<float>::max() << std::endl;
+	// std::cout << "Float min: " << std::numeric_limits<float>::min() << std::endl;
+
+	// std::cout << "Double max: " << std::numeric_limits<double>::max() << std::endl;
+	// std::cout << "Double max define: " << __DBL_MAX__ << std::endl;
+
+	// std::cout << "Double min: " << std::numeric_limits<double>::min() << std::endl;
+	// std::cout << "Double max define: " << __DBL_MIN__ << std::endl;
+
+	// return 0;
+
+
 	if (argc == 2)
 	{
 		std::string str = argv[1];

@@ -51,16 +51,14 @@ bool ScalarConverter::limit_check(std::string str, long double dbl, char *pEnd)
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
-		if (dbl > __DBL_MAX__ || dbl < -__DBL_MAX__ - 1)
-		{
+		if (dbl > std::numeric_limits<float>::max() || dbl < std::numeric_limits<float>::min())
 			std::cout << "float: impossible" << std::endl;
-			std::cout << "double: impossible" << std::endl;
-		}
 		else
-		{
 			std::cout << "float: " << dbl << "f" << std::endl;
+		if (dbl > __DBL_MAX__ || dbl < __DBL_MIN__)
+			std::cout << "double: impossible" << std::endl;
+		else
 			std::cout << "double: " << dbl << std::endl;
-		}
 		return (ERROR);
 	}
 
@@ -78,32 +76,20 @@ void ScalarConverter::convert(std::string str)
 	std::cout << "Double: " << dbl << std::endl;
 	std::cout << "pEnd: " << pEnd << std::endl << std::endl;
 
-	
 	if (ScalarConverter::limit_check(str, dbl, pEnd))
 		return ;
 	std::cout << "Passed Limit Check" << std::endl;
 
-	if (ScalarConverter::is_int(str))
-	{
-		ScalarConverter::int_to_char(str);
-		ScalarConverter::int_to_int(str);
-		ScalarConverter::int_to_float(str);
-		ScalarConverter::int_to_double(str);
-	}
-	else
-	{
-		ScalarConverter::int_to_char(str);
-		ScalarConverter::int_to_int(str);
-		ScalarConverter::int_to_float(str);
-		ScalarConverter::int_to_double(str);
-	}
-
+		ScalarConverter::int_to_char(dbl);
+		ScalarConverter::int_to_int(dbl);
+		ScalarConverter::int_to_float(dbl);
+		ScalarConverter::int_to_double(dbl);
 } 
 
 
-void ScalarConverter::int_to_char(std::string str)
+void ScalarConverter::int_to_char(long double dbl)
 {
-	int display = std::atoi(str.c_str());
+	int display = static_cast<int>(dbl);
 	std::string result = "impossible";
 
 	if (display >= 32 && display <= 126)
@@ -117,31 +103,31 @@ void ScalarConverter::int_to_char(std::string str)
 		<< std::endl;
 }
 
-void ScalarConverter::int_to_int(std::string str)
+void ScalarConverter::int_to_int(long double dbl)
 {
 	std::cout
 		<< "int: "
-		<< static_cast<int>(std::atoi(str.c_str()))
+		<< static_cast<int>(dbl)
 		<< std::endl;
 }
 
-void ScalarConverter::int_to_float(std::string str)
+void ScalarConverter::int_to_float(long double dbl)
 {
 	std::cout
 		<< "float: "
 		<< std::fixed
 		<< std::setprecision(1)
-		<< std::atof(str.c_str())
+		<< dbl
 		<< 'f'
 		<< std::endl;
 }
 
-void ScalarConverter::int_to_double(std::string str)
+void ScalarConverter::int_to_double(long double dbl)
 {
 	std::cout
 		<< "double: "
 		<< std::fixed // avoid cientific notation
 		<< std::setprecision(1) // past dot precision 1
-		<< static_cast<double>(std::strtod(str.c_str(), NULL))
+		<< dbl
 		<< std::endl;
 }

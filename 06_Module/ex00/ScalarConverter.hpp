@@ -28,10 +28,10 @@ class ScalarConverter
 		ScalarConverter & operator=(const ScalarConverter &assign);
 		
 		// Converters
-		void static int_to_char(std::string str);
-		void static int_to_int(std::string str);
-		void static int_to_float(std::string str);
-		void static int_to_double(std::string str);
+		void static int_to_char(long double dbl);
+		void static int_to_int(long double dbl);
+		void static int_to_float(long double dbl);
+		void static int_to_double(long double dbl);
 
 		int static is_int(std::string str);
 
