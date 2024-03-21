@@ -28,7 +28,7 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) -f $(OBJS)
-	
+
 fclean: clean
 	$(RM) -f $(NAME)
 
