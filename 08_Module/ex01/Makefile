@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 NAME = span
 RM = rm
 FILESC = main.cpp Span.cpp
@@ -21,7 +21,7 @@ OBJS = $(FILESC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(FILESH)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -lm
 
 %.o: %.cpp
 	c++ $(CFLAGS) -c -o $@ $<

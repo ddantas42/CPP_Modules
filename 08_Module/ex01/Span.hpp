@@ -25,7 +25,7 @@ class Span
 		int shortestSpan();
 		int longestSpan();
 
-		void AddRange(std::vector<int> v);
+		void AddRange(std::vector<int> nums);
 
 	private:
 		unsigned int size;
