@@ -24,7 +24,7 @@ class Array
 			array = new T[src.size()];
 			_size = src.size();
 			for (unsigned int i = 0; i < _size; i++)
-				array[i] = src[i];
+				array[i] = src.array[i];
 		}
 
 		// Destructors
