@@ -42,26 +42,17 @@ int Span::shortestSpan()
 	int min = *(std::min_element(this->numbers.begin(), this->numbers.end()));
 	int max = *(std::max_element(this->numbers.begin(), this->numbers.end()));
 
-	double mid = (min - max) / 2;
+	double mid = (max - min) / 2;
 
-	std::cout << "Mid: " << mid << std::endl;
 	for (std::vector<int>::iterator i = this->numbers.begin(); i != this->numbers.end(); i++)
 	{
-		if (*i < mid)
-			min = *i;
-		else if (*i >= mid)
-			break ;
+		for(std::vector<int>::iterator i2 = i + 1; i2 != this->numbers.end(); i2++)
+		{
+			if (std::abs(*i - *i2) < mid)
+				mid = std::abs(*i - *i2);
+		}
 	}
-	for (std::vector<int>::iterator i = this->numbers.end(); i != this->numbers.begin(); i--)
-	{
-		if (*i > mid)
-			max = *i;
-		else if (*i <= mid)
-			break ;
-	}
-	std::cout << "Min: " << min << std::endl;
-	std::cout << "Max: " << max << std::endl;
-	return max - min;
+	return mid;
 }
 
 int Span::longestSpan()
