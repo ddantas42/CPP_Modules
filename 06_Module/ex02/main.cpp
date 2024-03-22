@@ -55,15 +55,16 @@ void identify(Base* p)
 void identify(Base& p)
 {
 	try {
-		dynamic_cast<A&>(p); // if not sucefull (not A type) throws an exception
+		(void)dynamic_cast<A&>(p); // if not sucefull (not A type) throws an exception
 		std::cout << "A" << std::endl;
+		
 	}
 	catch (...) // any exceptions
 	{
 		// std::cout << "A failed to cast" << std::endl;
 	}
 	try {
-		dynamic_cast<B&>(p);
+		(void)dynamic_cast<B&>(p);
 		std::cout << "B" << std::endl;
 	}
 	catch (...) 
@@ -71,7 +72,7 @@ void identify(Base& p)
 		// std::cout << "B failed to cast" << std::endl;
 	}
 	try {
-		dynamic_cast<C&>(p);
+		(void)dynamic_cast<C&>(p);
 		std::cout << "C" << std::endl;
 	}
 	catch (...) 

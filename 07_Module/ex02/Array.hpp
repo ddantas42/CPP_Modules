@@ -8,7 +8,7 @@ class Array
 		// Constructors
 		Array(void) {
 			array = NULL;
-			size = 0;
+			_size = 0;
 		};
 
 		Array(unsigned int n)
