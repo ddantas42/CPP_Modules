@@ -20,9 +20,23 @@ int main()
 	Bureaucrat Josh3(Josh);
 	
 	std::cout << Josh;
-	Josh.incrementGrade();
+
+	try {
+		Josh.incrementGrade();
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	
 	std::cout << Josh << std::endl;
-	Josh.decrementGrade();
+
+	try {
+		Josh.decrementGrade();
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	
 	std::cout << Josh;
 	std::cout << Josh2;
 	std::cout << Josh3;

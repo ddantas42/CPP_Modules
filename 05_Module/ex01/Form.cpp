@@ -35,7 +35,6 @@ Form & Form::operator=(const Form &assign)
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
 {
-	try {
 		if (this->getIsSigned() == true)
 			std::cout << "Form " << this->getName() << " is already signed" << std::endl;
 		else if (bureaucrat.getGrade() <= this->gradeToSign)
@@ -48,10 +47,6 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 		else
 			throw Form::GradeTooLowException();
 
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
 std::ostream&	operator<<(std::ostream &out, const Form& Form)

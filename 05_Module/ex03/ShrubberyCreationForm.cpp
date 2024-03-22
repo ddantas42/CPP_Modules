@@ -41,7 +41,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::cout << "Form " << this->getName() << " has not been signed" << std::endl;
 		return;
 	}
-	try {
 		if (executor.getGrade() <= this->getGradeToExecute())
 		{
 			std::ofstream MyFile((this->target + "_shrubbery").c_str());
@@ -54,9 +53,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		{
 			throw AForm::GradeTooLowException();
 		}
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 }

@@ -15,18 +15,12 @@
 // Constructors
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
-	try {
-		if (grade < 1)
-			throw GradeTooHighException();
-		else if (grade > 150)
-			throw GradeTooLowException(); 
-		else
-			this->grade = grade;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-		this->grade = 0;
-	}
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException(); 
+	else
+		this->grade = grade;
 
 }
 
@@ -42,28 +36,18 @@ int	Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-	try {
 		if (this->grade - 1 < 1)
 			throw GradeTooHighException();
 		else
 			this->grade--;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
 void Bureaucrat::decrementGrade()
 {
-	try {
 		if (this->grade + 1 > 150)
 			throw GradeTooLowException();
 		else
 			this->grade++;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
 // Operators
