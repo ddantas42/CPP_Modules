@@ -29,21 +29,33 @@ int main()
 	std::cout << Josh;	
 	std::cout << Jam << std::endl;	
 	
-	Shrubbery.execute(Josh);
-	Robotomy.execute(Josh);
-	Presidential.execute(Josh);
+	try {
+		Shrubbery.execute(Josh);
+		Robotomy.execute(Josh);
+		Presidential.execute(Josh);
 
-	Shrubbery.execute(Jam);
-	Robotomy.execute(Jam);
-	Presidential.execute(Jam);
+		Shrubbery.execute(Jam);
+		Robotomy.execute(Jam);
+		Presidential.execute(Jam);
 
-	Josh.signAForm(Shrubbery);
-	Josh.signAForm(Presidential);
-	Josh.signAForm(Robotomy);
+		Josh.signAForm(Shrubbery);
+		Josh.signAForm(Presidential);
+		Josh.signAForm(Robotomy);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}	
 	
 	std::cout << "////////////////" << std::endl;
 	// Shrubbery.execute(Jam);
-	Jam.executeForm(Shrubbery);
+	
+	try {
+		Jam.executeForm(Shrubbery);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	
 	std::cout << "////////////////" << std::endl;
 	// Shrubbery.execute(Josh);
