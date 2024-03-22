@@ -14,7 +14,7 @@ class MutantStack
 		MutantStack(const MutantStack &copy) ;
 		
 		// Destructor
-		~MutantStack() {};
+		~MutantStack();
 		
 		// Operators
 		MutantStack & operator=(const MutantStack &assign) {stack = assign.stack; return *this;};
@@ -26,17 +26,25 @@ class MutantStack
 		size_t size();
 		bool empty();
 
-		// typedef typename std::stack<T>::container_type::iterator iterator;
-		// iterator begin()
-		// {
-		// 	return NULL;
-		// };
-
-		// iterator end()
-		// {
-		// 	return NULL;
-		// };
-
+		template <typename U>
+		class Iterator
+		{
+			public:
+				Iterator() {};
+				Iterator(T *ptr) : ptr(ptr) {};
+				Iterator(const Iterator &copy) : ptr(copy.ptr) {};
+				~Iterator() {};
+				Iterator & operator=(const Iterator &assign) {ptr = assign.ptr; return *this;};
+				bool operator!=(const Iterator &other) {return ptr != other.ptr;};
+				bool operator==(const Iterator &other) {return ptr == other.ptr;};
+				T & operator*() {return *ptr;};
+				Iterator & operator++() {ptr++; return *this;};
+				Iterator operator++(int) {Iterator tmp(*this); operator++(); return tmp;};
+				Iterator & operator--() {ptr--; return *this;};
+				Iterator operator--(int) {Iterator tmp(*this); operator--(); return tmp;};
+			private:
+				T *ptr;
+		};
 
 	private:
 		std::stack<T> stack;	
