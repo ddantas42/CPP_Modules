@@ -25,8 +25,20 @@ int main()
 	std::cout << Jam << std::endl;	
 	std::cout << form << std::endl;	
 	
-	form.beSigned(Jam);
-	form.beSigned(Josh);
+	try {
+		form.beSigned(Jam);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	
+	try {
+		form.beSigned(Josh);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	
 	std::cout << std::endl;
 	std::cout << form << std::endl;	
 	
