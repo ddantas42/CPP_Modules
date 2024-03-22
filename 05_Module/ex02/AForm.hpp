@@ -22,10 +22,10 @@ class AForm
 		// Operators
 		AForm & operator=(const AForm &assign);
 		
-		const std::string getName() const { return this->name; };
-		bool	getIsSigned() const { return this->isSigned; };
-		int		getGradeToSign() const { return this->gradeToSign; };
-		int		getGradeToExecute() const { return this->gradeToExecute; };
+		const std::string getName() const;
+		bool	getIsSigned() const;
+		int		getGradeToSign() const;
+		int		getGradeToExecute() const;
 
 		void	beSigned(Bureaucrat &bureaucrat);
 

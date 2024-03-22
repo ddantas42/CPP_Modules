@@ -66,3 +66,8 @@ std::ostream&	operator<<(std::ostream &out, const AForm& form)
 		
 	return out;
 }
+
+const std::string  AForm::getName() const { return this->name; }
+bool	AForm::getIsSigned() const { return this->isSigned; }
+int		AForm::getGradeToSign() const { return this->gradeToSign; }
+int		AForm::getGradeToExecute() const { return this->gradeToExecute; }
