@@ -58,6 +58,9 @@ AForm  *Intern::makeForm(std::string formName, std::string target)
 	}
 
 	std::cout << "Intern: I couldn't find that form name...." << std::endl;
+	delete form[0];
+	delete form[1];
+	delete form[2];
 	return NULL;
 }	
 

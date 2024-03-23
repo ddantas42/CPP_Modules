@@ -15,7 +15,7 @@ class Form
 		Form(const Form &copy);
 		
 		// Destructor
-		~Form() {};
+		~Form();
 		
 		// Operators
 		Form & operator=(const Form &assign);
@@ -29,11 +29,11 @@ class Form
 
 		class GradeTooLowException : public std::exception
 		{
-			const char* what() const throw() {return "Grade is too low";}
+			const char* what() const throw();
 		};
 		class GradeTooHighException : public std::exception 
 		{
-			const char* what() const throw() {return "Grade is too high";}
+			const char* what() const throw();
 		};
 		
 	private:

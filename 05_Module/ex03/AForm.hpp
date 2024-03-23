@@ -17,7 +17,7 @@ class AForm
 		AForm(const AForm &copy);
 		
 		// Destructor
-		virtual ~AForm() {};
+		virtual ~AForm();
 		
 		// Operators
 		AForm & operator=(const AForm &assign);
@@ -31,15 +31,15 @@ class AForm
 
 		class GradeTooLowException : public std::exception
 		{
-			const char* what() const throw() {return "Grade is too low";}
+			const char* what() const throw();
 		};
 		class GradeTooHighException : public std::exception 
 		{
-			const char* what() const throw() {return "Grade is too high";}
+			const char* what() const throw();
 		};
 		
-		virtual void execute(Bureaucrat const & executor) const {(void)executor;std::cout << "this shouldn-t be here...\n";};
-
+		virtual void execute(Bureaucrat const & executor) const = 0;
+		
 	private:
 		const std::string name;
 		bool isSigned;

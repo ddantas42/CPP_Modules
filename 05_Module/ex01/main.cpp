@@ -33,7 +33,7 @@ int main()
 	}
 	
 	try {
-		form.beSigned(Josh);
+		Josh.signForm(form);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;

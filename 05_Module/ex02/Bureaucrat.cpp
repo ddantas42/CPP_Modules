@@ -15,6 +15,8 @@
 
 
 // Constructors
+Bureaucrat::Bureaucrat() : name("Default Bureaucrat"), grade(150) {}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
 	this->grade = 0;
@@ -25,6 +27,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 	else
 		this->grade = grade;
 }
+
+Bureaucrat::~Bureaucrat() {}
+
 
 // Operators
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
@@ -81,4 +86,14 @@ std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)
 	else
 		out << bureaucrat.getName() << ", bureaucrat grade undefined" << std::endl;
 	return out;
+}
+
+const char*  Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high";
+}
+
+const char*  Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
 }

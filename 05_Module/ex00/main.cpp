@@ -15,9 +15,18 @@
 
 int main()
 {
+	
 	Bureaucrat Josh("Josh", 1);
 	Bureaucrat Josh2 = Josh;
 	Bureaucrat Josh3(Josh);
+	
+	try {
+		Bureaucrat Jesh("Jesh", 248);
+
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	
 	std::cout << Josh;
 

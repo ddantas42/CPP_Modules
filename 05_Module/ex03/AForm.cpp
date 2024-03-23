@@ -20,6 +20,8 @@ AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) :
 name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {this->isSigned = false;}
 
+AForm::~AForm() {}
+
 AForm::AForm(const AForm &copy)
 : name(copy.name), isSigned(copy.isSigned),
 gradeToSign(copy.gradeToSign), gradeToExecute(copy.gradeToExecute)
@@ -71,3 +73,13 @@ const std::string  AForm::getName() const { return this->name; }
 bool	AForm::getIsSigned() const { return this->isSigned; }
 int		AForm::getGradeToSign() const { return this->gradeToSign; }
 int		AForm::getGradeToExecute() const { return this->gradeToExecute; }
+
+const char*  AForm::GradeTooHighException::what() const throw()
+{
+	return "Grade too high";
+}
+
+const char*  AForm::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
+}

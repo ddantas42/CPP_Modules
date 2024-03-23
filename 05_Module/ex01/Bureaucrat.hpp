@@ -23,23 +23,24 @@ class Bureaucrat
 {
 	public:
 		// Constructors
+		Bureaucrat() ;
 		Bureaucrat(const std::string &name, int grade);
 		
 		Bureaucrat(const Bureaucrat &copy);
 		
 		// Destructor
-		~Bureaucrat() {};
+		~Bureaucrat() ;
 		
 		// Operators
 		Bureaucrat & operator=(const Bureaucrat &assign);
 
 		class GradeTooLowException : public std::exception
 		{
-			const char* what() const throw() {return "Grade is too low";}
+			const char* what() const throw();
 		};
 		class GradeTooHighException : public std::exception 
 		{
-			const char* what() const throw() {return "Grade is too high";}
+			const char* what() const throw();
 		};
 		
 		const std::string	&getName() const;
@@ -53,7 +54,6 @@ class Bureaucrat
 	private:
 		const std::string	name;	
 		int					grade;
-		Bureaucrat() {};
 };
 
 std::ostream&		operator<<(std::ostream &out, const Bureaucrat& bureaucrat);
