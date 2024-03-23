@@ -1,32 +1,13 @@
 #include <iostream>
-#include <map>
-#include <fstream>
+#include "BitcoinExchange.hpp"
 
 int main(int ac, char **av)
 {
-	std::map<std::string, float> map;
-	std::ifstream file;
-
-	if (ac != 2)
-	{
-		std::cout << "Error: invalid number of arguments" << std::endl;
-		return 1;
-	}
-
-
-	file.open(av[1]);
-
-	if (file.is_open())
-	{
-		std::string line;
-		while (std::getline(file, line))
-		{
-			std::cout << line << std::endl;
-		}
-	}
+	BitcoinExchange BTC;
+	
+	if (ac == 2)
+		BTC.BtcExchange(av[1]);
 	else
-	{
-		std::cout << "Error: file not found" << std::endl;
-	}
+		std::cout << "Error: Wrong arguments" << std::endl;
 	return 0;
 }
