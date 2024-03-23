@@ -7,6 +7,9 @@
 # include <fstream>
 # include <cstring>
 # include <cstdlib>
+# include <unistd.h>
+
+# include <sstream>
 
 class BitcoinExchange
 {
@@ -21,14 +24,16 @@ class BitcoinExchange
 
 		
 		void BtcExchange(std::string file);
-		int OpenFile(std::string file);
-		void ParseFile(std::string line);
-		int DataValidator(std::string date, float value);
 		
 	private:
 		std::map<std::string, float> data;
 		std::map<std::string, float> input;
 		std::fstream file;
+		
+		int YMDValidator(std::string YMD[]);
+		int OpenFile(std::string file);
+		void ParseFile(std::string line);
+		int DataValidator(std::string date);
 };
 
 #endif

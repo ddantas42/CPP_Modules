@@ -44,4 +44,4 @@ claptrap
 scavtrap
 fragtrap
 diamondtrap
-*.txt
+valgrind.txt
