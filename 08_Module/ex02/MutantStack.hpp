@@ -6,7 +6,7 @@
 # include <stack>
 
 template <typename T>
-class MutantStack
+class MutantStack : public std::stack<T>
 {
 	public:
 		// Constructors
@@ -17,14 +17,12 @@ class MutantStack
 		~MutantStack();
 		
 		// Operators
-		MutantStack & operator=(const MutantStack &assign) {stack = assign.stack; return *this;};
+		MutantStack & operator=(const MutantStack &assign);
 		
-		// Member functions
-		void push(T value);
-		void pop();
-		T top();
-		size_t size();
-		bool empty();
+		typedef typename std::stack<T>::container_type cont;
+		typedef typename cont::iterator iterator;
+		typename cont::iterator begin(void);
+		typename cont::iterator end(void);
 
 	private:
 		std::stack<T> stack;	
