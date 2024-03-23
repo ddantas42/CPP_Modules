@@ -36,16 +36,19 @@ int BitcoinExchange::DataValidator(std::string date, float value)
 
 	try {
 
-		std::string date1 = date.substr(0, date.find("-"));
-		std::string date2 = date.substr(date.find("-") + 1);
-		std::string date3 = date2.substr(0, date2.find("-"));
-		
 		std::cout << "BAAAHHHH\n";
-		date1.size();
+		std::string date1 = date.substr(0, date.find("-"));
+
 		std::cout << "BEEEEHHHH\n";
-		date2.size();
+		std::string date2 = date.substr(date.find("-") + 1);
+		
 		std::cout << "BIIIIHHHH\n";
+		std::string date3 = date2.substr(0, date2.find("-"));
+
+		date1.size();
+		date2.size();
 		date3.size();
+
 		
 		if (date2.size() != 2 || date3.size() != 2)
 		{
