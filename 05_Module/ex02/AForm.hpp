@@ -27,7 +27,7 @@ class AForm
 		int		getGradeToSign() const;
 		int		getGradeToExecute() const;
 
-		void	beSigned(Bureaucrat &bureaucrat);
+		int	beSigned(Bureaucrat &bureaucrat);
 
 		class GradeTooLowException : public std::exception
 		{

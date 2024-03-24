@@ -68,7 +68,31 @@ void	Bureaucrat::signAForm(AForm &form)
 	const AForm *pForm = &form;
 	
 	if (pForm != NULL)
-		form.beSigned(*this);
+	{
+			int ret = 0;
+		try {
+
+			ret = form.beSigned(*this);
+			if (ret == 1)
+			{
+			std::cout << "Form "
+						<<	form.getName() << " was signed by "
+						<< this->getName() << std::endl;
+			}
+			else if (ret == 2)
+			{
+				std::cout << this->getName() << " couldn't sign " << form.getName()
+						<< " because " << "Form is already sign" << std::endl;
+			}
+		}
+		catch (std::exception &e)
+		{
+			std::cout << this->getName() << " couldn't sign " << form.getName()
+						<< " because " << e.what() << std::endl;
+		}
+	}
+	else
+		std::cout << "Form is NULL" << std::endl;
 }
 
 void Bureaucrat::executeForm(AForm const & form)

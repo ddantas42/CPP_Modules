@@ -41,20 +41,17 @@ Form & Form::operator=(const Form &assign)
 	return *this;
 }
 
-void	Form::beSigned(Bureaucrat &bureaucrat)
+int	Form::beSigned(Bureaucrat &bureaucrat)
 {
-		if (this->getIsSigned() == true)
-			std::cout << "Form " << this->getName() << " is already signed" << std::endl;
-		else if (bureaucrat.getGrade() <= this->gradeToSign)
-		{
-			this->isSigned = true;
-			std::cout << "Form "
-					<<	this->getName() << " was signed by "
-					<< bureaucrat.getName() << std::endl;
-		}
-		else
-			throw Form::GradeTooLowException();
-
+	if (this->getIsSigned() == true)
+		return 2;
+	else if (bureaucrat.getGrade() <= this->gradeToSign)
+	{
+		this->isSigned = true;
+		return 1;
+	}
+	else
+		throw Form::GradeTooLowException();
 }
 
 std::ostream&	operator<<(std::ostream &out, const Form& Form)
