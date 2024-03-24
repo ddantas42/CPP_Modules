@@ -14,8 +14,10 @@ int BitcoinExchange::YMDValidator(std::string YMD[])
 	f[0] = std::strtof(YMD[0].c_str(), NULL);
 	f[1] = std::strtof(YMD[1].c_str(), NULL);
 	f[2] = std::strtof(YMD[2].c_str(), NULL);
-	
-	
+
+	// Funcao que valida o ano, mes e dia formatado;
+
+
 	// if (f[0] <= 0)
 	// {
 	// 	std::cout << "Error: negative year" << std::endl;
@@ -35,6 +37,7 @@ int BitcoinExchange::YMDValidator(std::string YMD[])
 	// {
 		// Protect against anos bisseistos
 	// }
+	(void)f;
 	return 0;
 }
 
@@ -62,30 +65,32 @@ int BitcoinExchange::OpenFile(std::string str)
 
 int BitcoinExchange::DataValidator(std::string date)
 {
-	std::string YMD[3];
-
 	std::istringstream ss(date);
+	int day, month, year;
+	char deli;
 
-
-	std::getline(ss, YMD[0], '-');
-    std::getline(ss, YMD[1], '-');
-    std::getline(ss, YMD[2]);
-
-	std::cout << "year: " << YMD[0] << std::endl;
-	std::cout << "month: " << YMD[1] << std::endl;
-	std::cout << "day: " << YMD[3] << std::endl;
-
-	YMD[0].size();
-	YMD[1].size();
-	std::cout <<  std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl<< YMD[2].size() << std::endl;
-	if (YMD[1].size() != 2 || YMD[2].size() != 2)
+	if (std::sscanf(date.c_str(), "%i-%i-%i%c", &year, &month, &day, &deli) != 3)
 	{
-		std::cout << "Error: wrong date format" << std::endl;
+		// a = ano;
+		// b = mes;
+		// c = dia;
+		// d = espaco depois da coisa;
+
+		// sscanf retorn o numero de variaveis que conseguiu ler e por 
+		std::cout << "date: |" << date << "|" << std::endl;
+		std::cout << "Error: wrong date format aaaaa" << std::endl;
 		return 1;
 	}
 
-	if (YMDValidator(YMD))
-		return 1;
+	
+	// if (YMD[1].size() != 2 || YMD[2].size() != 2)
+	// {
+	// 	std::cout << "Error: wrong date format" << std::endl;
+	// 	return 1;
+	// }
+
+	// if (YMDValidator(YMD))
+		// return 1;
 
 	return 0;
 }
