@@ -18,7 +18,14 @@ Form::Form() : name("default"), gradeToSign(75), gradeToExecute(75)
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute) :
 name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
-{this->isSigned = false;}
+{
+	if (gradeToSign < 1 || gradeToExecute < 1)
+		throw Form::GradeTooHighException();
+	else if (gradeToSign > 150 || gradeToExecute > 150)
+		throw Form::GradeTooLowException();
+	else
+		this->isSigned = false;
+}
 
 Form::~Form() {}
 
@@ -26,7 +33,6 @@ Form::Form(const Form &copy)
 : name(copy.name), isSigned(copy.isSigned),
 gradeToSign(copy.gradeToSign), gradeToExecute(copy.gradeToExecute)
 {}
-
 
 // Operators
 Form & Form::operator=(const Form &assign)
@@ -61,11 +67,11 @@ std::ostream&	operator<<(std::ostream &out, const Form& Form)
 		std::cout << "Yes" << std::endl;
 	else
 		std::cout << "No" << std::endl;
-		
+
 	std::cout <<
 		"Grade to sign: " << Form.getGradeToSign() << std::endl <<
 		"Grade to execute: " << Form.getGradeToExecute() << std::endl;
-		
+
 	return out;
 }
 

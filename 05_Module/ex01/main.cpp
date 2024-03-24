@@ -26,6 +26,7 @@ int main()
 	std::cout << form << std::endl;	
 	
 	try {
+		std::cout << "here" << std::endl;
 		form.beSigned(Jam);
 	}
 	catch (std::exception &e) {

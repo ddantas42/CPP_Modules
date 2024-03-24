@@ -18,7 +18,14 @@ AForm::AForm() : name("default"), gradeToSign(75), gradeToExecute(75)
 
 AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute) :
 name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
-{this->isSigned = false;}
+{
+	if (gradeToSign < 1 || gradeToExecute < 1)
+		throw AForm::GradeTooHighException();
+	else if (gradeToSign > 150 || gradeToExecute > 150)
+		throw AForm::GradeTooLowException();
+	else
+		this->isSigned = false;
+}
 
 AForm::~AForm() {}
 

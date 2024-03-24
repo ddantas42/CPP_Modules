@@ -40,22 +40,19 @@ int	Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-		if (this->grade - 1 < 1)
-			throw GradeTooHighException();
-		else
-			this->grade--;
+	if (this->grade - 1 < 1)
+		throw GradeTooHighException();
+	else
+		this->grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-		if (this->grade + 1 > 150)
-			throw GradeTooLowException();
-		else
-			this->grade++;
+	if (this->grade + 1 > 150)
+		throw GradeTooLowException();
+	else
+		this->grade++;
 }
-
-
-
 
 // Operators
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
@@ -66,7 +63,7 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() >= 0 && bureaucrat.getGrade() <= 150)
+	if (bureaucrat.getGrade() > 0 && bureaucrat.getGrade() <= 150)
 		out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;
 	else
 		out << bureaucrat.getName() << ", bureaucrat grade undefined" << std::endl;
