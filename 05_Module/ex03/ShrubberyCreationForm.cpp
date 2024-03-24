@@ -34,12 +34,11 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	return *this;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+int ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
 	{
-		std::cout << "Form " << this->getName() << " has not been signed" << std::endl;
-		return;
+		return 1;
 	}
 		if (executor.getGrade() <= this->getGradeToExecute())
 		{
@@ -48,9 +47,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "         # #\\### ####\n        ### \\/#|### |/####\n       ##\\/#/ \\||/##/_/##/_#\n     ###  \\/###|/ \\/ # ###\n   ##_\\_#\\_\\## | #/###_/_####\n  ## #### # \\ #| /  #### ##/##\n   __#_--###`  |{,###---###-~\n             \\ }{\n              }}{\n              }}{\n              {{}\n        , -=-~{ .-^- _\n              `}\n               {";
 			MyFile << tree;
 			MyFile.close();
+			return 2;
 		}
 		else
 		{
 			throw AForm::GradeTooLowException();
 		}
+	
 }

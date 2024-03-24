@@ -9,17 +9,7 @@
 template <typename T>
 void easyfind( T &container, int number )
 {
-	int n = 0;
-	for (typename T::iterator i = container.begin(); i != container.end(); i++)
-	{
-		if (*i == number)
-		{
-			std::cout << "Found it!!\nPosition: " << n << std::endl;
-			return ;
-		}
-		n++;
-	}
-	std::cout << "Not found :/" << std::endl;
+	return (std::find(stack.begin(), stack.end(), number));
 }
 
 #endif

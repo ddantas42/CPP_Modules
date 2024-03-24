@@ -98,9 +98,28 @@ void	Bureaucrat::signAForm(AForm &form)
 void Bureaucrat::executeForm(AForm const & form)
 {
 	const AForm *pForm = &form;
-	
+	int ret = 0;
+
 	if (pForm != NULL)
-		form.execute(*this);
+	{
+		try {
+			ret = form.execute(*this);
+			if (ret == 1)
+			{
+				std::cout << this->getName() << " couldn't execute " << form.getName()
+						<< " because " << "Form is not signed" << std::endl;
+			}
+			else if (ret == 2)
+			{
+				std::cout << this->getName() << " executed " << form.getName() << std::endl;
+			}
+		}
+		catch (std::exception &e){
+			std::cout << this->getName() << " couldn't execute " << form.getName()
+						<< " because " << e.what() << std::endl;
+			throw ;
+		}
+	}
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)

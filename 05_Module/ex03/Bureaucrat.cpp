@@ -6,7 +6,7 @@
 /*   By: hiper <hiper@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 22:31:28 by hiper             #+#    #+#             */
-/*   Updated: 2024/03/16 16:43:49 by hiper            ###   ########.fr       */
+/*   Updated: 2024/03/16 17:28:46 by hiper            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 
 
 // Constructors
+Bureaucrat::Bureaucrat() : name("Default Bureaucrat"), grade(150) {}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name)
 {
 	this->grade = 0;
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException(); 
-		else
-			this->grade = grade;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException(); 
+	else
+		this->grade = grade;
 }
+
+Bureaucrat::~Bureaucrat() {}
+
 
 // Operators
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
@@ -44,18 +49,18 @@ int	Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-		if (this->grade - 1 < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else
-			this->grade--;
+	if (this->grade - 1 < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		this->grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-		if (this->grade + 1 > 150)
-			throw Bureaucrat::GradeTooLowException();
-		else
-			this->grade++;
+	if (this->grade + 1 > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		this->grade++;
 }
 
 void	Bureaucrat::signAForm(AForm &form)
@@ -93,9 +98,28 @@ void	Bureaucrat::signAForm(AForm &form)
 void Bureaucrat::executeForm(AForm const & form)
 {
 	const AForm *pForm = &form;
-	
+	int ret = 0;
+
 	if (pForm != NULL)
-		form.execute(*this);
+	{
+		try {
+			ret = form.execute(*this);
+			if (ret == 1)
+			{
+				std::cout << this->getName() << " couldn't execute " << form.getName()
+						<< " because " << "Form is not signed" << std::endl;
+			}
+			else if (ret == 2)
+			{
+				std::cout << this->getName() << " executed " << form.getName() << std::endl;
+			}
+		}
+		catch (std::exception &e){
+			std::cout << this->getName() << " couldn't execute " << form.getName()
+						<< " because " << e.what() << std::endl;
+			throw ;
+		}
+	}
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)
@@ -105,4 +129,14 @@ std::ostream&	operator<<(std::ostream &out, const Bureaucrat& bureaucrat)
 	else
 		out << bureaucrat.getName() << ", bureaucrat grade undefined" << std::endl;
 	return out;
+}
+
+const char*  Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high";
+}
+
+const char*  Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
 }

@@ -26,8 +26,8 @@ int main()
 	std::cout << form << std::endl;	
 	
 	try {
+		form.beSigned(Jam);
 		std::cout << "here" << std::endl;
-		form.beSigned(Josh);
 		form.beSigned(Josh);
 	}
 	catch (std::exception &e) {

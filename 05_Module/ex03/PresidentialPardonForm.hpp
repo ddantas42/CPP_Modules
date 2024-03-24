@@ -20,7 +20,7 @@ class PresidentialPardonForm : public AForm
 		// Operators
 		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
 		
-		void execute(Bureaucrat const & executor) const;
+		int execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string target;

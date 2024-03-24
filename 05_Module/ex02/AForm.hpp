@@ -38,7 +38,7 @@ class AForm
 			const char* what() const throw();
 		};
 		
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		virtual int execute(Bureaucrat const & executor) const = 0;
 
 	private:
 		const std::string name;

@@ -20,7 +20,7 @@ class RobotomyRequestForm : public AForm
 		// Operators
 		RobotomyRequestForm & operator=(const RobotomyRequestForm &assign);
 		
-		void execute(Bureaucrat const & executor) const;
+		int execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string target;

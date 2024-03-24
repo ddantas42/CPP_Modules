@@ -30,14 +30,9 @@ int main()
 	std::cout << Jam << std::endl;	
 	
 	try {
-		Shrubbery.execute(Josh);
-		Robotomy.execute(Josh);
-		Presidential.execute(Josh);
+		Jam.executeForm(Shrubbery);
 
-		Shrubbery.execute(Jam);
-		Robotomy.execute(Jam);
-		Presidential.execute(Jam);
-
+		std::cout << "hello" << std::endl;
 		Josh.signAForm(Shrubbery);
 		Josh.signAForm(Presidential);
 		Josh.signAForm(Robotomy);

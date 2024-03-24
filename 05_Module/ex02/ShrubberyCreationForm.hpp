@@ -20,7 +20,7 @@ class ShrubberyCreationForm : public AForm
 		// Operators
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &assign);
 		
-		void execute(Bureaucrat const & executor) const;
+		int execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string target;

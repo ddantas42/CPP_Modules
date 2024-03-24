@@ -27,13 +27,12 @@ name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 		this->isSigned = false;
 }
 
-AForm::~AForm() {}
-
 AForm::AForm(const AForm &copy)
 : name(copy.name), isSigned(copy.isSigned),
 gradeToSign(copy.gradeToSign), gradeToExecute(copy.gradeToExecute)
 {}
 
+AForm::~AForm() {}
 
 // Operators
 AForm & AForm::operator=(const AForm &assign)
@@ -73,7 +72,7 @@ std::ostream&	operator<<(std::ostream &out, const AForm& form)
 	return out;
 }
 
-const std::string  AForm::getName() const { return this->name; }
+const std::string AForm::getName() const { return this->name; }
 bool	AForm::getIsSigned() const { return this->isSigned; }
 int		AForm::getGradeToSign() const { return this->gradeToSign; }
 int		AForm::getGradeToExecute() const { return this->gradeToExecute; }
