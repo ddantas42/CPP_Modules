@@ -8,7 +8,7 @@
 # include <limits>
 # include <iomanip>
 
-# define ERROR 1
+# define ALREADY_PRINTED 1
 # define ALL_GOOD 0
 
 class ScalarConverter

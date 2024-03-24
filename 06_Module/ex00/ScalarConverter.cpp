@@ -12,20 +12,33 @@ bool ScalarConverter::limit_check(std::string str, long double dbl, char *pEnd)
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: nanf" << std::endl;
 		std::cout << "double: nan" << std::endl;
-		return (ERROR);
+		return (ALREADY_PRINTED);
 	}
-	if (( pEnd[0] != '\0' && pEnd[1] != '\0' ) || ( dbl == 0 && !std::isdigit(str[0]) ))
+	if (str[1] == '\0' && pEnd[0] >= 32 && pEnd[0] <= 126 && pEnd[1] == '\0' && dbl == 0)
+	{
+		std::cout << "char: '" << pEnd[0] << "'" << std::endl;
+		std::cout << "int: " << static_cast<int>(pEnd[0]) << std::endl;
+		std::cout << "float: " << static_cast<float>(pEnd[0]) << ".0" << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(pEnd[0]) << std::endl;
+		return (ALREADY_PRINTED);
+	}
+	if (str.size() >= 2 && pEnd[0] != 'f' && dbl == 0)
 	{
 		std::cout << "invalid parameter" << std::endl;
-		return (ERROR);
+		return (ALREADY_PRINTED);
 	}
+		if (( pEnd[0] != '\0' && pEnd[1] != '\0' ) || ( dbl == 0 && !std::isdigit(str[0]) ))
+		{
+			std::cout << "invalid parameter" << std::endl;
+			return (ALREADY_PRINTED);
+		}
 	if (str == "-inff" || str == "+inff" || str == "inff" || str == "-inf" || str == "+inf" || str == "inf")
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: " << dbl << "f" << std::endl;
 		std::cout << "double: " << dbl << std::endl;
-		return (ERROR);
+		return (ALREADY_PRINTED);
 	}
 	if (dbl > INT32_MAX || dbl < INT32_MIN)
 	{
@@ -39,7 +52,7 @@ bool ScalarConverter::limit_check(std::string str, long double dbl, char *pEnd)
 			std::cout << "double: impossible" << std::endl;
 		else
 			std::cout << "double: " << dbl << std::endl;
-		return (ERROR);
+		return (ALREADY_PRINTED);
 	}
 
 	return (ALL_GOOD);
@@ -95,7 +108,7 @@ void ScalarConverter::int_to_float(long double dbl)
 		<< "float: "
 		<< std::fixed
 		<< std::setprecision(1)
-		<< dbl
+		<< static_cast<float>(dbl)
 		<< 'f'
 		<< std::endl;
 }
