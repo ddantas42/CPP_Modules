@@ -25,11 +25,10 @@ bool RPN::Check_str(std::string str)
 		
 		if (*i != ' ' && *i != '+' && *i != '-' && *i != '*' && *i != '/' && !is_digit(*i))
 			return true ;
-		if (is_digit(*i) && *(1+i) && is_digit(*(1+i)))
-			return true;
-		else if (!is_digit(*i) && *(1+i) && !is_digit(*(1+i)))
-			return true;
-
+		if (*i == ' ' && *(1+i) && *(1+i) == ' ')
+			return true ;
+		else if (*i != ' ' && *(1+i) && *(1+i) != ' ')
+			return true ;
 	}
 	return false;
 }
@@ -41,5 +40,6 @@ void RPN::Calculate(std::string str)
 		std::cout << "Error" << std::endl;
 		return ;
 	}
+	
 
 }
