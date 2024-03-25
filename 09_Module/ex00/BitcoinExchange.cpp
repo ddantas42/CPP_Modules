@@ -19,12 +19,15 @@ void BitcoinExchange::GetDataCvs()
 	std::string line;
 
 	this->cvs.open("data.csv", std::ios::in);
-	std::getline(this->file, line);
-	while (std::getline(this->file, line))
+	std::getline(this->cvs, line);
+	while (std::getline(this->cvs, line))
 	{
-		std::string key(line.substr(0, 10));
-		float value = static_cast<float>(atof(line.c_str() + 11));
-		this->data[key] = value;
+		float value;
+		std::stringstream ss(line);
+		std::string date_cvs;
+		std::getline(ss, date_cvs, ',');
+		ss >> value;
+		this->data.insert(std::pair<std::string, float>(date_cvs, value));
 	}
 	this->cvs.close();
 }
@@ -53,7 +56,7 @@ int BitcoinExchange::OpenFile(std::string str)
 
 int BitcoinExchange::DataValidator(long y, long m, long d)
 {
-	if (y <= 0)
+	if (y <= 0 || y > INT_MAX)
 	{
 		std::cout << "Error: invalid year" << std::endl; return 1;
 	}
@@ -96,7 +99,14 @@ int BitcoinExchange::ParseFile(std::string line)
 		return 1;
 	else
 	{
-		this->date = to_string(year) + "-" + to_string(month) + "-" + to_string(day);
+		std::string month_str = to_string(month);
+		std::string day_str = to_string(day);
+		if (month <= 9)
+			month_str = "0" + month_str;
+		if (day <= 9)
+			day_str = "0" + day_str;
+			
+		this->date = to_string(year) + "-" + month_str + "-" + day_str;
 		return 0;
 	}
 }
@@ -109,8 +119,9 @@ void BitcoinExchange::BtcExchange(std::string str)
 			this->file.close();
 		return;
 	}
+
 	GetDataCvs();
-	
+
 	std::string buffer;
 	this->file.close();
 	this->file.open(str.c_str(), std::ios::in);
@@ -120,10 +131,8 @@ void BitcoinExchange::BtcExchange(std::string str)
 	{
 		if (ParseFile(str))
 			continue;
-		// std::cout << "Good date: " << str << std::endl;
-		std::cout << "lowest" << FindLowest() << std::endl;
-		// std::cout << date << " => " << this->value << " = " << FindLowest() * this->value << std::endl;
-		this->data.erase(this->data.begin(), this->data.end());
+		// std::cout << "Good date: " << this->date << std::endl;
+		std::cout << date << " => " << this->value << " = " << FindLowest() * this->value << std::endl;
 	}
 	this->file.close();
 }
