@@ -66,13 +66,13 @@ int Span::longestSpan()
 	return std::abs(max - min);
 }
 
-void Span::AddRange(std::vector<int> nums)
+void Span::AddRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	if (this->numbers.size() + nums.size() <= this->size)
-		this->numbers.insert(this->numbers.end(), nums.begin(), nums.end());
+	if (this->numbers.size() +  std::distance(begin, end) <= this->size)
+		this->numbers.insert(this->numbers.end(), begin, end);
 	else
 	{
-		std::cout << "Error: numbers size + added size =" << this->numbers.size() + nums.size() << std::endl;
+		std::cout << "Error: numbers size + added size = " << this->numbers.size() + std::distance(begin, end) << std::endl;
 		std::cout << "Error: size = " << this->size << std::endl;
 		throw std::string("Error: couldn't add range");
 	}

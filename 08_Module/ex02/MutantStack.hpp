@@ -25,7 +25,7 @@ class MutantStack : public std::stack<T>
 		typename cont::iterator end(void);
 
 	private:
-		std::stack<T> stack;	
+		std::stack<T> stack;
 };
 
 # include "MutantStack.tpp"
