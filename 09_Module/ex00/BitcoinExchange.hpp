@@ -26,14 +26,19 @@ class BitcoinExchange
 		void BtcExchange(std::string file);
 		
 	private:
+		std::string date;
 		std::map<std::string, float> data;
-		std::map<std::string, float> input;
 		std::fstream file;
+		std::fstream cvs;
+		float value;
 		
+		std::string to_string(int value);
 		int YMDValidator(std::string YMD[]);
 		int OpenFile(std::string file);
-		void ParseFile(std::string line);
-		int DataValidator(std::string date);
+		int ParseFile(std::string line);
+		int DataValidator(long y, long m, long d);
+		void GetDataCvs();
+		float FindLowest();
 };
 
 #endif

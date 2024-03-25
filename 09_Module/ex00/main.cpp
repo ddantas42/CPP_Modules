@@ -10,7 +10,7 @@ int main(int ac, char **av)
 	else
 		std::cout << "Error: Wrong arguments" << std::endl;
 
-		// use lower.bound, returns target or the next higher above it 
-		// ONLY WORKS IF SORTED
+	// use lower.bound, returns target or the next higher above it 
+	// ONLY WORKS IF SORTED
 	return 0;
 }

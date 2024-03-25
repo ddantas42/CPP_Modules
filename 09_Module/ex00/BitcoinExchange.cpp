@@ -8,37 +8,25 @@ BitcoinExchange::~BitcoinExchange() {}
 // Operators
 BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &assign){(void) assign;return *this;}
 
-int BitcoinExchange::YMDValidator(std::string YMD[])
+std::string BitcoinExchange::to_string(int value) {
+    std::ostringstream os;
+    os << value;
+    return os.str();
+}
+
+void BitcoinExchange::GetDataCvs()
 {
-	float f[3];
-	f[0] = std::strtof(YMD[0].c_str(), NULL);
-	f[1] = std::strtof(YMD[1].c_str(), NULL);
-	f[2] = std::strtof(YMD[2].c_str(), NULL);
+	std::string line;
 
-	// Funcao que valida o ano, mes e dia formatado;
-
-
-	// if (f[0] <= 0)
-	// {
-	// 	std::cout << "Error: negative year" << std::endl;
-	// 	return 1;
-	// }
-	// else if (f[1] <= 0 || f[1] > 12)
-	// {
-	// 	std::cout << "Error: invalid month" << std::endl;
-	// 	return 1;
-	// }
-	// else if (f[2] <= 0 || f[2] > 31 || ((f[1] == 4 || f[1] == 6 || f[1] == 9 || f[1] == 11) && f[2] == 31) || (f[1] == 2 && f[2] > 29))
-	// {
-	// 	std::cout << "Error: invalid day" << std::endl;
-	// 	return 1;
-	// }
-	// else if (f[0] % 4 == 0 && f)
-	// {
-		// Protect against anos bisseistos
-	// }
-	(void)f;
-	return 0;
+	this->cvs.open("data.csv", std::ios::in);
+	std::getline(this->file, line);
+	while (std::getline(this->file, line))
+	{
+		std::string key(line.substr(0, 10));
+		float value = static_cast<float>(atof(line.c_str() + 11));
+		this->data[key] = value;
+	}
+	this->cvs.close();
 }
 
 int BitcoinExchange::OpenFile(std::string str)
@@ -55,7 +43,7 @@ int BitcoinExchange::OpenFile(std::string str)
 			this->file.close();
 			return 1;
 		}
-		else 
+		else
 			return 0;
 	}
 	else
@@ -63,67 +51,55 @@ int BitcoinExchange::OpenFile(std::string str)
 	return 1;
 }
 
-int BitcoinExchange::DataValidator(std::string date)
+int BitcoinExchange::DataValidator(long y, long m, long d)
 {
-	std::istringstream ss(date);
-	int day, month, year;
-	char deli;
-
-	if (std::sscanf(date.c_str(), "%i-%i-%i%c", &year, &month, &day, &deli) != 3)
+	if (y <= 0)
 	{
-		// a = ano;
-		// b = mes;
-		// c = dia;
-		// d = espaco depois da coisa;
-
-		// sscanf retorn o numero de variaveis que conseguiu ler e por 
-		std::cout << "date: |" << date << "|" << std::endl;
-		std::cout << "Error: wrong date format aaaaa" << std::endl;
-		return 1;
+		std::cout << "Error: invalid year" << std::endl; return 1;
 	}
-
-	
-	// if (YMD[1].size() != 2 || YMD[2].size() != 2)
-	// {
-	// 	std::cout << "Error: wrong date format" << std::endl;
-	// 	return 1;
-	// }
-
-	// if (YMDValidator(YMD))
-		// return 1;
-
+	else if (m <= 0 || m > 12)
+	{
+		std::cout << "Error: invalid month" << std::endl; return 1;
+	}
+	else if (d <= 0 || d > 31 || ((m == 4 || m == 6 || m == 9 || m == 11) && d == 31) || (m == 2 && d > 29))
+	{
+		std::cout << "Error: invalid day" << std::endl; return 1;
+	}
+	else if (y % 4 != 0 && m == 2 && d == 29)
+	{
+		std::cout << "Error: invalid day" << std::endl; return 1;
+	}
 	return 0;
 }
 
-void BitcoinExchange::ParseFile(std::string line)
+int BitcoinExchange::ParseFile(std::string line)
 {
-	char *ptr = NULL;
-	float f;
-
-	std::string date = line.substr(0, line.find(" | "));
-	std::string value = line.substr(line.find(" | ") + 3);
-	std::cout << date << " " << value << std::endl;
-
-	ptr = NULL;
-	f = std::strtof(value.c_str(), &ptr);
-	if (date.empty() || value.empty() || ptr[0] != '\0')
+	if (line.empty())
 	{
-		std::cout << "ptr: " << ptr << std::endl;
-		std::cout << "Error: wrong file format" << std::endl;
+		std::cout << "Error: bad input (empty)" << std::endl;
+		return 1;
 	}
-	else if (f < 0 || f > 1000)
+	long year = 0, month = 0, day = 0; char deli = 0;
+	if (std::sscanf(line.c_str(), "%ld-%ld-%ld | %e%c", &year, &month, &day, &this->value, &deli) != 4)
 	{
-		if (f < 0)
+		std::cout << "Error: bad input => " << line << std::endl; return 1;
+	}
+	if (this->value < 0 || this->value > 1000)
+	{
+		if (this->value < 0)
 			std::cout << "Error: number is negative" << std::endl;
 		else
 			std::cout << "Error: number is too big" << std::endl; 
+		return 1;
 	}
-	else if (DataValidator(date))
-		return ;
+	else if (DataValidator(year, month, day))
+		return 1;
 	else
-		this->data.insert(std::pair<std::string, float>(date, f));		
+	{
+		this->date = to_string(year) + "-" + to_string(month) + "-" + to_string(day);
+		return 0;
+	}
 }
-
 
 void BitcoinExchange::BtcExchange(std::string str)
 {
@@ -133,6 +109,35 @@ void BitcoinExchange::BtcExchange(std::string str)
 			this->file.close();
 		return;
 	}
-	while (std::getline(file, str))
-		ParseFile(str);
+	GetDataCvs();
+	
+	std::string buffer;
+	this->file.close();
+	this->file.open(str.c_str(), std::ios::in);
+	std::getline(this->file, str);
+	
+	while (std::getline(this->file, str))
+	{
+		if (ParseFile(str))
+			continue;
+		// std::cout << "Good date: " << str << std::endl;
+		std::cout << "lowest" << FindLowest() << std::endl;
+		// std::cout << date << " => " << this->value << " = " << FindLowest() * this->value << std::endl;
+		this->data.erase(this->data.begin(), this->data.end());
+	}
+	this->file.close();
+}
+
+float BitcoinExchange::FindLowest()
+{
+	std::map<std::string, float>::const_iterator i = this->data.lower_bound(this->date);
+
+	if (i != this->data.end() && i->first == this->date)
+		return i->second;
+	else if (i != this->data.begin())
+	{
+		i--;
+		return i->second;
+	}
+	return i->second;
 }
