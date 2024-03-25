@@ -1,13 +1,13 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-template <class T>
+template <typename T>
 class Array 
 {
 	public:
 		// Constructors
 		Array(void) {
-			array = NULL;
+			array = new T[0];
 			_size = 0;
 		};
 
@@ -50,15 +50,15 @@ class Array
 		};
 
 		// Operators
-		Array &operator=(Array const &rhs)
+		Array &operator=(Array const &src)
 		{
-			if (this != &rhs)
+			if (this != &src)
 			{
 				delete [] array;
-				array = new T[rhs.size()];
-				_size = rhs.size();
+				array = new T[src.size()];
+				_size = src.size();
 				for (unsigned int i = 0; i < _size; i++)
-					array[i] = rhs[i];
+					array[i] = src[i];
 			}
 			return *this;
 		}
