@@ -15,15 +15,21 @@ int RPN::is_digit(char c)
 	return (0);
 }
 
-bool RPN::Check_str(std::string str)
+int RPN::is_operator(char c)
 {
-	if (str.empty())
+	if (c == '+' || c == '-' || c == '*' || c == '/')
+		return (1);
+	return (0);
+}
+
+bool RPN::Check_str(std::string &str)
+{
+	if (str.empty() || !is_digit(str[0]))
 		return true;
 	for (std::string::iterator i = str.begin(); i != str.end(); i++)
 	{
 		std::cout << "checking: " << *i << std::endl;
-		
-		if (*i != ' ' && *i != '+' && *i != '-' && *i != '*' && *i != '/' && !is_digit(*i))
+		if (*i != ' ' && !is_operator(*i) && !is_digit(*i))
 			return true ;
 		if (*i == ' ' && *(1+i) && *(1+i) == ' ')
 			return true ;
@@ -40,6 +46,15 @@ void RPN::Calculate(std::string str)
 		std::cout << "Error" << std::endl;
 		return ;
 	}
-	
+	for (std::string::iterator i = str.begin(); i != str.end(); i++)
+	{
+
+		if (is_digit(*i))
+		{
+			stack.push(*i - '0');
+		}
+		
+		// }
+	}	
 
 }

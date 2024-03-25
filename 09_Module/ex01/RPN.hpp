@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <stack>
 
 class RPN
 {
@@ -18,12 +19,13 @@ class RPN
 		RPN & operator=(const RPN &assign);
 
 		int is_digit(char c);
-		bool Check_str(std::string str);
-		
+		int is_operator(char c);
+		bool Check_str(std::string &str);
+
 		void Calculate(std::string str);
 
 	private:
-		
+		std::stack<long> stack;
 };
 
 #endif
