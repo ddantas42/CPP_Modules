@@ -19,7 +19,12 @@ int main( void )
 		std::cout << *i << " ";
 	std::cout << std::endl;
 
-	easyfind(a, 1);
+	try {
+		easyfind(a, 1);
+	}
+	catch (std::string &str) {
+		std::cout << str << std::endl;
+	}
 
 	std::cout << std::endl;
 	std::list<int> b;
@@ -36,6 +41,12 @@ int main( void )
 		std::cout << *i << " ";
 	std::cout << std::endl;
 
-	easyfind(b, 5);
+	try {
+		easyfind(a, 9);
+	}
+	catch (std::string &str) {
+		std::cout << str << std::endl;
+	}
+	
 	return 0;
 }
