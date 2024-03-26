@@ -54,6 +54,11 @@ void RPN::Calculate(std::string str)
 		}
 		else if (is_operator(*i))
 		{
+			if (stack.size() < 2)
+			{
+				std::cout << "Error" << std::endl;
+				return ;
+			}
 			float top = stack.top();
 			stack.pop();
 			float second = stack.top();
