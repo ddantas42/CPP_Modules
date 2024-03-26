@@ -1,8 +1,8 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
-NAME = RPN
+NAME = PmergeMe
 RM = rm
-FILESC = main.cpp RPN.cpp
+FILESC = main.cpp PmergeMe.cpp
 
 OBJS = $(FILESC:.cpp=.o)
 

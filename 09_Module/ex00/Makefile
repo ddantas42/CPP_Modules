@@ -1,17 +1,5 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: hiper <hiper@student.42.fr>                +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/30 02:21:46 by ddantas-          #+#    #+#              #
-#    Updated: 2024/03/25 09:47:33 by hiper            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 NAME = btc
 RM = rm
 FILESC = main.cpp BitcoinExchange.cpp
@@ -21,10 +9,10 @@ OBJS = $(FILESC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(FILESH)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	c++ $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
 	$(RM) -f $(OBJS)

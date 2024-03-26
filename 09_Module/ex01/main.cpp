@@ -3,10 +3,9 @@
 
 int main(int ac, char **av)
 {
-	RPN rpn;
 	if (ac == 2)
-		rpn.Calculate(av[1]);
+		RPN::Calculate(av[1]);
 	else
-		std::cout << "Usage: ./rpn \"expression\"" << std::endl;
+		std::cout << "Error: wrong arguments" << std::endl;
 	return 0;
 }

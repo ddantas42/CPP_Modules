@@ -8,24 +8,21 @@
 class RPN
 {
 	public:
+		static void Calculate(std::string str);
+
+	private:
 		// Constructors
 		RPN();
 		RPN(const RPN &copy);
-		
 		// Destructor
 		~RPN();
-		
 		// Operators
 		RPN & operator=(const RPN &assign);
 
-		int is_digit(char c);
-		int is_operator(char c);
-		bool Check_str(std::string &str);
 
-		void Calculate(std::string str);
-
-	private:
-		std::stack<float> stack;
+		static int is_digit(char c);
+		static int is_operator(char c);
+		static bool Check_str(std::string str);
 };
 
 #endif

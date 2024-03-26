@@ -22,7 +22,7 @@ int RPN::is_operator(char c)
 	return (0);
 }
 
-bool RPN::Check_str(std::string &str)
+bool RPN::Check_str(std::string str)
 {
 	if (str.empty() || !is_digit(str[0]))
 		return true;
@@ -40,6 +40,7 @@ bool RPN::Check_str(std::string &str)
 
 void RPN::Calculate(std::string str)
 {
+	std::stack<float> stack;
 	if (Check_str(str))
 	{
 		std::cout << "Error" << std::endl;
@@ -49,9 +50,7 @@ void RPN::Calculate(std::string str)
 	{
 
 		if (is_digit(*i))
-		{
 			stack.push(*i - '0');
-		}
 		else if (is_operator(*i))
 		{
 			if (stack.size() < 2)
@@ -59,6 +58,7 @@ void RPN::Calculate(std::string str)
 				std::cout << "Error" << std::endl;
 				return ;
 			}
+			
 			float top = stack.top();
 			stack.pop();
 			float second = stack.top();
@@ -74,6 +74,9 @@ void RPN::Calculate(std::string str)
 				stack.push(second / top);
 		}
 		
-	}	
-	std::cout << stack.top() << std::endl;
+	}
+	if (stack.size() == 1)
+		std::cout << stack.top() << std::endl;
+	else
+		std::cout << "Error" << std::endl;
 }
