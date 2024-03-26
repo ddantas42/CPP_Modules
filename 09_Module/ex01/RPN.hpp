@@ -25,7 +25,7 @@ class RPN
 		void Calculate(std::string str);
 
 	private:
-		std::stack<long> stack;
+		std::stack<float> stack;
 };
 
 #endif

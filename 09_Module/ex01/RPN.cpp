@@ -28,7 +28,6 @@ bool RPN::Check_str(std::string &str)
 		return true;
 	for (std::string::iterator i = str.begin(); i != str.end(); i++)
 	{
-		std::cout << "checking: " << *i << std::endl;
 		if (*i != ' ' && !is_operator(*i) && !is_digit(*i))
 			return true ;
 		if (*i == ' ' && *(1+i) && *(1+i) == ' ')
@@ -53,8 +52,23 @@ void RPN::Calculate(std::string str)
 		{
 			stack.push(*i - '0');
 		}
-		
-		// }
-	}	
+		else if (is_operator(*i))
+		{
+			float top = stack.top();
+			stack.pop();
+			float second = stack.top();
+			stack.pop();
 
+			if (*i == '+')
+				stack.push(second + top);
+			else if (*i == '-')
+				stack.push(second - top);
+			else if (*i == '*')
+				stack.push(second * top);
+			else if (*i == '/')
+				stack.push(second / top);
+		}
+		
+	}	
+	std::cout << stack.top() << std::endl;
 }
