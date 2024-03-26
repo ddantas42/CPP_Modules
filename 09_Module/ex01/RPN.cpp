@@ -71,7 +71,15 @@ void RPN::Calculate(std::string str)
 			else if (*i == '*')
 				stack.push(second * top);
 			else if (*i == '/')
-				stack.push(second / top);
+			{
+				if (top != 0)
+					stack.push(second / top);
+				else
+				{
+					std::cout << "Error" << std::endl;
+					return ;
+				}
+			}
 		}
 		
 	}
