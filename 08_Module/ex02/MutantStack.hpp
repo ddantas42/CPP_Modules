@@ -19,10 +19,10 @@ class MutantStack : public std::stack<T>
 		// Operators
 		MutantStack & operator=(const MutantStack &assign);
 		
-		typedef typename std::stack<T>::container_type cont;
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		typename cont::iterator begin(void);
-		typename cont::iterator end(void);
+
+		iterator begin(void);
+		iterator end(void);
 
 	private:
 		std::stack<T> stack;
