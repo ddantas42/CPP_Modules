@@ -36,19 +36,12 @@ double PmergeMe::v_sort(int ac, char **av)
 	while (i != X.end() - 1)
 	{
 		if (*i > *(i + 1))
-		{
-			S.push_back(*(i + 1));
 			S.push_back(*i);
-		}
 		else
-		{
-			S.push_back(*i);
 			S.push_back(*(i + 1));
-		}
 		if (i + 2 == X.end())
 			break;
 		i += 2;
-		
 	}
 
 	// std::sort(v.begin(), v.end());
