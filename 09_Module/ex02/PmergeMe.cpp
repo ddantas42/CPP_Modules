@@ -25,6 +25,8 @@ bool PmergeMe::check_args(int ac, char **av)
 
 double PmergeMe::v_sort(int ac, char **av)
 {
+	clock_t start, end;
+	start = clock();
 	std::vector<int> X;
 	std::vector<int> S;
 	std::vector<int> remains;
@@ -78,7 +80,6 @@ double PmergeMe::v_sort(int ac, char **av)
 		{
 			if (*it2 == *it)
 				X.erase(X.begin() + std::distance(X.begin(), it2));
-
 		}
 	}
 
@@ -88,10 +89,12 @@ double PmergeMe::v_sort(int ac, char **av)
 	for (std::vector<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 
+	end = clock();
 		std::cout << "Sorted Integeres: ";
 	for (std::vector<int>::iterator s = S.begin(); s != S.end(); s++)
 		std::cout << *s << " ";
-	return 0;
+	std::cout << std::endl;
+	return ((double) (end - start)) / CLOCKS_PER_SEC;
 
 }
 
@@ -104,19 +107,20 @@ void PmergeMe::sort(int ac, char **av)
 	}
 
 	std::cout << "Unsorted Integeres: ";
-	for (int i = 1; i < ac; i++)
+	int i = 1;
+	for (; i < ac; i++)
 		std::cout << av[i] << " ";
 	std::cout << std::endl;
+	float v_time = 0; 
 	try {
-		v_sort(ac, av);
+		v_time = v_sort(ac, av);
 	} catch (const char *e) {
 		std::cout << e << std::endl; 
 		return ;
 	}
-	std::vector<int> v;
-	for (int i = 1; i < ac; i++)
-	{
-		int n = std::atoi(av[i]);
-		v.push_back(n);
-	}
+	std::cout << "Time to process a range of " << i << " elements with std::vector : " << v_time << std::endl; 
+	// std::cout << "Time to process a range of " << i << "elements with std::list : " << t_time << std::endl; 
+
+
+
 }
