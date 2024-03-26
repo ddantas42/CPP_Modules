@@ -36,16 +36,18 @@ double PmergeMe::v_sort(int ac, char **av)
 	while (i != X.end() - 1)
 	{
 		if (*i > *(i + 1))
-			S.push_back(*i);
+		{
+			S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
+		}
 		else
-			S.push_back(*(i + 1));
+			S.insert(std::lower_bound(S.begin(), S.end(), *(i + 1)), *(i + 1));
 		if (i + 2 == X.end())
 			break;
 		i += 2;
 	}
+	S.insert(S.begin(), *S.begin());
+	S.insert(S.begin(), *std::min_element(X.begin(), X.end()));
 
-	// std::sort(v.begin(), v.end());
-	
 		std::cout << "Sorted Integeres: ";
 	for (std::vector<int>::iterator s = S.begin(); s != S.end(); s++)
 		std::cout << *s << " ";
