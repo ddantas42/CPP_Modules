@@ -20,7 +20,7 @@ class MutantStack : public std::stack<T>
 		MutantStack & operator=(const MutantStack &assign);
 		
 		typedef typename std::stack<T>::container_type cont;
-		typedef typename cont::iterator iterator;
+		typedef typename std::stack<T>::container_type::iterator iterator;
 		typename cont::iterator begin(void);
 		typename cont::iterator end(void);
 
