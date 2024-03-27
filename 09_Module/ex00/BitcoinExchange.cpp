@@ -100,7 +100,7 @@ int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::s
 		else if (value >= 1000)
 			std::cout << "Error: number is too big" << std::endl; 
 		else
-			std::cout << "Error: value is 0 " << line << std::endl;
+			std::cout << "Error: value is 0 " << std::endl;
 
 		return 1;
 	}
