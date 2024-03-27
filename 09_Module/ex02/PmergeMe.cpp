@@ -28,6 +28,15 @@ bool PmergeMe::check_args(int ac, char **av)
 			return true;
 		else if (n < 0 || n > INT_MAX)
 			return true;
+		else if (n - (int)n != 0)
+			return true;
+		else
+		{
+			std::string str = av[i];
+			if (str.find('.') != std::string::npos)
+				return true;
+		
+		}
 	}
 	std::vector<int> v;
 	for (int n = 1; n < ac; n++)
@@ -157,7 +166,7 @@ void PmergeMe::sort(int ac, char **av)
 	std::cout << "Unsorted Integeres: ";
 	int i = 1;
 	for (; i < ac; i++)
-		std::cout << av[i] << " ";
+		std::cout << std::atoi(av[i]) << " ";
 	std::cout << std::endl;
 
 	double v_time = 0; 
