@@ -31,6 +31,7 @@ class BitcoinExchange
 		std::fstream file;
 		std::fstream cvs;
 		float value;
+		long year, month, day;
 		
 		std::string to_string(int value);
 		int YMDValidator(std::string YMD[]);

@@ -82,8 +82,11 @@ int BitcoinExchange::ParseFile(std::string line)
 		std::cout << "Error: bad input (empty)" << std::endl;
 		return 1;
 	}
-	long year = 0, month = 0, day = 0; char deli = 0;
-	if (std::sscanf(line.c_str(), "%ld-%ld-%ld | %e%c", &year, &month, &day, &this->value, &deli) != 4)
+	this->year = 0;
+	this->month = 0,
+	this->day = 0;
+	char deli = 0;
+	if (std::sscanf(line.c_str(), "%ld-%ld-%ld | %e%c", &this->year, &this->month, &this->day, &this->value, &deli) != 4)
 	{
 		std::cout << "Error: bad input => " << line << std::endl; return 1;
 	}
@@ -139,14 +142,23 @@ void BitcoinExchange::BtcExchange(std::string str)
 
 float BitcoinExchange::FindLowest()
 {
-	std::map<std::string, float>::const_iterator i = this->data.lower_bound(this->date);
+	std::map<std::string, float>::iterator i = data.begin();
 
-	if (i != this->data.end() && i->first == this->date)
+	int year, month, day;
+	std::sscanf(i->first.c_str(), "%d-%d-%d", &year, &month, &day);
+	while ((year < this->year || month < this->month || day < this->day) && i != data.end())
+	{
+		std::sscanf(i->first.c_str(), "%d-%d-%d", &year, &month, &day);
+		i++;
+	}
+	if (i == data.begin())
 		return i->second;
-	else if (i != this->data.begin())
+	else if (year == this->year && month == this->month && day == this->day)
+		i--;
+	else
 	{
 		i--;
-		return i->second;
+		i--;
 	}
 	return i->second;
 }
