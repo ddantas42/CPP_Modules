@@ -97,7 +97,7 @@ double PmergeMe::v_sort(int ac, char **av)
 	for (std::vector<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 	end = current_time();
-	print(S, "Vs");
+	// print(S, "Vs");
 	return (end - start);
 }
 
@@ -141,7 +141,7 @@ double PmergeMe::l_sort(int ac, char **av)
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 	end = current_time();
 
-	print(S, "Ls");
+	// print(S, "Ls");
 	std::cout << "Sorted integers:  ";
 	for (std::list<int>::iterator i = S.begin(); i != S.end(); i++)
 		std::cout << *i << " ";
@@ -152,7 +152,10 @@ double PmergeMe::l_sort(int ac, char **av)
 void PmergeMe::sort(int ac, char **av)
 {
 	if (check_args(ac, av))
+	{
+		std::cout << "Error" << std::endl;
 		return ;
+	}
 
 
 	std::cout << "Unsorted Integeres: ";
