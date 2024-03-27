@@ -5,6 +5,7 @@
 # include <string>
 # include <list>
 # include <algorithm>
+# include <deque>
 # include <vector>
 # include <fstream>
 # include <ctime>
@@ -26,6 +27,7 @@ class PmergeMe
 		static void sort(int ac, char **av);
 
 	private:
+		static double l_sort(int ac, char **av); 
 		static double v_sort(int ac, char **av); 
 		static bool check_args(int ac, char **av);
 		

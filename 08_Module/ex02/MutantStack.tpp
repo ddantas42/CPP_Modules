@@ -23,13 +23,13 @@ MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> &assign)
 }
 
 template <typename T>
-typename MutantStack<T>::cont::iterator MutantStack<T>::begin(void) 
+typename MutantStack<T>::iterator MutantStack<T>::begin(void) 
 {
 	return std::stack<T>::c.begin();
 }
 
 template <typename T>
-typename MutantStack<T>::cont::iterator MutantStack<T>::end(void) 
+typename MutantStack<T>::iterator MutantStack<T>::end(void) 
 {
 	return std::stack<T>::c.end();
 }
