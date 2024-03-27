@@ -101,7 +101,6 @@ int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::s
 			std::cout << "Error: number is too big" << std::endl; 
 		else
 			std::cout << "Error: value is 0 " << std::endl;
-
 		return 1;
 	}
 	else if (DataValidator(YMD[0], YMD[1], YMD[2]))
