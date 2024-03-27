@@ -9,6 +9,7 @@
 # include <vector>
 # include <fstream>
 # include <ctime>
+# include <unistd.h>
 # include <limits.h>
 
 class PmergeMe
@@ -30,6 +31,10 @@ class PmergeMe
 		static double l_sort(int ac, char **av); 
 		static double v_sort(int ac, char **av); 
 		static bool check_args(int ac, char **av);
+		static double current_time();
+
+		template <typename T>
+		static void print(T &container, std::string c);
 		
 };
 

@@ -9,6 +9,15 @@ PmergeMe::~PmergeMe(){}
 PmergeMe & PmergeMe::operator=(const PmergeMe &assign)
 {(void) assign;return *this;}
 
+template <typename T>
+void PmergeMe::print(T &container, std::string c)
+{
+	std::cout << "Current " << c << ": ";
+	for (typename T::iterator it = container.begin(); it != container.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
+
 bool PmergeMe::check_args(int ac, char **av)
 {
 	for (int i = 1; i < ac; i++)
@@ -23,10 +32,17 @@ bool PmergeMe::check_args(int ac, char **av)
 	return false;
 }
 
+double PmergeMe::current_time()
+{
+    struct timespec ts;
+    clock_gettime(1, &ts);
+    return ts.tv_sec * 1000000 + ts.tv_nsec / 1000;
+}
+
 double PmergeMe::v_sort(int ac, char **av)
 {
-	clock_t start, end;
-	start = clock();
+	double start, end;
+	start = current_time();
 	std::vector<int> X;
 	std::vector<int> S;
 	std::vector<int> remains;
@@ -86,18 +102,14 @@ double PmergeMe::v_sort(int ac, char **av)
 	for (std::vector<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 
-	end = clock();
-		std::cout << "Sorted Integeres:   ";
-	for (std::vector<int>::iterator s = S.begin(); s != S.end(); s++)
-		std::cout << *s << " ";
-	std::cout << std::endl;
-	return ((double) (end - start)) / CLOCKS_PER_SEC;
+	end = current_time();	
+	return end - start;
 }
 
 double PmergeMe::l_sort(int ac, char **av)
 {
-	clock_t start, end;
-	start = clock();
+	double start, end;
+	start = current_time();
 	std::list<int> X;
 	std::list<int> S;
 	std::list<int> remains;
@@ -109,6 +121,7 @@ double PmergeMe::l_sort(int ac, char **av)
 	int smallest_left = *i;
 	while (X.size() >= 2) // 1, 2, 3
 	{
+
 		if (*i > *X.end())
 		{
 			if (*X.end() < smallest_left)
@@ -120,20 +133,21 @@ double PmergeMe::l_sort(int ac, char **av)
 		}
 		else
 		{
-			if (*i < smallest_left)
+			if (*i < smallest_left) 
 				smallest_left = *i;
-
 			S.insert(std::lower_bound(S.begin(), S.end(), *X.end()), *X.end());
+			
+			print(X, "X");
+
 			remains.push_back(*i);
 			X.pop_front();
 			X.pop_back();
 
 		}
+		std::cout << "here2\n";
 
-		std::cout << "Current List: ";
-		for (std::list<int>::iterator s = S.begin(); s != S.end(); s++)
-			std::cout << *s << " ";
-		std::cout << std::endl;
+		print(X, "X");
+		print(S, "S");
 
 		if (X.size() > 2)
 		{
@@ -149,12 +163,12 @@ double PmergeMe::l_sort(int ac, char **av)
 	// for (std::list<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 	// 	S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 
-	end = clock();
+	end = current_time();
 		std::cout << "Sorted Integeres: ";
 	for (std::list<int>::iterator s = S.begin(); s != S.end(); s++)
 		std::cout << *s << " ";
 	std::cout << std::endl;
-	return ((double) (end - start)) / CLOCKS_PER_SEC;
+	return end - start;
 }
 
 void PmergeMe::sort(int ac, char **av)
@@ -172,7 +186,7 @@ void PmergeMe::sort(int ac, char **av)
 		std::cout << av[i] << " ";
 	std::cout << std::endl;
 
-	float v_time = 0; 
+	double v_time = 0; 
 	try {
 		v_time = v_sort(ac, av);
 	} catch (const char *e) {
@@ -180,7 +194,7 @@ void PmergeMe::sort(int ac, char **av)
 		return ;
 	}
 
-	// float l_time = l_sort(ac, av);
-	std::cout << "Time to process a range of " << i - 1 << " elements with std::vector : " << v_time << std::endl; 
-	// std::cout << "Time to process a range of " << i - 1 << " elements with std::list : " << l_time << std::endl; 
+	double l_time = l_sort(ac, av);
+	std::cout << "Time to process a range of " << i - 1 << " elements with std::vector : " << v_time  << "us" << std::endl; 
+	std::cout << "Time to process a range of " << i - 1 << " elements with std::list : " << l_time << "us" << std::endl; 
 }
