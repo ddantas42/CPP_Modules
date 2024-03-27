@@ -93,12 +93,15 @@ int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::s
 	{
 		std::cout << "Error: bad input => " << line << std::endl; return 1;
 	}
-	if (value < 0 || value > 1000)
+	if (value <= 0 || value >= 1000)
 	{
 		if (value < 0)
 			std::cout << "Error: number is negative" << std::endl;
-		else
+		else if (value >= 1000)
 			std::cout << "Error: number is too big" << std::endl; 
+		else
+			std::cout << "Error: value is 0 " << line << std::endl;
+
 		return 1;
 	}
 	else if (DataValidator(YMD[0], YMD[1], YMD[2]))
@@ -109,7 +112,7 @@ int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::s
 		std::string day_str = to_string(YMD[2]);
 		if (YMD[1] <= 9)
 			month_str = "0" + month_str;
-		if (YMD[3] <= 9)
+		if (YMD[2] <= 9)
 			day_str = "0" + day_str;
 			
 		date = to_string(YMD[0]) + "-" + month_str + "-" + day_str;

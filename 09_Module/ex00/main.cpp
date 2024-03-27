@@ -7,6 +7,5 @@ int main(int ac, char **av)
 		BitcoinExchange::BtcExchange(av[1]);
 	else
 		std::cout << "Error: Wrong arguments" << std::endl;
-
 	return 0;
 }
