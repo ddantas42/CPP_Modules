@@ -23,23 +23,17 @@ class BitcoinExchange
 		BitcoinExchange & operator=(const BitcoinExchange &assign);
 
 		
-		void BtcExchange(std::string file);
+		static void BtcExchange(std::string file);
 		
 	private:
-		std::string date;
-		std::map<std::string, float> data;
-		std::fstream file;
-		std::fstream cvs;
-		float value;
-		long year, month, day;
-		
-		std::string to_string(int value);
-		int YMDValidator(std::string YMD[]);
-		int OpenFile(std::string file);
-		int ParseFile(std::string line);
-		int DataValidator(long y, long m, long d);
-		void GetDataCvs();
-		float FindLowest();
+
+		static std::string to_string(int value);
+		static int YMDValidator(std::string YMD[]);
+		static int OpenFile(std::string file);
+		static int ParseFile(std::string line, long *YMD, float &value, std::string &date);
+		static int DataValidator(long y, long m, long d);
+		static void GetDataCvs(std::map<std::string, float> &data);
+		static float FindLowest(std::map<std::string, float> &data, long *YMD);
 };
 
 #endif

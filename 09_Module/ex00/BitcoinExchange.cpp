@@ -14,36 +14,39 @@ std::string BitcoinExchange::to_string(int value) {
     return os.str();
 }
 
-void BitcoinExchange::GetDataCvs()
+void BitcoinExchange::GetDataCvs(std::map<std::string, float> &data)
 {
 	std::string line;
+	std::fstream cvs;
 
-	this->cvs.open("data.csv", std::ios::in);
-	std::getline(this->cvs, line);
-	while (std::getline(this->cvs, line))
+	cvs.open("data.csv", std::ios::in);
+	std::getline(cvs, line);
+	while (std::getline(cvs, line))
 	{
 		float value;
 		std::stringstream ss(line);
 		std::string date_cvs;
 		std::getline(ss, date_cvs, ',');
 		ss >> value;
-		this->data.insert(std::pair<std::string, float>(date_cvs, value));
+		data.insert(std::pair<std::string, float>(date_cvs, value));
 	}
-	this->cvs.close();
+	cvs.close();
 }
 
 int BitcoinExchange::OpenFile(std::string str)
 {
-	this->file.open(str.c_str(), std::ios::in);
+
+	std::fstream file;
+	file.open(str.c_str(), std::ios::in);
 	
-	if (this->file.is_open())
+	if (file.is_open())
 	{
 		std::string line;
-		std::getline(this->file, line);
+		std::getline(file, line);
 		if (std::strcmp(line.c_str(), "date | value") != 0)
 		{
 			std::cout << "Error: wrong file format" << std::endl;
-			this->file.close();
+			file.close();
 			return 1;
 		}
 		else
@@ -75,85 +78,86 @@ int BitcoinExchange::DataValidator(long y, long m, long d)
 	return 0;
 }
 
-int BitcoinExchange::ParseFile(std::string line)
+int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::string &date)
 {
 	if (line.empty())
 	{
 		std::cout << "Error: bad input (empty)" << std::endl;
 		return 1;
 	}
-	this->year = 0;
-	this->month = 0,
-	this->day = 0;
+	YMD[0] = 0;
+	YMD[1] = 0,
+	YMD[2] = 0;
 	char deli = 0;
-	if (std::sscanf(line.c_str(), "%ld-%ld-%ld | %e%c", &this->year, &this->month, &this->day, &this->value, &deli) != 4)
+	if (std::sscanf(line.c_str(), "%ld-%ld-%ld | %e%c", &YMD[0], &YMD[1], &YMD[2], &value, &deli) != 4)
 	{
 		std::cout << "Error: bad input => " << line << std::endl; return 1;
 	}
-	if (this->value < 0 || this->value > 1000)
+	if (value < 0 || value > 1000)
 	{
-		if (this->value < 0)
+		if (value < 0)
 			std::cout << "Error: number is negative" << std::endl;
 		else
 			std::cout << "Error: number is too big" << std::endl; 
 		return 1;
 	}
-	else if (DataValidator(year, month, day))
+	else if (DataValidator(YMD[0], YMD[1], YMD[2]))
 		return 1;
 	else
 	{
-		std::string month_str = to_string(month);
-		std::string day_str = to_string(day);
-		if (month <= 9)
+		std::string month_str = to_string(YMD[1]);
+		std::string day_str = to_string(YMD[2]);
+		if (YMD[1] <= 9)
 			month_str = "0" + month_str;
-		if (day <= 9)
+		if (YMD[3] <= 9)
 			day_str = "0" + day_str;
 			
-		this->date = to_string(year) + "-" + month_str + "-" + day_str;
+		date = to_string(YMD[0]) + "-" + month_str + "-" + day_str;
 		return 0;
 	}
 }
 
 void BitcoinExchange::BtcExchange(std::string str)
 {
-	if(OpenFile(str))
-	{
-		if (this->file.is_open())
-			this->file.close();
-		return;
-	}
-
-	GetDataCvs();
-
-	std::string buffer;
-	this->file.close();
-	this->file.open(str.c_str(), std::ios::in);
-	std::getline(this->file, str);
+	std::map<std::string, float> data;
 	
-	while (std::getline(this->file, str))
+	if(OpenFile(str))
+		return;
+
+	GetDataCvs(data);
+
+	std::fstream file;
+	std::string buffer;
+	file.open(str.c_str(), std::ios::in);
+	std::getline(file, str);
+	
+
+	while (std::getline(file, str))
 	{
-		if (ParseFile(str))
+		long YMD[3];
+		float value;
+		std::string date;
+		if (ParseFile(str, YMD, value, date))
 			continue;
-		// std::cout << "Good date: " << this->date << std::endl;
-		std::cout << date << " => " << this->value << " = " << FindLowest() * this->value << std::endl;
+		std::cout << date << " => " << value << " = " << FindLowest(data, YMD) * value << std::endl;
 	}
-	this->file.close();
+	file.close();
 }
 
-float BitcoinExchange::FindLowest()
+float BitcoinExchange::FindLowest(std::map<std::string, float> &data, long *YMD)
 {
 	std::map<std::string, float>::iterator i = data.begin();
 
-	int year, month, day;
-	std::sscanf(i->first.c_str(), "%d-%d-%d", &year, &month, &day);
-	while ((year < this->year || month < this->month || day < this->day) && i != data.end())
+	int data_year, data_month, data_day;
+	std::sscanf(i->first.c_str(), "%d-%d-%d", &data_year, &data_month, &data_day);
+	while ((data_year < YMD[0] || data_month < YMD[1] || data_day < YMD[2]) && i != data.end())
 	{
-		std::sscanf(i->first.c_str(), "%d-%d-%d", &year, &month, &day);
+		std::sscanf(i->first.c_str(), "%d-%d-%d", &data_year, &data_month, &data_day);
 		i++;
 	}
 	if (i == data.begin())
 		return i->second;
-	else if (year == this->year && month == this->month && day == this->day)
+	else if (data_year == YMD[0] && data_month == YMD[1] && data_day == YMD[2])
 		i--;
 	else
 	{
