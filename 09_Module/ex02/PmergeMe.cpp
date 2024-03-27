@@ -29,8 +29,22 @@ bool PmergeMe::check_args(int ac, char **av)
 		else if (n < 0 || n > INT_MAX)
 			return true;
 	}
+	std::vector<int> v;
+	for (int n = 1; n < ac; n++)
+		v.push_back(std::atoi(av[n]));
+	for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		for (std::vector<int>::iterator it2 = v.begin(); it2 != v.end(); it2++)
+		{
+			if (std::distance(v.begin(), it) == std::distance(v.begin(), it2))
+				continue;
+			if (*it2 == *it)
+				return true;
+		}
+	}
 	return false;
 }
+
 
 double PmergeMe::current_time()
 {
@@ -42,29 +56,14 @@ double PmergeMe::current_time()
 double PmergeMe::v_sort(int ac, char **av)
 {
 	double start, end;
-	start = current_time();
 	std::vector<int> X;
 	std::vector<int> S;
 	std::vector<int> remains;
 	std::vector<int>::iterator i;
 	
+	start = current_time();
 	for (int n = 1; n < ac; n++)
 		X.push_back(std::atoi(av[n]));
-
-
-	for (std::vector<int>::iterator it = X.begin(); it != X.end(); it++)
-	{
-		for (std::vector<int>::iterator it2 = X.begin(); it2 != X.end(); it2++)
-		{
-			if (std::distance(X.begin(), it) == std::distance(X.begin(), it2))
-				continue;
-			if (*it2 == *it)
-				throw "Error: duplicate numbers";
-
-		}
-	}
-
-
 	i = X.begin();
 	int smallest_left = *i;
 	while (i != X.end() && i != X.end() - 1) // 1, 2, 3
@@ -87,23 +86,19 @@ double PmergeMe::v_sort(int ac, char **av)
 			break;
 		i += 2;
 	}
-
 	S.insert(S.begin(), smallest_left); // 4 paired with smallest
 	remains.push_back(smallest_left); // erase remaining of X that already are in S
-	
-
     for (std::vector<int>::iterator i = remains.begin(); i != remains.end(); ++i)
 	{
         std::vector<int>::iterator eraseIt = std::find(X.begin(), X.end(), *i);
         if (eraseIt != X.end())
             X.erase(eraseIt);
     }
-
 	for (std::vector<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
-
-	end = current_time();	
-	return end - start;
+	end = current_time();
+	print(S, "Vs");
+	return (end - start);
 }
 
 double PmergeMe::l_sort(int ac, char **av)
@@ -146,6 +141,7 @@ double PmergeMe::l_sort(int ac, char **av)
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 	end = current_time();
 
+	print(S, "Ls");
 	std::cout << "Sorted integers:  ";
 	for (std::list<int>::iterator i = S.begin(); i != S.end(); i++)
 		std::cout << *i << " ";
@@ -156,10 +152,7 @@ double PmergeMe::l_sort(int ac, char **av)
 void PmergeMe::sort(int ac, char **av)
 {
 	if (check_args(ac, av))
-	{
-		std::cout << "Error" << std::endl;
 		return ;
-	}
 
 
 	std::cout << "Unsorted Integeres: ";
