@@ -43,10 +43,7 @@ double PmergeMe::v_sort(int ac, char **av)
 			if (std::distance(X.begin(), it) == std::distance(X.begin(), it2))
 				continue;
 			if (*it2 == *it)
-			{
-				std::cout << *it << std::endl;
 				throw "Error: duplicate numbers";
-			}
 
 		}
 	}
@@ -54,7 +51,7 @@ double PmergeMe::v_sort(int ac, char **av)
 
 	i = X.begin();
 	int smallest_left = *i;
-	while (i != X.end() - 1) // 1, 2, 3
+	while (i != X.end() && i != X.end() - 1) // 1, 2, 3
 	{
 		if (*i > *(i + 1))
 		{
@@ -74,28 +71,27 @@ double PmergeMe::v_sort(int ac, char **av)
 			break;
 		i += 2;
 	}
-	remains.push_back(smallest_left); // erase remaining of X that already are in S
-	for (std::vector<int>::iterator it = remains.begin(); it != remains.end(); it++)
-	{
-		for (std::vector<int>::iterator it2 = X.begin(); it2 != X.end(); it2++)
-		{
-			if (*it2 == *it)
-				X.erase(X.begin() + std::distance(X.begin(), it2));
-		}
-	}
 
 	S.insert(S.begin(), smallest_left); // 4 paired with smallest
+	remains.push_back(smallest_left); // erase remaining of X that already are in S
+	
+
+    for (std::vector<int>::iterator i = remains.begin(); i != remains.end(); ++i)
+	{
+        std::vector<int>::iterator eraseIt = std::find(X.begin(), X.end(), *i);
+        if (eraseIt != X.end())
+            X.erase(eraseIt);
+    }
 
 	for (std::vector<int>::iterator i = X.begin(); i != X.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 
 	end = clock();
-	// 	std::cout << "Sorted Integeres: ";
-	// for (std::vector<int>::iterator s = S.begin(); s != S.end(); s++)
-	// 	std::cout << *s << " ";
-	// std::cout << std::endl;
+		std::cout << "Sorted Integeres:   ";
+	for (std::vector<int>::iterator s = S.begin(); s != S.end(); s++)
+		std::cout << *s << " ";
+	std::cout << std::endl;
 	return ((double) (end - start)) / CLOCKS_PER_SEC;
-
 }
 
 double PmergeMe::l_sort(int ac, char **av)
@@ -184,7 +180,7 @@ void PmergeMe::sort(int ac, char **av)
 		return ;
 	}
 
-	float l_time = l_sort(ac, av);
-	std::cout << "Time to process a range of " << i << " elements with std::vector : " << v_time << std::endl; 
-	std::cout << "Time to process a range of " << i << " elements with std::list : " << l_time << std::endl; 
+	// float l_time = l_sort(ac, av);
+	std::cout << "Time to process a range of " << i - 1 << " elements with std::vector : " << v_time << std::endl; 
+	// std::cout << "Time to process a range of " << i - 1 << " elements with std::list : " << l_time << std::endl; 
 }
