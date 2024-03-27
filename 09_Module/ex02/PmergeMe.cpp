@@ -117,56 +117,38 @@ double PmergeMe::l_sort(int ac, char **av)
 
 	for (int n = 1; n < ac; n++)
 		X.push_back(std::atoi(av[n]));
-	i = X.begin();
-	int smallest_left = *i;
 	while (X.size() >= 2) // 1, 2, 3
 	{
-
-		if (*i > *X.end())
+		if (X.front() > X.back())
 		{
-			if (*X.end() < smallest_left)
-				smallest_left = *X.end();
-			S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
-			remains.push_back(*X.end());
+			S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
+			remains.push_back(X.back());
 			X.pop_front();
 			X.pop_back();
 		}
 		else
 		{
-			if (*i < smallest_left) 
-				smallest_left = *i;
-			S.insert(std::lower_bound(S.begin(), S.end(), *X.end()), *X.end());
-			
-			print(X, "X");
-
-			remains.push_back(*i);
+			S.insert(std::lower_bound(S.begin(), S.end(), X.back()), X.back());
+			remains.push_back(X.front());
 			X.pop_front();
 			X.pop_back();
-
 		}
-		std::cout << "here2\n";
 
-		print(X, "X");
-		print(S, "S");
-
-		if (X.size() > 2)
+		if (X.size() < 2)
 		{
-			// remains.push_back(*i);
-			// X.pop_front();
+			if (X.size() != 0)
+				S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
 			break ;
 		}
-		i = X.begin();
 	}
-	// S.insert(S.begin(), smallest_left); // 4 paired with smallest
-	// X.assign(remains.begin(), remains.end());
-	
-	// for (std::list<int>::iterator i = X.begin(); i != X.end(); i++) // 5
-	// 	S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 
+	for (std::list<int>::iterator i = remains.begin(); i != remains.end(); i++) // 5
+		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 	end = current_time();
-		std::cout << "Sorted Integeres: ";
-	for (std::list<int>::iterator s = S.begin(); s != S.end(); s++)
-		std::cout << *s << " ";
+
+	std::cout << "Sorted integers:  ";
+	for (std::list<int>::iterator i = S.begin(); i != S.end(); i++)
+		std::cout << *i << " ";
 	std::cout << std::endl;
 	return end - start;
 }
