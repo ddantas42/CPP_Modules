@@ -104,12 +104,12 @@ double PmergeMe::v_sort(int ac, char **av)
 double PmergeMe::l_sort(int ac, char **av)
 {
 	double start, end;
-	start = current_time();
 	std::list<int> X;
 	std::list<int> S;
 	std::list<int> remains;
 	std::list<int>::iterator i;
 
+	start = current_time();
 	for (int n = 1; n < ac; n++)
 		X.push_back(std::atoi(av[n]));
 	while (X.size() >= 2) // 1, 2, 3
@@ -128,14 +128,10 @@ double PmergeMe::l_sort(int ac, char **av)
 			X.pop_front();
 			X.pop_back();
 		}
-
-		if (X.size() < 2)
-		{
-			if (X.size() != 0)
-				S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
-			break ;
-		}
 	}
+
+	if (X.size() == 1)
+		S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
 
 	for (std::list<int>::iterator i = remains.begin(); i != remains.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
