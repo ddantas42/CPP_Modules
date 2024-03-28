@@ -33,7 +33,7 @@ class BitcoinExchange
 		static int ParseFile(std::string line, long *YMD, float &value, std::string &date);
 		static int DataValidator(long y, long m, long d);
 		static void GetDataCvs(std::map<std::string, float> &data);
-		static float FindLowest(std::map<std::string, float> &data, long *YMD);
+		static float FindLowest(std::map<std::string, float> &data, long *YMD, std::string date);
 };
 
 #endif
