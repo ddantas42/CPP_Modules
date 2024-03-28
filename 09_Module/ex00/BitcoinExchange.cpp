@@ -149,22 +149,49 @@ void BitcoinExchange::BtcExchange(std::string str)
 float BitcoinExchange::FindLowest(std::map<std::string, float> &data, long *YMD, std::string date)
 {
 	std::map<std::string, float>::iterator i = data.begin();
-	long year, month, day;
-
-	sscanf(i->first.c_str(), "%ld-%ld-%ld", &year, &month, &day);
+	long year;
+	
+	sscanf(i->first.c_str(), "%ld", &year);
 	if (YMD[0] < year)
 		return i->second;
 	i = data.lower_bound(date);
 
-	std::cout << "it at:" << i->first << " => " << i->second << " ";
+	sscanf(i->first.c_str(), "%ld", &year);
 
-	(void)YMD;
+	if (YMD[0] > year)
+		return (FindLowest2(data, YMD, date));
 	if (i != data.end() && i->first == date) {
 			return i->second;
 	}
 	if (i != data.begin()) {
 		--i;
 		return i->second;
+	}
+	return i->second;
+}
+
+float BitcoinExchange::FindLowest2(std::map<std::string, float> &data, long *YMD, std::string date)
+{
+	std::map<std::string, float>::iterator i = data.begin();
+
+	long year, month, day;
+	sscanf(i->first.c_str(), "%ld-%ld-%ld", &year, &month, &day);
+	while ((YMD[0] > year || YMD[1] > month || YMD[2] > day) && i != data.end())
+	{
+		sscanf(i->first.c_str(), "%ld-%ld-%ld", &year, &month, &day);
+		i++;
+	}
+	if (i != data.end() && i->first == date) {
+			return i->second;
+	}
+	if (i != data.begin()) {
+		--i;
+		return i->second;
+	}
+	else
+	{
+		i--;
+		i--;
 	}
 	return i->second;
 }
