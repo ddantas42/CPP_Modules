@@ -158,15 +158,12 @@ float BitcoinExchange::FindLowest(std::map<std::string, float> &data, long *YMD,
 	if (i != data.end())
 		sscanf(i->first.c_str(), "%ld", &year);
 
-	if (YMD[0] > year)
+	if (i != data.end() && YMD[0] > year)
 		return (FindLowest2(data, YMD, date));
-	if (i != data.end() && i->first == date) {
+	if (i != data.end() && i->first == date) 
 			return i->second;
-	}
-	if (i != data.begin()) {
+	if (i != data.begin())
 		--i;
-		return i->second;
-	}
 	return i->second;
 }
 

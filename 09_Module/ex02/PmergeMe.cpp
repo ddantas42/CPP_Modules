@@ -95,7 +95,7 @@ double PmergeMe::v_sort(int ac, char **av)
 			break;
 		i += 2;
 	}
-	S.insert(S.begin(), smallest_left); // 4 paired with smallest
+	S.insert(S.begin(), smallest_left); // 4 paired with first and smallest
 	remains.push_back(smallest_left); // erase remaining of X that already are in S
     for (std::vector<int>::iterator i = remains.begin(); i != remains.end(); ++i)
 	{
@@ -121,10 +121,13 @@ double PmergeMe::l_sort(int ac, char **av)
 	start = current_time();
 	for (int n = 1; n < ac; n++)
 		X.push_back(std::atoi(av[n]));
+	int smallest = X.front();
 	while (X.size() >= 2) // 1, 2, 3
 	{
 		if (X.front() > X.back())
 		{
+			if (X.back() < smallest)
+				smallest = X.back();
 			S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
 			remains.push_back(X.back());
 			X.pop_front();
@@ -132,6 +135,8 @@ double PmergeMe::l_sort(int ac, char **av)
 		}
 		else
 		{
+			if (X.front() < smallest)
+				smallest = X.front();
 			S.insert(std::lower_bound(S.begin(), S.end(), X.back()), X.back());
 			remains.push_back(X.front());
 			X.pop_front();
@@ -139,9 +144,11 @@ double PmergeMe::l_sort(int ac, char **av)
 		}
 	}
 
+	S.insert(S.begin(), smallest); // 4
+	remains.erase(std::find(remains.begin(), remains.end(), smallest));
+
 	if (X.size() == 1)
 		S.insert(std::lower_bound(S.begin(), S.end(), X.front()), X.front());
-
 	for (std::list<int>::iterator i = remains.begin(); i != remains.end(); i++) // 5
 		S.insert(std::lower_bound(S.begin(), S.end(), *i), *i);
 	end = current_time();
