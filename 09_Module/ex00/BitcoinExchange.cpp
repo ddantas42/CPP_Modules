@@ -93,14 +93,12 @@ int BitcoinExchange::ParseFile(std::string line, long *YMD, float &value, std::s
 	{
 		std::cout << "Error: bad input => " << line << std::endl; return 1;
 	}
-	if (value <= 0 || value >= 1000)
+	if (value < 0 || value > 1000)
 	{
 		if (value < 0)
 			std::cout << "Error: number is negative" << std::endl;
 		else if (value >= 1000)
 			std::cout << "Error: number is too big" << std::endl; 
-		else
-			std::cout << "Error: value is 0 " << std::endl;
 		return 1;
 	}
 	else if (DataValidator(YMD[0], YMD[1], YMD[2]))
